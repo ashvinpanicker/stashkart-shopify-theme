@@ -24,7 +24,7 @@
     "animations_hover_elements": "3d-lift",
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
-    "buttons_radius": 0,
+    "buttons_radius": 30,
     "buttons_shadow_opacity": 0,
     "buttons_shadow_horizontal_offset": 0,
     "buttons_shadow_vertical_offset": 4,
@@ -126,8 +126,8 @@
     "cart_type": "notification",
     "show_vendor": false,
     "show_cart_note": false,
-    "cart_drawer_collection": "",
-    "cart_color_scheme": "scheme-1",
+    "cart_drawer_collection": "t-shirts",
+    "cart_color_scheme": "scheme-b930d057-28bb-472e-85fc-146e40b9da7b",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
