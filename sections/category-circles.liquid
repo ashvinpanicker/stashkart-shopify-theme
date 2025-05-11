@@ -1,0 +1,106 @@
+{% schema %}
+{
+  "name": "Category Circles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Shop by Category"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link to Collection"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Category Circles",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% if section.settings.section_title != blank %}
+  <h2 class="category-circles-heading">{{ section.settings.section_title }}</h2>
+{% endif %}
+<div class="category-circles">
+  {% for block in section.blocks %}
+    <a href="{{ block.settings.link }}" class="circle-item">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 200 }}"
+          alt="{{ block.settings.title }}"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% endif %}
+      <span>{{ block.settings.title }}</span>
+    </a>
+  {% endfor %}
+</div>
+
+<style>
+  .category-circles-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .category-circles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .circle-item {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    width: 120px;
+  }
+
+  .circle-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease;
+  }
+
+  .circle-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .circle-item span {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+</style>
