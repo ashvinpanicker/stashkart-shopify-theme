@@ -126,8 +126,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 990px) {
   .header:not(.drawer-menu).page-width {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .page-width--narrow {
@@ -3631,11 +3631,18 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, span, input, button {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-top: 1.5rem;
-}
 
+}
 .collection-hero__image-full img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+.facets__summary {
+  color: rgb(11 117 130) !important;
+}
+
+.facet-filters__sort {
+  color: rgb(11 117 130) !important;
+}
