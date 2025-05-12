@@ -3627,4 +3627,15 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, span, input, button {
   margin-bottom: 0.5rem;
 }
 
+.collection-hero__image-full {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 1.5rem;
+}
+
+.collection-hero__image-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
