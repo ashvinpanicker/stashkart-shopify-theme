@@ -17,9 +17,9 @@
         {{- collection.title | escape -}}
       </h1> {% endcomment %}
 
-      {%- if section.settings.show_collection_description -%}
+      {% comment %} {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>
-      {%- endif -%}
+      {%- endif -%} {% endcomment %}
     </div>
   </div>
 
