@@ -5,19 +5,23 @@
     text-align: center;
     overflow: hidden;
   }
+
   .footer-banner .container {
     max-width: 800px;
     margin: 0 auto;
   }
+
   .footer-banner h2 {
     font-size: 2.2rem;
     margin-bottom: 10px;
   }
+
   .footer-banner p {
     font-size: 1.1rem;
     margin-bottom: 25px;
     color: #555;
   }
+
   .footer-banner .btn {
     display: inline-block;
     padding: 12px 20px;
@@ -26,42 +30,48 @@
     font-weight: bold;
     text-decoration: none;
   }
+
   .footer-banner .btn.primary {
     background-color: #4caf50;
     color: white;
   }
+
   .footer-banner .btn.secondary {
     background-color: #fff;
     color: #333;
     border: 1px solid #ccc;
   }
+
   .footer-banner .scattered-image {
     position: absolute;
     width: 120px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   }
-  .footer-banner .image-1 {
+
+  /* Example positioning classes - you can extend these */
+  .image-1 {
     top: 20px;
     left: 5%;
   }
-  .footer-banner .image-2 {
+  .image-2 {
     top: 80px;
     right: 10%;
   }
-  .footer-banner .image-3 {
+  .image-3 {
     bottom: 60px;
     left: 15%;
   }
-  .footer-banner .image-4 {
+  .image-4 {
     bottom: 30px;
     right: 5%;
   }
-  .footer-banner .image-5 {
+  .image-5 {
     top: 50%;
     left: 45%;
     transform: translate(-50%, -50%);
   }
+
   @media (max-width: 768px) {
     .footer-banner .scattered-image {
       width: 80px;
@@ -70,15 +80,14 @@
 </style>
 
 <div class="footer-banner" style="background-color: {{ section.settings.background_color }}">
-  {% for i in (1..5) %}
-    {% assign img = section.settings["image_" | append: i ] %}
-    {% if img %}
+  {% for block in section.blocks %}
+    {% if block.settings.image %}
       <img
-        class="scattered-image image-{{ i }}"
-        src="{{ img | image_url: width: 200 }}"
-        alt="Image {{ i }}"
-        width="{{ img.width }}"
-        height="{{ img.height }}"
+        class="scattered-image {{ block.settings.custom_class }}"
+        src="{{ block.settings.image | image_url: width: 200 }}"
+        alt="Scattered Image"
+        width="{{ block.settings.image.width }}"
+        height="{{ block.settings.image.height }}"
         loading="lazy"
       >
     {% endif %}
@@ -87,10 +96,10 @@
   <div class="container">
     <h2>{{ section.settings.title }}</h2>
     <p>{{ section.settings.description }}</p>
-    {% if section.settings.button1_link != blank %}
+    {% if section.settings.button1_link and section.settings.button1_text != blank %}
       <a href="{{ section.settings.button1_link }}" class="btn primary">{{ section.settings.button1_text }}</a>
     {% endif %}
-    {% if section.settings.button2_link != blank %}
+    {% if section.settings.button2_link and section.settings.button2_text != blank %}
       <a href="{{ section.settings.button2_link }}" class="btn secondary">{{ section.settings.button2_text }}</a>
     {% endif %}
   </div>
@@ -139,41 +148,46 @@
       "id": "button2_text",
       "label": "Button 2 text",
       "default": "Contact Us"
-    },
-    {
-      "type": "header",
-      "content": "Scattered Images"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_1",
-      "label": "Image 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "Image 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_3",
-      "label": "Image 3"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_4",
-      "label": "Image 4"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_5",
-      "label": "Image 5"
     }
   ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Scattered Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "custom_class",
+          "label": "Custom CSS class for positioning",
+          "default": "image-1"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
   "presets": [
     {
       "name": "Footer Banner",
-      "category": "Custom"
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "custom_class": "image-1"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "custom_class": "image-2"
+          }
+        }
+      ]
     }
   ]
 }
