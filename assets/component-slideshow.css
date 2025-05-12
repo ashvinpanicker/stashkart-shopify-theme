@@ -35,8 +35,8 @@ slideshow-component .slideshow.banner {
   }
 }
 .btn-stash {
-  all: unset; /* nuclear reset */
-  display: inline-block;
+  box-sizing: border-box;
+  display: flex;
   padding: 0.5em 1.5em;
   background-color: #FAA718; /* Orange brand color */
   color: #fff;
