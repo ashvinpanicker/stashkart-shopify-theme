@@ -1,7 +1,7 @@
 <style>
   .footer-banner {
     position: relative;
-    padding: 60px 20px;
+    padding: 100px 20px;
     text-align: center;
     overflow: hidden;
   }
@@ -43,8 +43,9 @@
   }
 
   .footer-banner .scattered-image {
-    position: absolute;
-    width: 120px;
+    max-width: 150px;
+    width: 100%;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   }
@@ -84,7 +85,7 @@
     {% if block.settings.image %}
       <img
         class="scattered-image {{ block.settings.custom_class }}"
-        src="{{ block.settings.image | image_url: width: 200 }}"
+        src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
         alt="Scattered Image"
         width="{{ block.settings.image.width }}"
         height="{{ block.settings.image.height }}"
