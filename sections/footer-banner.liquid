@@ -12,12 +12,12 @@
   }
 
   .footer-banner h2 {
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     margin-bottom: 10px;
   }
 
   .footer-banner p {
-    font-size: 1.1rem;
+    font-size: 2.2rem;
     margin-bottom: 25px;
     color: #555;
   }
@@ -42,7 +42,21 @@
     border: 1px solid #ccc;
   }
 
+  .footer-banner {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .footer-banner .scattered-images-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
   .footer-banner .scattered-image {
+    position: absolute;
     max-width: 150px;
     width: 100%;
     height: auto;
@@ -50,27 +64,40 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   }
 
-  /* Example positioning classes - you can extend these */
-  .image-1 {
-    top: 20px;
-    left: 5%;
+  /* Example placement */
+  .footer-banner .image-1 {
+    top: 2px;
+    left: 40px;
   }
-  .image-2 {
-    top: 80px;
-    right: 10%;
+  .footer-banner .image-2 {
+    top: 180px;
+    left: 0;
   }
-  .image-3 {
+  .footer-banner .image-3 {
     bottom: 60px;
-    left: 15%;
+    left: 250px;
   }
-  .image-4 {
-    bottom: 30px;
-    right: 5%;
+
+  .footer-banner .image-4 {
+    bottom: 0;
+    right: 250px;
   }
-  .image-5 {
-    top: 50%;
-    left: 45%;
+
+  .footer-banner .image-5 {
+    bottom: 50px;
+    right: 100px;
     transform: translate(-50%, -50%);
+  }
+
+  .footer-banner .image-6 {
+    bottom: 10px;
+    right: 0px;
+  }
+
+  /* Layer title/buttons above images */
+  .footer-banner .container {
+    position: relative;
+    z-index: 1;
   }
 
   @media (max-width: 768px) {
@@ -81,26 +108,28 @@
 </style>
 
 <div class="footer-banner" style="background-color: {{ section.settings.background_color }}">
-  {% for block in section.blocks %}
-    {% if block.settings.image %}
-      <img
-        class="scattered-image {{ block.settings.custom_class }}"
-        src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
-        alt="Scattered Image"
-        width="{{ block.settings.image.width }}"
-        height="{{ block.settings.image.height }}"
-        loading="lazy"
-      >
-    {% endif %}
-  {% endfor %}
+  <div class="scattered-images-wrapper">
+    {% for block in section.blocks %}
+      {% if block.settings.image %}
+        <img
+          class="scattered-image image-{{ forloop.index }}"
+          src="{{ block.settings.image | image_url }}"
+          alt="Scattered Image {{ forloop.index }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% endif %}
+    {% endfor %}
+  </div>
 
   <div class="container">
     <h2>{{ section.settings.title }}</h2>
     <p>{{ section.settings.description }}</p>
-    {% if section.settings.button1_link and section.settings.button1_text != blank %}
+    {% if section.settings.button1_link %}
       <a href="{{ section.settings.button1_link }}" class="btn primary">{{ section.settings.button1_text }}</a>
     {% endif %}
-    {% if section.settings.button2_link and section.settings.button2_text != blank %}
+    {% if section.settings.button2_link %}
       <a href="{{ section.settings.button2_link }}" class="btn secondary">{{ section.settings.button2_text }}</a>
     {% endif %}
   </div>
