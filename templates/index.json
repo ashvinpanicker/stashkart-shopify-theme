@@ -12,25 +12,6 @@
     "slideshow_QariNY": {
       "type": "slideshow",
       "blocks": {
-        "slide_rwjYWf": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/lavender--white---brick-tshirt-on-3-basic-wood-man.jpg",
-            "image_link": "shopify://collections/all",
-            "image_overlay_opacity": 50,
-            "heading": "All Products",
-            "heading_size": "h1",
-            "subheading": "View our entire catalogue",
-            "button_label": "Check it out",
-            "link": "shopify://collections/all",
-            "button_style_secondary": true,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
         "slide_w8J7KA": {
           "type": "slide",
           "settings": {
@@ -145,6 +126,25 @@
             "color_scheme": "scheme-4"
           }
         },
+        "slide_rwjYWf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/lavender--white---brick-tshirt-on-3-basic-wood-man.jpg",
+            "image_link": "shopify://collections/all",
+            "image_overlay_opacity": 50,
+            "heading": "All Products",
+            "heading_size": "h1",
+            "subheading": "View our entire catalogue",
+            "button_label": "Check it out",
+            "link": "shopify://collections/all",
+            "button_style_secondary": true,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
         "slide_CdC9zW": {
           "type": "slide",
           "disabled": true,
@@ -207,13 +207,13 @@
         }
       },
       "block_order": [
-        "slide_rwjYWf",
         "slide_w8J7KA",
         "slide_R4qWTn",
         "slide_fw6V7p",
         "slide_NVwM6t",
         "slide_aARUjL",
         "slide_Q8Nnyn",
+        "slide_rwjYWf",
         "slide_CdC9zW",
         "slide_pMHDNJ",
         "slide_FcKrfn"
