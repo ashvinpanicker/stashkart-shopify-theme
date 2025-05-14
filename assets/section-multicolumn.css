@@ -23,10 +23,9 @@
   }
 }
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 480px) {
   .multicolumn .page-width {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 4.5rem 1.5rem;
   }
 }
 
