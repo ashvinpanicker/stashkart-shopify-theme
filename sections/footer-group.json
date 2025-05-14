@@ -72,8 +72,8 @@
         "description": "T-shirts that keep you moving.",
         "button1_link": "shopify://collections/all",
         "button1_text": "Shop Now",
-        "button2_link": "shopify://pages/contact",
-        "button2_text": "Contact Us"
+        "button2_link": "",
+        "button2_text": "Learn More"
       }
     },
     "footer": {
