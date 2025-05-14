@@ -9,6 +9,8 @@
   .footer-banner .container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
 
   .footer-banner h2 {
@@ -42,17 +44,12 @@
     border: 1px solid #ccc;
   }
 
-  .footer-banner {
-    position: relative;
-    padding: 60px 20px;
-    text-align: center;
-    overflow: hidden;
-  }
-
+  /* Scattered Images */
   .footer-banner .scattered-images-wrapper {
     position: absolute;
     inset: 0;
     z-index: 0;
+    pointer-events: none; /* don't block buttons */
   }
 
   .footer-banner .scattered-image {
@@ -64,45 +61,157 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   }
 
-  /* Example placement */
-  .footer-banner .image-1 {
-    top: 2px;
+  /* Desktop Placement */
+  .image-1 {
+    top: 20px;
     left: 40px;
   }
-  .footer-banner .image-2 {
+  .image-2 {
     top: 180px;
-    left: 0;
+    left: 10px;
   }
-  .footer-banner .image-3 {
-    bottom: 60px;
-    left: 250px;
+  .image-3 {
+    bottom: 30px;
+    left: 200px;
   }
-
-  .footer-banner .image-4 {
-    bottom: 0;
-    right: 250px;
+  .image-4 {
+    bottom: 30px;
+    right: 220px;
   }
-
-  .footer-banner .image-5 {
-    bottom: 50px;
+  .image-5 {
+    bottom: 100px;
     right: 100px;
     transform: translate(-50%, -50%);
   }
-
-  .footer-banner .image-6 {
+  .image-6 {
     bottom: 10px;
-    right: 0px;
+    right: 10px;
   }
 
-  /* Layer title/buttons above images */
-  .footer-banner .container {
-    position: relative;
-    z-index: 1;
+  /* Responsive Tweaks */
+  @media (max-width: 1220px) {
+    .footer-banner h2 {
+      font-size: 2.8rem;
+      padding: 0 5vw;
+    }
+
+    .footer-banner p {
+      font-size: 1.8rem;
+      padding: 0 8vw;
+    }
+
+    .footer-banner .scattered-image {
+      max-width: 100px;
+    }
+
+    .image-2{
+      top: 160px;
+      left: 20px;
+    }
+
+    .image-3 {
+      top: auto;
+      bottom: 40px;
+      left: 140px;
+    }
+    .image-4 {
+      top: auto;
+      bottom: 140px;
+      right: 160px;
+    }
+    .image-5 {
+      top: 20px;
+      right: 40px;
+      transform: none;
+    }
+    .image-6 {
+      bottom: 20px;
+      right: 20px;
+    }
   }
 
   @media (max-width: 768px) {
+    .footer-banner h2 {
+      font-size: 2.4rem;
+      padding: 0 5vw;
+    }
+
+    .footer-banner p {
+      font-size: 1.6rem;
+      padding: 0 8vw;
+    }
+
     .footer-banner .scattered-image {
-      width: 80px;
+      max-width: 80px;
+    }
+
+    .image-1 {
+      top: 10px;
+      left: 80px;
+    }
+    .image-2 {
+      top: 160px;
+      left: 40px;
+    }
+    .image-3 {
+      bottom: 10px;
+      left: 10px;
+    }
+    .image-4 {
+      bottom: 160px;
+      right: 60px;
+    }
+    .image-5 {
+      top: 10px;
+      right: 30px;
+    }
+    .image-6 {
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-banner h2 {
+      font-size: 2rem;
+    }
+
+    .footer-banner p {
+      font-size: 1.4rem;
+    }
+
+    .footer-banner .btn {
+      padding: 10px 20px;
+      font-size: 1.4rem;
+    }
+
+    .footer-banner .scattered-image {
+      max-width: 60px;
+    }
+
+    .image-1 {
+      top: 10px;
+      left: 30px;
+    }
+    .image-2 {
+      top: 160px;
+      left: 0;
+    }
+    .image-3 {
+      bottom: 20px;
+      left: 30px;
+    }
+    .image-4 {
+      bottom: 130px;
+      right: 50px;
+    }
+    .image-5 {
+      bottom: 80px;
+      right: 20px;
+    }
+    .image-6 {
+      bottom: 10px;
+      right: 10px;
     }
   }
 </style>
@@ -114,7 +223,8 @@
         <img
           class="scattered-image image-{{ forloop.index }}"
           src="{{ block.settings.image | image_url }}"
-          alt="Scattered Image {{ forloop.index }}"
+          {% comment %} alt="Scattered Image {{ forloop.index }}" {% endcomment %}
+          alt="{{ block.settings.image.alt | escape }}"
           loading="lazy"
           width="{{ block.settings.image.width }}"
           height="{{ block.settings.image.height }}"
