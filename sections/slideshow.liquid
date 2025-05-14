@@ -25,6 +25,14 @@
   {%- endstyle -%}
 {%- endif -%}
 
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .hide-mobile {
+      display: none !important;
+    }
+  }
+{%- endstyle -%}
+
 {%- assign total_slides = section.blocks.size -%}
 {%- assign slides_per_view = 3 -%}
 {%- assign num_dots = total_slides | minus: slides_per_view | plus: 1 -%}
@@ -40,7 +48,7 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %} hide-mobile">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -607,5 +615,3 @@
   ]
 }
 {% endschema %}
-
-
