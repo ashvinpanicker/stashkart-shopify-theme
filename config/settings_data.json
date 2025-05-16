@@ -149,9 +149,14 @@
         "disabled": false,
         "settings": {}
       },
+      "sticky-cart-by-uplinkly": {
+        "type": "shopify://apps/sticky-cart-by-uplinkly/blocks/sticky-cart/25fba6ad-75e4-408b-a261-b223e0c71c8b",
+        "disabled": false,
+        "settings": {}
+      },
       "4270892276865887485": {
         "type": "shopify://apps/sticky-add-to-cart-bar-pro/blocks/stickybar/97d83368-7a1d-48fc-b259-1c1881d781b1",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "stickyotherpages": false,
           "forcebtnpicker": false,
@@ -161,14 +166,9 @@
           "forcereviewspicker": false
         }
       },
-      "sticky-cart-by-uplinkly": {
-        "type": "shopify://apps/sticky-cart-by-uplinkly/blocks/sticky-cart/25fba6ad-75e4-408b-a261-b223e0c71c8b",
-        "disabled": false,
-        "settings": {}
-      },
       "sticky-cart-animator-by-uplinkly": {
-        "type": "shopify://apps/sticky-cart-by-uplinkly/blocks/cart-animator/25fba6ad-75e4-408b-a261-b223e0c71c8b",
-        "disabled": true,
+        "type": "shopify://apps/uplinkly-sticky-cart/blocks/cart-animator/25fba6ad-75e4-408b-a261-b223e0c71c8b",
+        "disabled": false,
         "settings": {}
       }
     },
