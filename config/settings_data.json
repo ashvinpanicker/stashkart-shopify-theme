@@ -148,6 +148,18 @@
         "type": "shopify://apps/maxbundle-product-bundles/blocks/app-embed/469560a3-d600-4f5e-a767-2a4cdaceacca",
         "disabled": false,
         "settings": {}
+      },
+      "4270892276865887485": {
+        "type": "shopify://apps/sticky-add-to-cart-bar-pro/blocks/stickybar/97d83368-7a1d-48fc-b259-1c1881d781b1",
+        "disabled": false,
+        "settings": {
+          "stickyotherpages": false,
+          "forcebtnpicker": false,
+          "forcevariantpicker": false,
+          "forcepricepicker": false,
+          "forcecomppricepicker": false,
+          "forcereviewspicker": false
+        }
       }
     },
     "color_schemes": {
