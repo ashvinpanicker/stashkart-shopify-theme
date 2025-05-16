@@ -3628,6 +3628,15 @@ details-disclosure>details {
   }
 }
 
+.slideshow__slide:hover {
+  cursor: pointer;
+
+  .button--secondary {
+    scale: 1.10;
+    transition: scale 0.2s ease-in-out;
+  }
+}
+
 body,
 h1,
 h2,
