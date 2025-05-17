@@ -35,9 +35,7 @@ slideshow-component .slideshow.banner {
   }
 }
 .btn-stash {
-  all: unset; /* nuclear reset */
-  display: inline-block;
-  padding: 0.5em 1.5em;
+  display: inline-flex;
   background-color: #FAA718; /* Orange brand color */
   color: #fff;
   border: none;
@@ -73,7 +71,7 @@ slideshow-component .slideshow.banner {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 54.5rem;
+  max-width: 58.5rem;
 }
 
 .slideshow__text > * {
