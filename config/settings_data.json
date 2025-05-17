@@ -168,7 +168,7 @@
       },
       "sticky-cart-animator-by-uplinkly": {
         "type": "shopify://apps/sticky-cart-by-uplinkly/blocks/cart-animator/25fba6ad-75e4-408b-a261-b223e0c71c8b",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     },
