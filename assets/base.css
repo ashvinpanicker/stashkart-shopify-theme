@@ -3631,8 +3631,8 @@ details-disclosure>details {
 .slideshow__slide:hover {
   cursor: pointer;
 
-  .button--secondary {
-    scale: 1.10;
+  .btn-stash {
+    scale: 1.05; 
     transition: scale 0.2s ease-in-out;
   }
 }
