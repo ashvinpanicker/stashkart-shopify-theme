@@ -130,7 +130,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/lavender--white---brick-tshirt-on-3-basic-wood-man.jpg",
-            "image_link": "shopify://collections/all",
+            "image_link": "shopify://collections/all-products",
             "image_overlay_opacity": 50,
             "heading": "All Products",
             "heading_size": "h1",
