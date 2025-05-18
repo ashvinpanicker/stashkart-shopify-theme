@@ -16,13 +16,13 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/a-family-wearing-peach-tshirts-in-an-airport_0accdeb0-e909-44f9-a8fb-6656979894f3.png",
-            "image_link": "shopify://collections/family-t-shirts",
+            "image_link": "shopify://collections/family",
             "image_overlay_opacity": 40,
             "heading": "Family",
             "heading_size": "h1",
             "subheading": "For your loved ones",
             "button_label": "Shop Now",
-            "link": "shopify://collections/family-t-shirts",
+            "link": "shopify://collections/family",
             "button_style_secondary": false,
             "show_text_box": false,
             "box_align": "middle-left",
@@ -379,7 +379,7 @@
         "featured_collection_y3FGwc": {
           "type": "featured_collection",
           "settings": {
-            "collection": "family-t-shirts"
+            "collection": "family"
           }
         },
         "featured_collection_xfCrG8": {
