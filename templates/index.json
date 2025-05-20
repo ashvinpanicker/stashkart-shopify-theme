@@ -232,36 +232,28 @@
     "category_circles_kRAtgR": {
       "type": "category-circles",
       "blocks": {
+        "category_x4faxW": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Website_illustrations_category-05_32c6b9bd-dbfe-411f-9d16-31f7940d13f8.png",
+            "title": "Pawprints",
+            "link": "shopify://collections/pets"
+          }
+        },
+        "category_UfwM7T": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Website_illustrations_category-07_195957eb-a477-4179-af28-28eecf2190ce.png",
+            "title": "Mugs",
+            "link": "shopify://collections/mugs"
+          }
+        },
         "category_6embML": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Website_illustrations_category-09_7da2d2f8-f04e-4440-9941-3f16b9c32e0a.png",
             "title": "T-shirts",
             "link": "shopify://collections/t-shirts"
-          }
-        },
-        "category_ycGzK6": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Website_illustrations_category-08_ebb1c3a7-6a6f-4cff-8c44-81ac0c413359.png",
-            "title": "Crop Tops",
-            "link": "shopify://collections/womens-crop-tops"
-          }
-        },
-        "category_hUwNAc": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Website_illustrations_category-10_91d4ec68-2ec3-4f32-9d93-12dd9851f5ff.png",
-            "title": "Sweatshirts",
-            "link": "shopify://collections/sweatshirts"
-          }
-        },
-        "category_x4faxW": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Website_illustrations_category-05_32c6b9bd-dbfe-411f-9d16-31f7940d13f8.png",
-            "title": "Pets",
-            "link": "shopify://collections/pets"
           }
         },
         "category_WeXtcH": {
@@ -272,22 +264,30 @@
             "link": "shopify://collections/caps"
           }
         },
-        "category_UfwM7T": {
+        "category_hUwNAc": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Website_illustrations_category-07_195957eb-a477-4179-af28-28eecf2190ce.png",
-            "title": "Mugs",
-            "link": "shopify://collections/mugs"
+            "image": "shopify://shop_images/Website_illustrations_category-10_91d4ec68-2ec3-4f32-9d93-12dd9851f5ff.png",
+            "title": "Sweatshirts",
+            "link": "shopify://collections/sweatshirts"
+          }
+        },
+        "category_ycGzK6": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Website_illustrations_category-08_ebb1c3a7-6a6f-4cff-8c44-81ac0c413359.png",
+            "title": "Crop Tops",
+            "link": "shopify://collections/womens-crop-tops"
           }
         }
       },
       "block_order": [
-        "category_6embML",
-        "category_ycGzK6",
-        "category_hUwNAc",
         "category_x4faxW",
+        "category_UfwM7T",
+        "category_6embML",
         "category_WeXtcH",
-        "category_UfwM7T"
+        "category_hUwNAc",
+        "category_ycGzK6"
       ],
       "name": "Category Circles",
       "settings": {
