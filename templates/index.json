@@ -297,6 +297,12 @@
     "product_list_6NcLaM": {
       "type": "product-list",
       "blocks": {
+        "product_afFLRC": {
+          "type": "product",
+          "settings": {
+            "product": "just-beat-it-iconic-music-anthem-dog-t-shirt"
+          }
+        },
         "product_gM9Nfk": {
           "type": "product",
           "settings": {
@@ -312,31 +318,25 @@
         "product_GTHNwT": {
           "type": "product",
           "settings": {
-            "product": "sunshine-family-sleeveless-t-shirt-powered-by-positivity"
-          }
-        },
-        "product_afFLRC": {
-          "type": "product",
-          "settings": {
-            "product": "just-beat-it-iconic-music-anthem-dog-t-shirt"
-          }
-        },
-        "product_MgX8pX": {
-          "type": "product",
-          "settings": {
-            "product": "cosmic-mess-unisex-sweatshirt"
-          }
-        },
-        "product_KHKwfK": {
-          "type": "product",
-          "settings": {
-            "product": "kids-unisex-travel-companion-classic-crew-t-shirt"
+            "product": "catzilla-cute-chaotic-unstoppable-metal-poster"
           }
         },
         "product_RxEJH7": {
           "type": "product",
           "settings": {
             "product": "the-beautiful-mess-embrace-chaos-t-shirt"
+          }
+        },
+        "product_MgX8pX": {
+          "type": "product",
+          "settings": {
+            "product": "catgpt-smarter-than-you-still-sleeps-16-hours-magic-mug"
+          }
+        },
+        "product_KHKwfK": {
+          "type": "product",
+          "settings": {
+            "product": "who-let-the-dogs-out-with-a-retro-desi-remix-oversized-t-shirt"
           }
         },
         "product_DDzh64": {
@@ -347,13 +347,13 @@
         }
       },
       "block_order": [
+        "product_afFLRC",
         "product_gM9Nfk",
         "product_Wxx6VX",
         "product_GTHNwT",
-        "product_afFLRC",
+        "product_RxEJH7",
         "product_MgX8pX",
         "product_KHKwfK",
-        "product_RxEJH7",
         "product_DDzh64"
       ],
       "name": "Product List",
