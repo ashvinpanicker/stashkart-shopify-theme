@@ -297,10 +297,22 @@
     "product_list_6NcLaM": {
       "type": "product-list",
       "blocks": {
+        "product_RxEJH7": {
+          "type": "product",
+          "settings": {
+            "product": "ohana-means-family-lilo-stitch-inspired-poster-for-pet-lovers"
+          }
+        },
         "product_afFLRC": {
           "type": "product",
           "settings": {
             "product": "just-beat-it-iconic-music-anthem-dog-t-shirt"
+          }
+        },
+        "product_GTHNwT": {
+          "type": "product",
+          "settings": {
+            "product": "birdies-on-tap-t-shirt"
           }
         },
         "product_gM9Nfk": {
@@ -313,18 +325,6 @@
           "type": "product",
           "settings": {
             "product": "loved-by-karma-crew-t-shirt"
-          }
-        },
-        "product_GTHNwT": {
-          "type": "product",
-          "settings": {
-            "product": "catzilla-cute-chaotic-unstoppable-metal-poster"
-          }
-        },
-        "product_RxEJH7": {
-          "type": "product",
-          "settings": {
-            "product": "the-beautiful-mess-embrace-chaos-t-shirt"
           }
         },
         "product_MgX8pX": {
@@ -347,11 +347,11 @@
         }
       },
       "block_order": [
+        "product_RxEJH7",
         "product_afFLRC",
+        "product_GTHNwT",
         "product_gM9Nfk",
         "product_Wxx6VX",
-        "product_GTHNwT",
-        "product_RxEJH7",
         "product_MgX8pX",
         "product_KHKwfK",
         "product_DDzh64"
