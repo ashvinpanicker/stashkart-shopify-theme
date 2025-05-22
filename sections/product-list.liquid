@@ -97,6 +97,39 @@
       grid-template-columns: 1fr;
     }
   }
+
+  .variant-select {
+    padding: 8px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+  .btn:hover {
+    background-color: #333;
+  }
+
+  /* Manually disable ATC shake animation plugin for Bestsellers Section */
+  [cart-animator-animate] .product-card button[data-product-id],
+  [cart-animator-animate] .product-card form[action*='/cart/add'] [type='submit'] {
+    animation: none !important;
+    -webkit-animation: none !important;
+    animation-name: none !important;
+    -webkit-animation-name: none !important;
+  }
 {% endstyle %}
 
 <div class="page-width product-list-section">
@@ -107,22 +140,46 @@
       {% for block in section.blocks %}
         {% assign product = block.settings.product %}
         {% if product %}
-          <div class="product-card" {{ block.shopify_attributes }}>
-            <a href="{{ product.url }}">
-              {% assign image = product.featured_image %}
-              <img
-                src="{{ image | img_url: '500x500' }}"
-                alt="{{ product.title }}"
-                width="{{ image.width }}"
-                height="{{ image.height }}"
-                loading="lazy"
-              >
+          <div class="product-card">
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="form_type" value="product">
+              <input type="hidden" name="utf8" value="✓">
+
+              <!-- Product Image + Title -->
+              <a href="{{ product.url }}">
+                <img
+                  src="{{ product.featured_image | img_url: '500x500' }}"
+                  alt="{{ product.title }}"
+                  width="500"
+                  height="500"
+                  loading="lazy"
+                >
+              </a>
               <div class="product-title">{{ product.title }}</div>
-            </a>
+
+              <!-- Variant Picker -->
+              {% if product.variants.size > 1 %}
+                <select name="id" class="variant-select">
+                  {% for variant in product.variants %}
+                    {% if variant.available %}
+                      <option value="{{ variant.id }}">{{ variant.title }}</option>
+                    {% else %}
+                      <option disabled>{{ variant.title }} - Sold Out</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+              {% else %}
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              {% endif %}
+
+              <!-- Add to Cart -->
+              <button type="submit" class="btn btn--full">Add to Cart</button>
+            </form>
           </div>
         {% endif %}
       {% endfor %}
     </div>
+
   {% else %}
     <p>No products selected.</p>
   {% endif %}
