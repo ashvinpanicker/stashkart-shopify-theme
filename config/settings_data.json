@@ -170,6 +170,11 @@
         "type": "shopify://apps/sticky-cart-by-uplinkly/blocks/cart-animator/25fba6ad-75e4-408b-a261-b223e0c71c8b",
         "disabled": false,
         "settings": {}
+      },
+      "5877711596357593266": {
+        "type": "shopify://apps/kaching-popup/blocks/popup/e910a01f-bb85-45d8-92ef-3667265465b1",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
