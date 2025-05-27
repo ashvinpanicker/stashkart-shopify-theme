@@ -126,8 +126,8 @@
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
-    "cart_drawer_collection": "t-shirts",
-    "cart_color_scheme": "scheme-b930d057-28bb-472e-85fc-146e40b9da7b",
+    "cart_drawer_collection": "all-products",
+    "cart_color_scheme": "scheme-6451691d-ad9b-4ef2-9c16-45e300615810",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -274,13 +274,13 @@
       },
       "scheme-6451691d-ad9b-4ef2-9c16-45e300615810": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#f3f3f3",
           "background_gradient": "",
           "text": "#121212",
-          "button": "#121212",
+          "button": "#047889",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "secondary_button_label": "#047889",
+          "shadow": "#242833"
         }
       },
       "scheme-7e17385f-f760-4c11-8b99-2fdcf515f830": {
