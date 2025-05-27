@@ -465,9 +465,9 @@
           "settings": {
             "image": "shopify://shop_images/Website_illustrations-04_aa18fb28-86bc-4010-9b12-09a44746c397.png",
             "title": "Made Just for You",
-            "text": "<p>Every product is made to order. We don’t offer returns, but that’s exactly what makes your purchase truly one of a kind.</p><p></p><p></p><p></p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Every item is crafted on demand, just for you. It’s personal, unique, and made with care. </p><p></p><p></p>",
+            "link_label": "For Bulk / Custom Orders Contact Us",
+            "link": "shopify://pages/contact"
           }
         },
         "column_MaqWGR": {
