@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Checkout is in DEMO MODE. Contact us to place orders",
+            "text": "New here? Use code MYSTASH10 for 10 % off your first order 🎁",
             "link": "shopify://pages/contact"
           }
         }
@@ -25,11 +25,10 @@
       "block_order": [
         "announcement-bar-0"
       ],
-      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-68b8ef06-d2ef-4c44-b8e3-c88c5e3065b5",
+        "color_scheme": "scheme-4",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
