@@ -280,6 +280,221 @@
       {% comment %}theme-check-enable AssetPreload{% endcomment %}
     {%- endunless -%}
 
+    {%- unless customer -%}
+      <div id="AuthModal" class="login-modal" style="display: none;">
+        <div class="modal-content">
+          <button id="CloseAuthModal" class="modal-close" aria-label="Close">&times;</button>
+          <div class="tab-toggle">
+            <button id="LoginTab" class="tab active">Login</button>
+            <button id="SignupTab" class="tab">Sign Up</button>
+          </div>
+
+          <!-- Login Form -->
+          <form method="post" id="LoginForm" class="auth-form">
+            <input type="hidden" name="form_type" value="customer_login">
+            <input type="hidden" name="utf8" value="✓">
+            <input type="email" name="customer[email]" placeholder="Email" required>
+            <input type="password" name="customer[password]" placeholder="Password" required>
+            <button type="submit" class="auth-button">Log In</button>
+          </form>
+
+          <!-- SIGN-UP TAB -->
+          <form id="SignupForm" class="auth-form" style="display:none;" method="post">
+            <input type="hidden" name="form_type" value="create_customer">
+            <input type="hidden" name="utf8" value="✓">
+            <input type="text" name="customer[first_name]" placeholder="First name" required>
+            <input type="text" name="customer[last_name]" placeholder="Last name" required>
+            <input type="email" name="customer[email]" placeholder="Email" required>
+            <input type="password" name="customer[password]" placeholder="Create a password" required>
+            <button type="submit" class="auth-button secondary">Create account</button>
+          </form>
+        </div>
+      </div>
+    {%- endunless -%}
+
+    <style>
+      .login-modal {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 10px;
+        z-index: 9999;
+      }
+
+      .modal-content {
+        background: #fff;
+        padding: 2rem;
+        width: 320px;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        font-size: 1.1rem;
+        position: relative;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #666;
+      }
+
+      .tab-toggle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+      }
+
+      .tab {
+        flex: 1;
+        padding: 0.5rem 0.75rem;
+        background-color: #eee;
+        border: none;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        background-color: #047889;
+        color: #fff;
+      }
+
+      .auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .auth-form input {
+        padding: 0.75rem;
+        font-size: 1.1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      .auth-button {
+        background-color: #047889;
+        color: #fff;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .auth-button.secondary {
+        background-color: #fba919;
+        color: #000;
+      }
+
+      .auth-button:hover {
+        filter: brightness(0.95);
+      }
+
+      @media screen and (max-width: 600px) {
+        .modal-content {
+          width: 95vw;
+          padding: 1.5rem;
+          font-size: 1rem;
+        }
+
+        .tab {
+          font-size: 1rem;
+          padding: 0.5rem;
+        }
+
+        .auth-button {
+          font-size: 1rem;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const loginLink = document.getElementById('LoginLink');
+        const modal = document.getElementById('AuthModal');
+        const modalContent = modal.querySelector('.modal-content');
+        const closeBtn = document.getElementById('CloseAuthModal');
+
+        const loginTab = document.getElementById('LoginTab');
+        const signupTab = document.getElementById('SignupTab');
+        const loginForm = document.getElementById('LoginForm');
+        const signupForm = document.getElementById('SignupForm');
+
+        // Open modal
+        loginLink.addEventListener('click', function (e) {
+          e.preventDefault();
+          const rect = loginLink.getBoundingClientRect();
+          modal.style.display = 'block';
+          modal.style.top = `${rect.bottom + window.scrollY}px`;
+          modal.style.right = `${window.innerWidth - rect.right}px`;
+        });
+
+        // Close logic
+        closeBtn.addEventListener('click', () => (modal.style.display = 'none'));
+
+        document.addEventListener('click', function (e) {
+          if (!modal.contains(e.target) && !loginLink.contains(e.target)) {
+            modal.style.display = 'none';
+          }
+        });
+
+        // Tabs
+        loginTab.addEventListener('click', () => {
+          loginTab.classList.add('active');
+          signupTab.classList.remove('active');
+          loginForm.style.display = 'flex';
+          signupForm.style.display = 'none';
+        });
+
+        signupTab.addEventListener('click', () => {
+          signupTab.classList.add('active');
+          loginTab.classList.remove('active');
+          loginForm.style.display = 'none';
+          signupForm.style.display = 'flex';
+        });
+
+        // AJAX login
+        loginForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const formData = new URLSearchParams(new FormData(loginForm));
+          fetch('/account/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: formData,
+          }).then((response) => {
+            if (response.redirected) {
+              window.location.href = response.url;
+            } else {
+              alert('Login failed.');
+            }
+          });
+        });
+
+        signupForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const data = new URLSearchParams(new FormData(signupForm));
+          fetch('/account', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: data,
+          }).then((r) => {
+            if (r.redirected) {
+              /* Shopify auto-logs the customer in */
+              window.location.href = r.url || '/account';
+            } else {
+              alert('Could not create account. Email may already exist.');
+            }
+          });
+        });
+      });
+    </script>
+
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
       {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
