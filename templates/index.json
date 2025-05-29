@@ -277,7 +277,7 @@
           "settings": {
             "image": "shopify://shop_images/Website_illustrations_category-08_ebb1c3a7-6a6f-4cff-8c44-81ac0c413359.png",
             "title": "Crop Tops",
-            "link": "shopify://collections/womens-crop-tops"
+            "link": "shopify://collections/crop-tops"
           }
         }
       },
@@ -289,7 +289,6 @@
         "category_hUwNAc",
         "category_ycGzK6"
       ],
-      "name": "Category Circles",
       "settings": {
         "section_title": "Shop by Category"
       }
@@ -356,7 +355,6 @@
         "product_KHKwfK",
         "product_DDzh64"
       ],
-      "name": "Product List",
       "settings": {
         "heading": "Bestsellers"
       }
@@ -490,7 +488,6 @@
       "custom_css": [
         "p {color: #444;}"
       ],
-      "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "Why Choose Us?",
         "heading_size": "h1",
