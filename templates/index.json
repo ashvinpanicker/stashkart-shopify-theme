@@ -31,6 +31,44 @@
             "color_scheme": "scheme-4"
           }
         },
+        "slide_FcKrfn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Golf_Banner.png",
+            "image_link": "shopify://collections/sports",
+            "image_overlay_opacity": 30,
+            "heading": "Sports",
+            "heading_size": "h1",
+            "subheading": "Play Hard, Look Sharp",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/sports",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
+        "slide_CdC9zW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/animals_pets.png",
+            "image_link": "shopify://collections/pets",
+            "image_overlay_opacity": 30,
+            "heading": "Pawprints",
+            "heading_size": "h1",
+            "subheading": "Animal Inspired Products",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/pets",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
         "slide_R4qWTn": {
           "type": "slide",
           "settings": {
@@ -145,26 +183,6 @@
             "color_scheme": "scheme-4"
           }
         },
-        "slide_CdC9zW": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/cosmic_mess_mockup.jpg",
-            "image_link": "shopify://collections/tshirts",
-            "image_overlay_opacity": 30,
-            "heading": "Men",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/tshirts",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "bottom-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-7e17385f-f760-4c11-8b99-2fdcf515f830"
-          }
-        },
         "slide_pMHDNJ": {
           "type": "slide",
           "disabled": true,
@@ -184,39 +202,19 @@
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-7e17385f-f760-4c11-8b99-2fdcf515f830"
           }
-        },
-        "slide_FcKrfn": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/young-man-adjusts-his-baseball-cap.jpg",
-            "image_link": "shopify://collections/caps",
-            "image_overlay_opacity": 0,
-            "heading": "Caps",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/caps",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "bottom-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-7e17385f-f760-4c11-8b99-2fdcf515f830"
-          }
         }
       },
       "block_order": [
         "slide_w8J7KA",
+        "slide_FcKrfn",
+        "slide_CdC9zW",
         "slide_R4qWTn",
         "slide_fw6V7p",
         "slide_NVwM6t",
         "slide_aARUjL",
         "slide_Q8Nnyn",
         "slide_rwjYWf",
-        "slide_CdC9zW",
-        "slide_pMHDNJ",
-        "slide_FcKrfn"
+        "slide_pMHDNJ"
       ],
       "settings": {
         "layout": "full_bleed",
