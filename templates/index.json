@@ -230,12 +230,12 @@
     "category_circles_kRAtgR": {
       "type": "category-circles",
       "blocks": {
-        "category_x4faxW": {
+        "category_6embML": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Website_illustrations_category-05_32c6b9bd-dbfe-411f-9d16-31f7940d13f8.png",
-            "title": "Pawprints",
-            "link": "shopify://collections/pets"
+            "image": "shopify://shop_images/Website_illustrations_category-09_7da2d2f8-f04e-4440-9941-3f16b9c32e0a.png",
+            "title": "T-shirts",
+            "link": "shopify://collections/t-shirts"
           }
         },
         "category_UfwM7T": {
@@ -246,20 +246,20 @@
             "link": "shopify://collections/mugs"
           }
         },
-        "category_6embML": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Website_illustrations_category-09_7da2d2f8-f04e-4440-9941-3f16b9c32e0a.png",
-            "title": "T-shirts",
-            "link": "shopify://collections/t-shirts"
-          }
-        },
         "category_WeXtcH": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Website_illustrations_category-06_fb429535-74db-4297-aa8d-febacfdcd939.png",
             "title": "Caps",
             "link": "shopify://collections/caps"
+          }
+        },
+        "category_x4faxW": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Website_illustrations_category-05_32c6b9bd-dbfe-411f-9d16-31f7940d13f8.png",
+            "title": "Dog Tees",
+            "link": "shopify://collections/dog-t-shirts"
           }
         },
         "category_hUwNAc": {
@@ -280,10 +280,10 @@
         }
       },
       "block_order": [
-        "category_x4faxW",
-        "category_UfwM7T",
         "category_6embML",
+        "category_UfwM7T",
         "category_WeXtcH",
+        "category_x4faxW",
         "category_hUwNAc",
         "category_ycGzK6"
       ],
