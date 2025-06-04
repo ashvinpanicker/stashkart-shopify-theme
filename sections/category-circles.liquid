@@ -60,6 +60,20 @@
         <span>{{ block.settings.title }}</span>
       </a>
     {% endfor %}
+    <a href="javascript:void(0)" class="end-item" aria-label="Scroll to start">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
   </div>
 </div>
 
@@ -132,17 +146,30 @@
       justify-content: center;
     }
   }
+  a.end-item {
+    flex: 0 0 auto;
+    width: 30px;
+    margin-top: -40px;
+    text-align: center;
+    color: inherit;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector('.category-circles-wrapper');
     if (!wrapper || window.innerWidth >= 768) return;
 
-    // Magic numbers for the spring effect
-    const nudgeDistance = 42; // how far to scroll (px)
-    const springDelay = 2269; // wait before nudging (ms)
-    const springDuration = 420; // total animation time (ms)
+    // Spring animation variables
+    const nudgeDistance = 42;
+    const springDelay = 2269;
+    const springDuration = 420;
 
+    // SPRING ANIMATION
     setTimeout(() => {
       let start = null;
 
@@ -151,7 +178,7 @@
         const elapsed = timestamp - start;
 
         const progress = elapsed / springDuration;
-        const eased = 1 - Math.cos(progress * Math.PI); // spring in/out
+        const eased = 1 - Math.cos(progress * Math.PI);
 
         const offset = eased * nudgeDistance;
         wrapper.scrollLeft = offset;
@@ -170,7 +197,7 @@
         const elapsed = timestamp - start;
         const progress = elapsed / springDuration;
         const eased = 1 - Math.cos(progress * Math.PI);
-        const offset = startOffset - (eased * startOffset);
+        const offset = startOffset - eased * startOffset;
         wrapper.scrollLeft = offset;
 
         if (elapsed < springDuration) {
@@ -180,6 +207,13 @@
 
       requestAnimationFrame(springScroll);
     }, springDelay);
+
+    // SCROLL-TO-START BUTTON FUNCTIONALITY
+    const endItem = document.querySelector('a.end-item');
+    if (endItem) {
+      endItem.addEventListener('click', () => {
+        wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+      });
+    }
   });
 </script>
-
