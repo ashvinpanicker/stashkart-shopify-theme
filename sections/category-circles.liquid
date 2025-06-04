@@ -94,7 +94,7 @@
 
   .category-circles {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     padding: 10px 20px;
     flex-wrap: nowrap;
   }
@@ -135,17 +135,6 @@
     scrollbar-width: none;
   }
 
-  /* Optional: restore grid on wider screens */
-  @media screen and (min-width: 768px) {
-    .category-circles-wrapper {
-      overflow-x: visible;
-    }
-
-    .category-circles {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  }
   a.end-item {
     flex: 0 0 auto;
     width: 30px;
@@ -157,6 +146,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Optional: restore grid on wider screens */
+  @media screen and (min-width: 768px) {
+    .category-circles-wrapper {
+      overflow-x: visible;
+    }
+
+    .category-circles {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    a.end-item {
+      display: none !important;
+    }
   }
 </style>
 <script>
