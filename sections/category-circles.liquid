@@ -133,3 +133,53 @@
     }
   }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.querySelector('.category-circles-wrapper');
+    if (!wrapper || window.innerWidth >= 768) return;
+
+    // Magic numbers for the spring effect
+    const nudgeDistance = 42; // how far to scroll (px)
+    const springDelay = 2269; // wait before nudging (ms)
+    const springDuration = 420; // total animation time (ms)
+
+    setTimeout(() => {
+      let start = null;
+
+      function springScroll(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+
+        const progress = elapsed / springDuration;
+        const eased = 1 - Math.cos(progress * Math.PI); // spring in/out
+
+        const offset = eased * nudgeDistance;
+        wrapper.scrollLeft = offset;
+
+        if (elapsed < springDuration) {
+          requestAnimationFrame(springScroll);
+        } else {
+          // spring back
+          start = null;
+          requestAnimationFrame((timestamp) => springBack(timestamp, offset));
+        }
+      }
+
+      function springBack(timestamp, startOffset) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+        const progress = elapsed / springDuration;
+        const eased = 1 - Math.cos(progress * Math.PI);
+        const offset = startOffset - (eased * startOffset);
+        wrapper.scrollLeft = offset;
+
+        if (elapsed < springDuration) {
+          requestAnimationFrame((t) => springBack(t, startOffset));
+        }
+      }
+
+      requestAnimationFrame(springScroll);
+    }, springDelay);
+  });
+</script>
+
