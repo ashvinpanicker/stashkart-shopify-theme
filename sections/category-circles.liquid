@@ -45,20 +45,22 @@
 {% if section.settings.section_title != blank %}
   <h2 class="category-circles-heading">{{ section.settings.section_title }}</h2>
 {% endif %}
-<div class="category-circles">
-  {% for block in section.blocks %}
-    <a href="{{ block.settings.link }}" class="circle-item">
-      {% if block.settings.image %}
-        <img
-          src="{{ block.settings.image | image_url: width: 200 }}"
-          alt="{{ block.settings.title }}"
-          width="{{ block.settings.image.width }}"
-          height="{{ block.settings.image.height }}"
-        >
-      {% endif %}
-      <span>{{ block.settings.title }}</span>
-    </a>
-  {% endfor %}
+<div class="category-circles-wrapper">
+  <div class="category-circles">
+    {% for block in section.blocks %}
+      <a href="{{ block.settings.link }}" class="circle-item">
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: width: 200 }}"
+            alt="{{ block.settings.title }}"
+            width="100"
+            height="100"
+          >
+        {% endif %}
+        <span>{{ block.settings.title }}</span>
+      </a>
+    {% endfor %}
+  </div>
 </div>
 
 <style>
@@ -70,19 +72,25 @@
     font-weight: 600;
   }
 
+  .category-circles-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0;
+  }
+
   .category-circles {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
+    gap: 20px;
+    padding: 10px 20px;
+    flex-wrap: nowrap;
   }
 
   .circle-item {
+    flex: 0 0 auto;
+    width: 100px;
     text-align: center;
     text-decoration: none;
     color: inherit;
-    width: 120px;
   }
 
   .circle-item img {
@@ -100,7 +108,28 @@
 
   .circle-item span {
     display: block;
-    margin-top: 10px;
+    margin-top: 8px;
     font-weight: 500;
+  }
+
+  /* Optional: hide scrollbars */
+  .category-circles-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .category-circles-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Optional: restore grid on wider screens */
+  @media screen and (min-width: 768px) {
+    .category-circles-wrapper {
+      overflow-x: visible;
+    }
+
+    .category-circles {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 </style>
