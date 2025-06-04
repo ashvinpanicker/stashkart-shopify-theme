@@ -19,3 +19,8 @@ What's been modified so far without version control (can be found by searching f
 - Added few new shopify components:
   - Category Circles  `sections/category-circles.liquid`
   - Product List (for Bestsellers on Homepage) `sections/product-list.liquid`
+
+## Usage
+
+- Install Shopify CLI
+- shopify theme dev --store="<your-store-url>"
