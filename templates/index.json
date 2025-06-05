@@ -277,6 +277,14 @@
             "title": "Crop Tops",
             "link": "shopify://collections/crop-tops"
           }
+        },
+        "category_KAwFdd": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Website_illustrations.png",
+            "title": "Posters",
+            "link": "shopify://collections/posters"
+          }
         }
       },
       "block_order": [
@@ -285,7 +293,8 @@
         "category_WeXtcH",
         "category_x4faxW",
         "category_hUwNAc",
-        "category_ycGzK6"
+        "category_ycGzK6",
+        "category_KAwFdd"
       ],
       "settings": {
         "section_title": "Shop by Category"
