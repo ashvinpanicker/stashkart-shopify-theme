@@ -356,7 +356,10 @@
                                 </dt>
                                 <dd>
                                   <span class="price-per-item--current">
-                                    {{- 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price -}}
+                                    {{-
+                                      'products.product.volume_pricing.price_at_each_html'
+                                      | t: price: variant_price
+                                    -}}
                                   </span>
                                 </dd>
                               </dl>
@@ -438,6 +441,52 @@
                         {%- endif -%}
                       {%- endif -%}
                     </volume-pricing>
+                  {%- endif -%}
+                  {% if product.metafields.custom.show_custom_note == true %}
+                    <!-- Design Service Upsell -->
+                    <div class="product-design-upsell" style="margin-top: 1.5rem;">
+                      <label style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="enable_design_service" name="properties[Design Service]" value="Yes">
+                        Add custom design service for ₹199
+                      </label>
+
+                      <div id="design_text_wrapper" style="margin-top: 1rem; display: none;">
+                        <label for="design_text" style="display:block; font-weight: 600; margin-bottom: 0.5rem;"
+                          >Text to print:</label
+                        >
+                        <textarea
+                          id="design_text"
+                          name="properties[Text to print]"
+                          rows="3"
+                          style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 6px;"
+                          placeholder="E.g. Born to be wild"
+                          disabled
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <script>
+                      document.addEventListener('DOMContentLoaded', function () {
+                        const checkbox = document.getElementById('enable_design_service');
+                        const textarea = document.getElementById('design_text');
+                        const wrapper = document.getElementById('design_text_wrapper');
+
+                        if (checkbox) {
+                          checkbox.addEventListener('change', function () {
+                            if (checkbox.checked) {
+                              wrapper.style.display = 'block';
+                              textarea.disabled = false;
+                            } else {
+                              wrapper.style.display = 'none';
+                              textarea.disabled = true;
+                              textarea.value = '';
+                            }
+                          });
+                        }
+                      });
+                    </script>
+                    {% comment %} Add the design fee to the cart value when the checkbox is checked.
+                    Add the text entered in the textarea as a cart attribute. {% endcomment %}
                   {%- endif -%}
                 </div>
               {%- when 'popup' -%}
@@ -1674,7 +1723,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_2.label"
-        },        
+        },
         {
           "type": "select",
           "id": "icon_2",
@@ -1874,7 +1923,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_3.label"
-        },        
+        },
         {
           "type": "select",
           "id": "icon_3",
@@ -2176,7 +2225,7 @@
       ],
       "default": "hide",
       "label": "t:sections.main-product.settings.mobile_thumbnails.label"
-    },    
+    },
     {
       "type": "select",
       "id": "media_position",
