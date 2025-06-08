@@ -81,8 +81,7 @@
   .category-circles-heading {
     text-align: center;
     font-size: 2rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 20px 0 10px 5px;
     font-weight: 600;
   }
 
@@ -90,13 +89,19 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding: 10px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .category-circles-wrapper::-webkit-scrollbar {
+    display: none;
   }
 
   .category-circles {
     display: flex;
+    flex-wrap: nowrap;
     gap: 24px;
     padding: 10px 20px;
-    flex-wrap: nowrap;
   }
 
   .circle-item {
@@ -126,15 +131,6 @@
     font-weight: 500;
   }
 
-  /* Optional: hide scrollbars */
-  .category-circles-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-  .category-circles-wrapper {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
   a.end-item {
     flex: 0 0 auto;
     width: 30px;
@@ -148,7 +144,7 @@
     justify-content: center;
   }
 
-  /* Optional: restore grid on wider screens */
+  /* Desktop layout: even spacing, wrapped rows */
   @media screen and (min-width: 768px) {
     .category-circles-wrapper {
       overflow-x: visible;
@@ -157,12 +153,15 @@
     .category-circles {
       flex-wrap: wrap;
       justify-content: center;
+      gap: 40px 60px; /* vertical and horizontal spacing */
     }
+
     a.end-item {
       display: none !important;
     }
   }
 </style>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector('.category-circles-wrapper');
