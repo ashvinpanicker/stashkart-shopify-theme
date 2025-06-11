@@ -77,7 +77,7 @@
           <div class="card__information">
             <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
               <a href="{{ article.url }}" class="full-unstyled-link">
-                {{ article.title | truncate: 50 | escape }}
+                {{ article.title | truncate: 40 | escape }}
               </a>
             </h3>
             <div class="article-card__info caption-with-letter-spacing h5">
@@ -94,9 +94,9 @@
                   {%- if article.excerpt.size > 0 -%}
                     {{ article.excerpt | strip_html | truncatewords: 30 }}
                   {%- else -%}
-                    {{ article.content | strip_html | truncatewords: 30 }}
+                    {{ article.content | strip_html | truncatewords: 20 }}
                   {%- endif -%}
-                </p>
+              </p>
               {%- endif -%}
               <div class="article-card__footer">
                 {%- if article.comments_count > 0 and blog.comments_enabled? -%}
@@ -112,7 +112,7 @@
           {%- endif -%}
         </div>
       </div>
-      <div class="card__content">
+       <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
             <a href="{{ article.url }}" class="full-unstyled-link">
