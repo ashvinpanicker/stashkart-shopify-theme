@@ -171,7 +171,15 @@
   }
   @media screen and (max-width: 600px) {
     .product-grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+    }
+    .product-card {
+      scroll-snap-align: start;
+      width: 80%; /* Adjust as needed */
+      flex: 0 0 auto;
     }
     .product-size-quantity-row,
     .product-price-atc-row {
