@@ -52,6 +52,111 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    padding: 18px 12px 20px 12px;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .product-size-quantity-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+  }
+  .product-size-options label {
+    margin-right: 4px;
+    font-size: 14px;
+    color: #444;
+  }
+  .product-size-options select {
+    min-width: 80px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background: #fafbfc;
+  }
+  .product-quantity {
+    min-width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-price-atc-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+  }
+  .product-price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #047889;
+    min-width: 90px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .btn-bestseller {
+    margin-top: 0;
+    min-width: 120px;
+    max-width: 180px;
+    padding: 10px 0;
+    background-color: #007a8c;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background 0.2s;
+    flex: 1 1 120px;
+  }
+  .btn-bestseller:hover {
+    background-color: #333;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .product-card {
+      padding: 14px 6px 16px 6px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+    .product-size-quantity-row,
+    .product-price-atc-row {
+      flex-direction: column;
+      gap: 8px;
+      align-items: stretch;
+    }
+    .product-card {
+      padding: 10px 2px 12px 2px;
+    }
+    .btn-bestseller {
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+    }
+    .product-price {
+      justify-content: flex-start;
+      text-align: left;
+    }
   }
 
   .product-card img {
@@ -98,22 +203,37 @@
     }
   }
 
-  .variant-select {
-    padding: 8px;
+  .variant-qty-row,
+  .price-atc-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
     margin-top: 10px;
-    width: 100%;
+    align-items: center;
+  }
+
+  .variant-select {
+    flex: 1;
+    padding: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
   }
 
+  .qty-input {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
   .btn-bestseller {
-    margin-top: 10px;
+    flex-shrink: 0;
     padding: 10px;
     background-color: #007a8c;
     color: white;
     font-weight: 600;
     border: none;
-    width: 100%;
     cursor: pointer;
     border-radius: 6px;
   }
@@ -122,7 +242,12 @@
     background-color: #333;
   }
 
-  /* Manually disable ATC shake animation plugin for Bestsellers Section */
+  .product-price {
+    font-weight: 600;
+    font-size: 16px;
+    color: #111;
+  }
+
   [cart-animator-animate] .product-card button[data-product-id],
   [cart-animator-animate] .product-card form[action*='/cart/add'] [type='submit'] {
     animation: none !important;
@@ -157,30 +282,58 @@
               </a>
               <div class="product-title">{{ product.title }}</div>
 
-              <!-- Variant Picker -->
-              {% if product.variants.size >= 1 %}
+              <!-- Variant & Quantity Row -->
+              <div class="variant-qty-row">
                 <select name="id" class="variant-select">
                   {% for variant in product.variants %}
                     {% if variant.available %}
-                      <option value="{{ variant.id }}">{{ variant.title }}</option>
+                      <option value="{{ variant.id }}" data-price="{{ variant.price | money_without_currency | replace: ',', '' }}">
+                        {{ variant.title }}
+                      </option>
                     {% else %}
                       <option disabled>{{ variant.title }} - Sold Out</option>
                     {% endif %}
                   {% endfor %}
                 </select>
-              {% else %}
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-              {% endif %}
 
-              <!-- Add to Cart -->
-              <button type="submit" class="btn-bestseller btn--full">Add to Cart</button>
+                <input type="number" name="quantity" class="qty-input" value="1" min="1">
+              </div>
+
+              <!-- Price & Add to Cart Row -->
+              <div class="price-atc-row">
+                <div class="product-price">{{ product.price | money }}</div>
+                <button type="submit" class="btn-bestseller" data-product-id="{{ product.id }}">
+                  Add to Cart
+                </button>
+              </div>
             </form>
           </div>
         {% endif %}
       {% endfor %}
     </div>
-
   {% else %}
     <p>No products selected.</p>
   {% endif %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.product-card').forEach(function(card) {
+      const select = card.querySelector('select.variant-select');
+      const qty = card.querySelector('input.qty-input');
+      const priceEl = card.querySelector('.product-price');
+      if (!select || !qty || !priceEl) return;
+
+      const updatePrice = () => {
+        const option = select.options[select.selectedIndex];
+        const unitPrice = parseFloat(option.dataset.price || 0);
+        const quantity = parseInt(qty.value || 1);
+        const total = (unitPrice * quantity).toFixed(2);
+        priceEl.textContent = `₹${total}`;
+      };
+
+      select.addEventListener('change', updatePrice);
+      qty.addEventListener('input', updatePrice);
+    });
+  });
+</script>
