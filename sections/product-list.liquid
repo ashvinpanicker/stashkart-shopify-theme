@@ -54,7 +54,7 @@
     gap: 12px;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
     padding: 18px 12px 20px 12px;
     align-items: stretch;
     justify-content: flex-start;
@@ -75,7 +75,9 @@
     color: #444;
   }
   .product-size-options select {
-    min-width: 80px;
+    width: 50%;
+    min-width: 50px;
+    max-width: 150px;
     padding: 6px 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -83,10 +85,42 @@
     background: #fafbfc;
   }
   .product-quantity {
-    min-width: 110px;
+    min-width: 90px;
+    max-width: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .quantity-adjuster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quantity-adjuster button {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 28px;
+    text-align: center;
+    height: 100%;
+  }
+
+  .quantity-adjuster button:hover {
+    background-color: #ddd;
+  }
+
+  .qty-left {
+    border-radius: 4px 0px 0px 4px;
+  }
+
+  .qty-right {
+    border-radius: 0px 4px 4px 0px;
   }
 
   .product-price-atc-row {
@@ -220,11 +254,10 @@
   }
 
   .qty-input {
-    width: 60px;
+    width: 50px;
     padding: 8px;
     text-align: center;
     border: 1px solid #ccc;
-    border-radius: 4px;
   }
 
   .btn-bestseller {
@@ -287,7 +320,10 @@
                 <select name="id" class="variant-select">
                   {% for variant in product.variants %}
                     {% if variant.available %}
-                      <option value="{{ variant.id }}" data-price="{{ variant.price | money_without_currency | replace: ',', '' }}">
+                      <option
+                        value="{{ variant.id }}"
+                        data-price="{{ variant.price | money_without_currency | replace: ',', '' }}"
+                      >
                         {{ variant.title }}
                       </option>
                     {% else %}
@@ -296,15 +332,17 @@
                   {% endfor %}
                 </select>
 
-                <input type="number" name="quantity" class="qty-input" value="1" min="1">
+                <div class="quantity-adjuster">
+                  <button class="qty-left" type="button" data-action="decrease">-</button>
+                  <input type="number" name="quantity" class="qty-input" value="1" min="1">
+                  <button class="qty-right" type="button" data-action="increase">+</button>
+                </div>
               </div>
 
               <!-- Price & Add to Cart Row -->
               <div class="price-atc-row">
                 <div class="product-price">{{ product.price | money }}</div>
-                <button type="submit" class="btn-bestseller" data-product-id="{{ product.id }}">
-                  Add to Cart
-                </button>
+                <button type="submit" class="btn-bestseller" data-product-id="{{ product.id }}">Add to Cart</button>
               </div>
             </form>
           </div>
@@ -318,7 +356,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.product-card').forEach(function(card) {
+    document.querySelectorAll('.product-card').forEach(function (card) {
       const select = card.querySelector('select.variant-select');
       const qty = card.querySelector('input.qty-input');
       const priceEl = card.querySelector('.product-price');
@@ -334,6 +372,19 @@
 
       select.addEventListener('change', updatePrice);
       qty.addEventListener('input', updatePrice);
+      card.querySelectorAll('.quantity-adjuster button').forEach((button) => {
+        button.addEventListener('click', () => {
+          let quantity = parseInt(qty.value || 1);
+          const action = button.dataset.action;
+          if (action === 'increase') {
+            quantity++;
+          } else if (action === 'decrease' && quantity > 1) {
+            quantity--;
+          }
+          qty.value = quantity.toString();
+          updatePrice();
+        });
+      });
     });
   });
 </script>
