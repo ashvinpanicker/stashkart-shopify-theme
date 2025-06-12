@@ -105,6 +105,21 @@
       document.getElementById(tabName).style.display = 'block';
       evt.currentTarget.className += ' active';
     }
+
+    // Close other accordions when one is opened
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item && otherItem.parentElement === item.parentElement) {
+              otherItem.removeAttribute('open');
+            }
+          });
+        }
+      });
+    });
   </script>
 </div>
 
@@ -147,20 +162,21 @@
 
   /* Create an active/current tablink class */
   .tab button.active {
-    background-color: #007A8C;
+    background-color: #007a8c;
     color: white;
   }
 
   /* Style the tab content */
   .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 15px 12px 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
   }
 
   .faq-item {
     margin-bottom: 15px;
+    line-height: 2;
     border: 1px solid rgba(var(--color-foreground), 0.1);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
