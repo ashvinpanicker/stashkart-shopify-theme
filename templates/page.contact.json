@@ -17,14 +17,9 @@
         "padding_bottom": 36
       }
     },
-    "faq": {
-      "type": "faq",
-      "settings": {}
-    }
   },
   "order": [
     "main",
     "form",
-    "faq"
   ]
 }
