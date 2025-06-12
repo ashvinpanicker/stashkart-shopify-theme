@@ -499,6 +499,33 @@ h6:empty {
   font-family: inherit;
 }
 
+.faq-section {
+  padding: 20px;
+  margin-bottom: 20px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.faq-item summary {
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq-item p {
+  padding: 10px;
+}
+
 .link--text {
   color: rgb(var(--color-foreground));
 }

@@ -1,0 +1,187 @@
+<div class="faq-section page-width">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'Shipping')">Shipping & Returns</button>
+    <button class="tablinks" onclick="openTab(event, 'Customization')">Customization</button>
+    <button class="tablinks" onclick="openTab(event, 'Orders')">Orders</button>
+  </div>
+
+  <div id="Shipping" class="tabcontent" style="display:block">
+    <details class="faq-item">
+      <summary>Where do you ship?</summary>
+      <p>We currently ship all over India.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How long will my order take?</summary>
+      <p>
+        Once your design is approved (for custom orders) or once your order is placed (for ready designs), the delivery
+        timeline is 1 to 2 weeks. This allows for printing and shipping time.
+      </p>
+    </details>
+    <details class="faq-item">
+      <summary>How Can I Track My Order?</summary>
+      <p>
+        Once your order is printed and shipped (usually within 7–14 days), you’ll get a tracking link via email or
+        WhatsApp. If you haven’t received tracking after 10 days, please reach out to us with your order number and
+        we’ll check on it ASAP.
+      </p>
+    </details>
+    <details class="faq-item">
+      <summary>Is there free shipping?</summary>
+      <p>
+        We do not offer free shipping at the moment. Shipping charges are calculated in the original price of the
+        product.
+      </p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you accept returns or exchanges?</summary>
+      <p>
+        We do not offer returns or exchanges. As a print-on-demand business, every product is made & printed
+        specifically for you. We don’t hold inventory, and each item is unique.
+      </p>
+    </details>
+  </div>
+
+  <div id="Customization" class="tabcontent">
+    <details class="faq-item">
+      <summary>Do you offer product customization?</summary>
+      <p>
+        Yes! You can customize a product by reaching out to us via our website email or social media. Simple text
+        changes: ₹100 Full design or typography changes: ₹499 Once we understand your request, we take a 50% advance,
+        create the design, and share it for approval. We allow 1 round of feedback, and any changes beyond that will be
+        charged additionally.
+      </p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I upload my own design?</summary>
+      <p>
+        Absolutely. You can send us your own artwork to print on our products. However: If edits are needed, charges
+        will apply. We are not responsible for print quality if the file you provide is low-resolution or unclear.
+      </p>
+    </details>
+  </div>
+
+  <div id="Orders" class="tabcontent">
+    <details class="faq-item">
+      <summary>Can I cancel my order?</summary>
+      <p>
+        Since everything is made to order, we do not allow cancellations once an order is confirmed. The only exception
+        is if the product goes out of stock before printing begins.
+      </p>
+    </details>
+    <details class="faq-item">
+      <summary>Are your designs original?</summary>
+      <p>
+        Yes! All our designs are created in-house. We also welcome customer-submitted ideas or references for custom
+        orders.
+      </p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you take bulk or corporate orders?</summary>
+      <p>Yes, we do! Please get in touch with us directly for bulk order discounts and timelines.</p>
+    </details>
+    <details class="faq-item">
+      <summary>My Payment Was Deducted, But I Haven’t Received A Confirmation. What Should I Do?</summary>
+      <p>
+        Sometimes, payment gateways take a few minutes to process and confirm an order. If you’ve been charged but
+        haven’t received a confirmation email within 30 minutes, please reach out to us with: Your payment receipt or
+        screenshot Email ID used for the order Product(s) ordered We’ll check and get back to you within 24 hours.
+      </p>
+    </details>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName('tabcontent');
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = 'none';
+      }
+      tablinks = document.getElementsByClassName('tablinks');
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(' active', '');
+      }
+      document.getElementById(tabName).style.display = 'block';
+      evt.currentTarget.className += ' active';
+    }
+  </script>
+</div>
+
+<style>
+  .faq-section {
+    padding: 20px;
+    margin-bottom: 20px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    display: flex;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #007A8C;
+    color: white;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .faq-item {
+    margin-bottom: 15px;
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .faq-item summary {
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.2em;
+  }
+
+  .faq-item[open] summary::after {
+    content: '-';
+  }
+</style>
