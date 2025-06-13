@@ -309,6 +309,12 @@
             "product": "stitch-inspired-cap-for-pet-lovers"
           }
         },
+        "product_KHKwfK": {
+          "type": "product",
+          "settings": {
+            "product": "never-give-in-lovedale-alumni-golf-polo"
+          }
+        },
         "product_RxEJH7": {
           "type": "product",
           "settings": {
@@ -339,12 +345,6 @@
             "product": "catgpt-smarter-than-you-still-sleeps-16-hours-magic-mug"
           }
         },
-        "product_KHKwfK": {
-          "type": "product",
-          "settings": {
-            "product": "never-give-in-lovedale-alumni-golf-polo"
-          }
-        },
         "product_DDzh64": {
           "type": "product",
           "settings": {
@@ -354,12 +354,12 @@
       },
       "block_order": [
         "product_xVn8Mj",
+        "product_KHKwfK",
         "product_RxEJH7",
         "product_afFLRC",
         "product_gM9Nfk",
         "product_Wxx6VX",
         "product_MgX8pX",
-        "product_KHKwfK",
         "product_DDzh64"
       ],
       "settings": {
