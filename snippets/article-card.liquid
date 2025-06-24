@@ -60,7 +60,7 @@
                   {{ article.image.src | image_url }} {{ article.image.src.width }}w
                 "
                 src="{{ article.image.src | image_url: width: 533 }}"
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                {% comment %} sizes="(max-width: 749px) 100vw, (min-width: 750px) and (max-width: {{ settings.page_width }}px) calc((100vw - 130px) / 2), calc({{ settings.page_width | minus: 100 }}px / 2)" {% endcomment %}
                 alt="{{ article.image.src.alt | escape }}"
                 class="motion-reduce"
                 {% unless lazy_load == false %}
