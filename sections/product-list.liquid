@@ -43,7 +43,7 @@
 
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
   }
 
@@ -171,13 +171,11 @@
   @media screen and (max-width: 600px) {
     .product-grid {
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
+      flex-wrap: wrap;
       padding-bottom: 1rem;
     }
     .product-card {
-      scroll-snap-align: start;
-      width: 80%; /* Adjust as needed */
+      width: 100%; /* Adjust as needed */
       flex: 0 0 auto;
     }
     .product-size-quantity-row,
