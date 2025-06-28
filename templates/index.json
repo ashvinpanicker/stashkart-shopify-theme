@@ -12,29 +12,10 @@
     "slideshow_QariNY": {
       "type": "slideshow",
       "blocks": {
-        "slide_w8J7KA": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/a-family-wearing-peach-tshirts-in-an-airport_0accdeb0-e909-44f9-a8fb-6656979894f3.png",
-            "image_link": "shopify://collections/family",
-            "image_overlay_opacity": 40,
-            "heading": "Family",
-            "heading_size": "h1",
-            "subheading": "For your loved ones",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/family",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
         "slide_FcKrfn": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Golf_Banner.png",
+            "image": "shopify://shop_images/Website_Banner_Sports_7315f8cd-cb77-49a3-84b7-58612852d398.png",
             "image_link": "shopify://collections/sports",
             "image_overlay_opacity": 30,
             "heading": "Sports",
@@ -44,8 +25,27 @@
             "link": "shopify://collections/sports",
             "button_style_secondary": false,
             "show_text_box": true,
-            "box_align": "middle-center",
+            "box_align": "middle-left",
             "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
+        "slide_rwjYWf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website_Banner_All_products.png",
+            "image_link": "shopify://collections/all-products",
+            "image_overlay_opacity": 50,
+            "heading": "All Products",
+            "heading_size": "h1",
+            "subheading": "View our entire catalogue",
+            "button_label": "Check it out",
+            "link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
           }
@@ -69,8 +69,28 @@
             "color_scheme": "scheme-4"
           }
         },
+        "slide_w8J7KA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/a-family-wearing-peach-tshirts-in-an-airport_0accdeb0-e909-44f9-a8fb-6656979894f3.png",
+            "image_link": "shopify://collections/family",
+            "image_overlay_opacity": 40,
+            "heading": "Family",
+            "heading_size": "h1",
+            "subheading": "For your loved ones",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/family",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
         "slide_R4qWTn": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_music-04.png",
             "image_link": "shopify://collections/squad-goals",
@@ -90,6 +110,7 @@
         },
         "slide_fw6V7p": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_quotes-04.png",
             "image_link": "shopify://collections/hustlers",
@@ -109,6 +130,7 @@
         },
         "slide_NVwM6t": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_music-02.png",
             "image_link": "shopify://collections/music",
@@ -128,6 +150,7 @@
         },
         "slide_aARUjL": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_Family-01.png",
             "image_link": "shopify://collections/travel",
@@ -147,6 +170,7 @@
         },
         "slide_Q8Nnyn": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_quotes-01.png",
             "image_link": "shopify://collections/quotes",
@@ -156,25 +180,6 @@
             "subheading": "Aspire to Inspire",
             "button_label": "Shop Now",
             "link": "shopify://collections/quotes",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
-        "slide_rwjYWf": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/lavender--white---brick-tshirt-on-3-basic-wood-man.jpg",
-            "image_link": "shopify://collections/all-products",
-            "image_overlay_opacity": 50,
-            "heading": "All Products",
-            "heading_size": "h1",
-            "subheading": "View our entire catalogue",
-            "button_label": "Check it out",
-            "link": "shopify://collections/all",
             "button_style_secondary": false,
             "show_text_box": false,
             "box_align": "middle-left",
@@ -205,15 +210,15 @@
         }
       },
       "block_order": [
-        "slide_w8J7KA",
         "slide_FcKrfn",
+        "slide_rwjYWf",
         "slide_CdC9zW",
+        "slide_w8J7KA",
         "slide_R4qWTn",
         "slide_fw6V7p",
         "slide_NVwM6t",
         "slide_aARUjL",
         "slide_Q8Nnyn",
-        "slide_rwjYWf",
         "slide_pMHDNJ"
       ],
       "settings": {
