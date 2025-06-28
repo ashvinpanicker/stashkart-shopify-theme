@@ -3666,7 +3666,7 @@ details-disclosure>details {
 }
 
 /* Below this is Added by Ashvin */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   slideshow-component .slideshow.banner {
     display: flex;
     overflow: hidden;
@@ -3677,10 +3677,9 @@ details-disclosure>details {
     flex: 0 0 33%;
     max-width: 30% !important;
     padding: 0 5px;
-    /* optional spacing */
     box-sizing: border-box;
   }
-}
+} */
 
 .slideshow__slide:hover {
   cursor: pointer;

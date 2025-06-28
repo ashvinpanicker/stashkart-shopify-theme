@@ -33,14 +33,6 @@
   }
 {%- endstyle -%}
 
-{%- assign total_slides = section.blocks.size -%}
-{%- assign slides_per_view = 3 -%}
-{%- assign num_dots = total_slides | minus: slides_per_view | plus: 1 -%}
-
-{%- if num_dots < 1 -%}
-  {%- assign num_dots = 1 -%}
-{%- endif -%}
-
 <slideshow-component
   class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
   role="region"
@@ -48,7 +40,7 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %} hide-mobile">
+    <div class="slideshow__controls slideshow__controls--top slider-buttons{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -68,14 +60,17 @@
           <span class="slider-counter--total">{{ section.blocks.size }}</span>
         {%- else -%}
           <div class="slideshow__control-wrapper">
-            {%- for i in (1..num_dots) -%}
+            {%- for block in section.blocks -%}
               <button
-                class="slider-counter__link slider-counter__link--dots link"
-                aria-label="Slide group {{ i }} of {{ num_dots }}"
+                class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
                 aria-controls="Slider-{{ section.id }}"
-                data-slide-group="{{ i | minus: 1 }}"
               >
-                <span class="dot"></span>
+                {%- if section.settings.slider_visual == 'numbers' -%}
+                  {{ forloop.index -}}
+                {%- else -%}
+                  <span class="dot"></span>
+                {%- endif -%}
               </button>
             {%- endfor -%}
           </div>
@@ -362,10 +357,10 @@
       "id": "change_slides_speed",
       "min": 3,
       "max": 9,
-      "step": 3,
+      "step": 2,
       "unit": "s",
       "label": "t:sections.slideshow.settings.change_slides_speed.label",
-      "default": 3
+      "default": 5
     },
     {
       "type": "select",
@@ -478,12 +473,12 @@
         {
           "type": "header",
           "content": "t:sections.slideshow.blocks.slide.settings.header_button.content"
-        },
+        },        
         {
           "type": "text",
           "id": "button_label",
           "default": "t:sections.slideshow.blocks.slide.settings.button_label.default",
-          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
+          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label", 
           "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
         },
         {
@@ -500,7 +495,7 @@
         {
           "type": "header",
           "content": "t:sections.slideshow.blocks.slide.settings.header_layout.content"
-        },
+        },         
         {
           "type": "checkbox",
           "id": "show_text_box",
@@ -590,7 +585,7 @@
           ],
           "default": "center",
           "label": "t:sections.slideshow.blocks.slide.settings.text_alignment_mobile.label"
-        },
+        },        
         {
           "type": "color_scheme",
           "id": "color_scheme",
