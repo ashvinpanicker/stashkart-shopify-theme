@@ -1,3 +1,6 @@
+/* Remove mega menu CSS */
+/* The following CSS was removed to implement the dropdown/drawer menu */
+/*
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
@@ -73,8 +76,37 @@
   --shadow-opacity: var(--media-shadow-opacity);
   --shadow-visible: var(--media-shadow-visible);
 }
+*/
 
 /* base */
+
+/* Hide the dropdown menu on smaller screens */
+.desktop-menu {
+  display: none;
+}
+
+/* Show the dropdown menu on larger screens */
+@media screen and (min-width: 990px) {
+  .desktop-menu {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Show the drawer menu on smaller screens */
+.mobile-menu {
+  display: block;
+}
+
+/* Hide the drawer menu on larger screens */
+@media screen and (min-width: 990px) {
+  .mobile-menu {
+    display: none;
+  }
+}
 
 .page-width {
   max-width: var(--page-width);
