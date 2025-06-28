@@ -12,25 +12,6 @@
     "slideshow_QariNY": {
       "type": "slideshow",
       "blocks": {
-        "slide_FcKrfn": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Website_Banner_Sports_7315f8cd-cb77-49a3-84b7-58612852d398.png",
-            "image_link": "shopify://collections/sports",
-            "image_overlay_opacity": 30,
-            "heading": "Sports",
-            "heading_size": "h1",
-            "subheading": "Play Hard, Look Sharp",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/sports",
-            "button_style_secondary": false,
-            "show_text_box": true,
-            "box_align": "middle-left",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
         "slide_rwjYWf": {
           "type": "slide",
           "settings": {
@@ -50,10 +31,29 @@
             "color_scheme": "scheme-4"
           }
         },
+        "slide_FcKrfn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website_Banner_Sports_7315f8cd-cb77-49a3-84b7-58612852d398.png",
+            "image_link": "shopify://collections/sports",
+            "image_overlay_opacity": 30,
+            "heading": "Sports",
+            "heading_size": "h1",
+            "subheading": "Play Hard, Look Sharp",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/sports",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-left",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
         "slide_CdC9zW": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/animals_pets.png",
+            "image": "shopify://shop_images/Website_Banner_Worklife.png",
             "image_link": "shopify://collections/pets",
             "image_overlay_opacity": 30,
             "heading": "Pawprints",
@@ -72,7 +72,7 @@
         "slide_w8J7KA": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/a-family-wearing-peach-tshirts-in-an-airport_0accdeb0-e909-44f9-a8fb-6656979894f3.png",
+            "image": "shopify://shop_images/Website_Banner_Family.png",
             "image_link": "shopify://collections/family",
             "image_overlay_opacity": 40,
             "heading": "Family",
@@ -210,8 +210,8 @@
         }
       },
       "block_order": [
-        "slide_FcKrfn",
         "slide_rwjYWf",
+        "slide_FcKrfn",
         "slide_CdC9zW",
         "slide_w8J7KA",
         "slide_R4qWTn",
