@@ -476,7 +476,7 @@
             "image": "shopify://shop_images/Website_illustrations-04_aa18fb28-86bc-4010-9b12-09a44746c397.png",
             "title": "Made Just for You",
             "text": "<p>Every item is crafted on demand, just for you. It’s personal, unique, and made with care. </p><p></p><p></p>",
-            "link_label": "For Bulk / Custom Orders Contact Us",
+            "link_label": "",
             "link": "shopify://pages/contact"
           }
         },
@@ -506,7 +506,7 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "Submit a custom design or idea",
-        "button_link": "shopify://pages/contact",
+        "button_link": "shopify://pages/custom",
         "columns_desktop": 4,
         "column_alignment": "left",
         "background_style": "primary",
