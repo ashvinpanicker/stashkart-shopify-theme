@@ -189,6 +189,16 @@
         "type": "shopify://apps/search7-smart-search-filter/blocks/search-filter/88e24ea2-237e-4897-9894-0fe383246073",
         "disabled": false,
         "settings": {}
+      },
+      "3138269044488530766": {
+        "type": "shopify://apps/uppromote-affiliate/blocks/core-script/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
+        "disabled": false,
+        "settings": {}
+      },
+      "9005256451184024879": {
+        "type": "shopify://apps/uppromote-affiliate/blocks/customer-referral/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
