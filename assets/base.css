@@ -74,8 +74,6 @@
   --shadow-visible: var(--media-shadow-visible);
 }
 
-/* base */
-
 /* Hide the dropdown menu on smaller screens */
 .desktop-menu {
   display: none;
@@ -3736,8 +3734,10 @@ button {
 .facet-filters__sort {
   color: rgb(11 117 130) !important;
 }
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 749px) {
   .btn-stash {
-    display: none;
+    display: none !important;
   }
 }
+
