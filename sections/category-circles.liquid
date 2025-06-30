@@ -43,10 +43,10 @@
 {% endschema %}
 
 {% if section.settings.section_title != blank %}
-  <h2 class="category-circles-heading">{{ section.settings.section_title }}</h2>
+  <h2 class="page-width category-circles-heading">{{ section.settings.section_title }}</h2>
 {% endif %}
 <div class="category-circles-wrapper">
-  <div class="category-circles">
+  <div class="page-width category-circles">
     {% for block in section.blocks %}
       <a href="{{ block.settings.link }}" class="circle-item">
         {% if block.settings.image %}
@@ -79,10 +79,12 @@
 
 <style>
   .category-circles-heading {
-    text-align: center;
-    font-size: 2rem;
-    margin: 20px 0 10px 5px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 15px;
+
+    color: rgb(4, 120, 137);
   }
 
   .category-circles-wrapper {
@@ -99,36 +101,52 @@
 
   .category-circles {
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
-    gap: 24px;
+    gap: 40px;
     padding: 10px 20px;
+    justify-content: flex-start;
   }
 
   .circle-item {
     flex: 0 0 auto;
-    width: 100px;
-    text-align: center;
+    flex-direction: column;
+    height: auto;
+    text-align: left;
     text-decoration: none;
     color: inherit;
-  }
-
-  .circle-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #ddd;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
     transition: transform 0.3s ease;
   }
 
-  .circle-item:hover img {
-    transform: scale(1.1);
+  .circle-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 32px;
+    border: 2px solid #ddd;
+    margin: 0 auto 12px auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .circle-item:hover {
+    transform: translateY(-2px) scale(1.04);
   }
 
   .circle-item span {
     display: block;
-    margin-top: 8px;
-    font-weight: 500;
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
   }
 
   a.end-item {
@@ -146,18 +164,11 @@
 
   /* Desktop layout: even spacing, wrapped rows */
   @media screen and (min-width: 768px) {
-    .category-circles-wrapper {
-      overflow-x: visible;
-    }
-
     .category-circles {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px 60px; /* vertical and horizontal spacing */
+      gap: 40px;
     }
-
     a.end-item {
-      display: none !important;
+      display: flex !important;
     }
   }
 </style>
@@ -165,57 +176,61 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector('.category-circles-wrapper');
-    if (!wrapper || window.innerWidth >= 768) return;
+    if (!wrapper) return;
 
     // Spring animation variables
     const nudgeDistance = 42;
     const springDelay = 1769;
     const springDuration = 420;
 
-    // SPRING ANIMATION
-    setTimeout(() => {
-      let start = null;
+    // SPRING ANIMATION (mobile only)
+    if (window.innerWidth < 768) {
+      setTimeout(() => {
+        let start = null;
 
-      function springScroll(timestamp) {
-        if (!start) start = timestamp;
-        const elapsed = timestamp - start;
+        function springScroll(timestamp) {
+          if (!start) start = timestamp;
+          const elapsed = timestamp - start;
 
-        const progress = elapsed / springDuration;
-        const eased = 1 - Math.cos(progress * Math.PI);
+          const progress = elapsed / springDuration;
+          const eased = 1 - Math.cos(progress * Math.PI);
 
-        const offset = eased * nudgeDistance;
-        wrapper.scrollLeft = offset;
+          const offset = eased * nudgeDistance;
+          wrapper.scrollLeft = offset;
 
-        if (elapsed < springDuration) {
-          requestAnimationFrame(springScroll);
-        } else {
-          // spring back
-          start = null;
-          requestAnimationFrame((timestamp) => springBack(timestamp, offset));
+          if (elapsed < springDuration) {
+            requestAnimationFrame(springScroll);
+          } else {
+            // spring back
+            start = null;
+            requestAnimationFrame((timestamp) => springBack(timestamp, offset));
+          }
         }
-      }
 
-      function springBack(timestamp, startOffset) {
-        if (!start) start = timestamp;
-        const elapsed = timestamp - start;
-        const progress = elapsed / springDuration;
-        const eased = 1 - Math.cos(progress * Math.PI);
-        const offset = startOffset - eased * startOffset;
-        wrapper.scrollLeft = offset;
+        function springBack(timestamp, startOffset) {
+          if (!start) start = timestamp;
+          const elapsed = timestamp - start;
+          const progress = elapsed / springDuration;
+          const eased = 1 - Math.cos(progress * Math.PI);
+          const offset = startOffset - eased * startOffset;
+          wrapper.scrollLeft = offset;
 
-        if (elapsed < springDuration) {
-          requestAnimationFrame((t) => springBack(t, startOffset));
+          if (elapsed < springDuration) {
+            requestAnimationFrame((t) => springBack(t, startOffset));
+          }
         }
-      }
 
-      requestAnimationFrame(springScroll);
-    }, springDelay);
+        requestAnimationFrame(springScroll);
+      }, springDelay);
+    }
 
     // SCROLL-TO-START BUTTON FUNCTIONALITY
     const endItem = document.querySelector('a.end-item');
     if (endItem) {
       endItem.addEventListener('click', () => {
         wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+        // Ensure after smooth scroll, it's exactly at 0
+        setTimeout(() => { wrapper.scrollLeft = 0; }, 600);
       });
     }
   });
