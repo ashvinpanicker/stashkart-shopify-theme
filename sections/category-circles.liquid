@@ -43,7 +43,7 @@
 {% endschema %}
 
 {% if section.settings.section_title != blank %}
-  <h2 class="page-width product-list-heading">{{ section.settings.section_title }}</h2>
+  <h2 class="page-width category-circles-heading">{{ section.settings.section_title }}</h2>
 {% endif %}
 <div class="category-circles-wrapper">
   <div class="page-width category-circles">
@@ -78,12 +78,12 @@
 </div>
 
 <style>
-  .product-list-heading {
-    font-size: 48px;
+  .category-circles-heading {
+    font-size: 40px;
     font-weight: 400;
     text-align: left;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+
     color: rgb(4, 120, 137);
   }
 
@@ -110,7 +110,6 @@
   .circle-item {
     flex: 0 0 auto;
     flex-direction: column;
-    width: 160px;
     height: auto;
     text-align: left;
     text-decoration: none;
@@ -143,7 +142,7 @@
   .circle-item span {
     display: block;
     margin-top: 0;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-align: center;
     width: 100%;
@@ -174,7 +173,7 @@
       flex-wrap: nowrap;
       justify-content: flex-start;
       gap: 40px;
-      min-width: max-content;
+      {% comment %} min-width: max-content; {% endcomment %}
     }
     a.end-item {
       display: flex !important;
