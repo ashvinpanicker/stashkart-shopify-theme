@@ -43,10 +43,10 @@
 {% endschema %}
 
 {% if section.settings.section_title != blank %}
-  <h2 class="category-circles-heading">{{ section.settings.section_title }}</h2>
+  <h2 class="page-width product-list-heading">{{ section.settings.section_title }}</h2>
 {% endif %}
 <div class="category-circles-wrapper">
-  <div class="category-circles">
+  <div class="page-width category-circles">
     {% for block in section.blocks %}
       <a href="{{ block.settings.link }}" class="circle-item">
         {% if block.settings.image %}
@@ -78,11 +78,13 @@
 </div>
 
 <style>
-  .category-circles-heading {
-    text-align: center;
-    font-size: 2rem;
-    margin: 20px 0 10px 5px;
-    font-weight: 600;
+  .product-list-heading {
+    font-size: 48px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: rgb(4, 120, 137);
   }
 
   .category-circles-wrapper {
@@ -99,36 +101,52 @@
 
   .category-circles {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 32px;
     padding: 10px 20px;
+    justify-content: flex-start;
   }
 
   .circle-item {
     flex: 0 0 auto;
-    width: 100px;
-    text-align: center;
+    flex-direction: column;
+    width: 160px;
+    height: auto;
+    text-align: left;
     text-decoration: none;
     color: inherit;
-  }
-
-  .circle-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #ddd;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
     transition: transform 0.3s ease;
   }
 
-  .circle-item:hover img {
-    transform: scale(1.1);
+  .circle-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 32px;
+    border: 2px solid #ddd;
+    margin: 0 auto 12px auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .circle-item:hover {
+    transform: translateY(-2px) scale(1.04);
   }
 
   .circle-item span {
     display: block;
-    margin-top: 8px;
-    font-weight: 500;
+    margin-top: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
   }
 
   a.end-item {
@@ -147,17 +165,19 @@
   /* Desktop layout: even spacing, wrapped rows */
   @media screen and (min-width: 768px) {
     .category-circles-wrapper {
-      overflow-x: visible;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
     }
-
     .category-circles {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px 60px; /* vertical and horizontal spacing */
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 40px;
+      min-width: max-content;
     }
-
     a.end-item {
-      display: none !important;
+      display: flex !important;
     }
   }
 </style>
