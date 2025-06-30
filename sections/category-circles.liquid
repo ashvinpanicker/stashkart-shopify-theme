@@ -101,8 +101,9 @@
 
   .category-circles {
     display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
     padding: 10px 20px;
     justify-content: flex-start;
   }
@@ -163,17 +164,8 @@
 
   /* Desktop layout: even spacing, wrapped rows */
   @media screen and (min-width: 768px) {
-    .category-circles-wrapper {
-      overflow-x: auto;
-      overflow-y: visible;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 10px;
-    }
     .category-circles {
-      flex-wrap: nowrap;
-      justify-content: flex-start;
       gap: 40px;
-      {% comment %} min-width: max-content; {% endcomment %}
     }
     a.end-item {
       display: flex !important;
@@ -184,57 +176,61 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector('.category-circles-wrapper');
-    if (!wrapper || window.innerWidth >= 768) return;
+    if (!wrapper) return;
 
     // Spring animation variables
     const nudgeDistance = 42;
     const springDelay = 1769;
     const springDuration = 420;
 
-    // SPRING ANIMATION
-    setTimeout(() => {
-      let start = null;
+    // SPRING ANIMATION (mobile only)
+    if (window.innerWidth < 768) {
+      setTimeout(() => {
+        let start = null;
 
-      function springScroll(timestamp) {
-        if (!start) start = timestamp;
-        const elapsed = timestamp - start;
+        function springScroll(timestamp) {
+          if (!start) start = timestamp;
+          const elapsed = timestamp - start;
 
-        const progress = elapsed / springDuration;
-        const eased = 1 - Math.cos(progress * Math.PI);
+          const progress = elapsed / springDuration;
+          const eased = 1 - Math.cos(progress * Math.PI);
 
-        const offset = eased * nudgeDistance;
-        wrapper.scrollLeft = offset;
+          const offset = eased * nudgeDistance;
+          wrapper.scrollLeft = offset;
 
-        if (elapsed < springDuration) {
-          requestAnimationFrame(springScroll);
-        } else {
-          // spring back
-          start = null;
-          requestAnimationFrame((timestamp) => springBack(timestamp, offset));
+          if (elapsed < springDuration) {
+            requestAnimationFrame(springScroll);
+          } else {
+            // spring back
+            start = null;
+            requestAnimationFrame((timestamp) => springBack(timestamp, offset));
+          }
         }
-      }
 
-      function springBack(timestamp, startOffset) {
-        if (!start) start = timestamp;
-        const elapsed = timestamp - start;
-        const progress = elapsed / springDuration;
-        const eased = 1 - Math.cos(progress * Math.PI);
-        const offset = startOffset - eased * startOffset;
-        wrapper.scrollLeft = offset;
+        function springBack(timestamp, startOffset) {
+          if (!start) start = timestamp;
+          const elapsed = timestamp - start;
+          const progress = elapsed / springDuration;
+          const eased = 1 - Math.cos(progress * Math.PI);
+          const offset = startOffset - eased * startOffset;
+          wrapper.scrollLeft = offset;
 
-        if (elapsed < springDuration) {
-          requestAnimationFrame((t) => springBack(t, startOffset));
+          if (elapsed < springDuration) {
+            requestAnimationFrame((t) => springBack(t, startOffset));
+          }
         }
-      }
 
-      requestAnimationFrame(springScroll);
-    }, springDelay);
+        requestAnimationFrame(springScroll);
+      }, springDelay);
+    }
 
     // SCROLL-TO-START BUTTON FUNCTIONALITY
     const endItem = document.querySelector('a.end-item');
     if (endItem) {
       endItem.addEventListener('click', () => {
         wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+        // Ensure after smooth scroll, it's exactly at 0
+        setTimeout(() => { wrapper.scrollLeft = 0; }, 600);
       });
     }
   });
