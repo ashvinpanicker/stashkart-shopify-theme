@@ -277,10 +277,6 @@
     if (endItem) {
       endItem.addEventListener('click', () => {
         wrapper.scrollTo({ left: 0, behavior: 'smooth' });
-        // Ensure after smooth scroll, it's exactly at 0
-        setTimeout(() => {
-          wrapper.scrollLeft = 0;
-        }, 900);
       });
     }
 
@@ -289,10 +285,6 @@
     if (startItem) {
       startItem.addEventListener('click', () => {
         wrapper.scrollTo({ left: wrapper.scrollWidth, behavior: 'smooth' });
-        // Ensure after smooth scroll, it's exactly at the end
-        setTimeout(() => {
-          wrapper.scrollLeft = wrapper.scrollWidth;
-        }, 900);
       });
     }
 
@@ -344,10 +336,6 @@
       // Add event listener to scroll to the end
       scrollToEndButton.addEventListener('click', () => {
         wrapper.scrollTo({ left: wrapper.scrollWidth, behavior: 'smooth' });
-        // Ensure after smooth scroll, it's exactly at the end
-        setTimeout(() => {
-          wrapper.scrollLeft = wrapper.scrollWidth;
-        }, 900);
       });
 
       // Append the button to the last visible circle
