@@ -3741,3 +3741,8 @@ button {
   }
 }
 
+.btn-bestseller .loading__spinner .spinner,
+.btn-bestseller .loading__spinner .path {
+  stroke: white !important;
+}
+

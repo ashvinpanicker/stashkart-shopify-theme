@@ -353,7 +353,10 @@
               <!-- Price & Add to Cart Row -->
               <div class="price-atc-row">
                 <div class="product-price">{{ product.price | money }}</div>
-                <button type="submit" class="btn-bestseller" data-product-id="{{ product.id }}">Add to Cart</button>
+                <button type="submit" class="btn-bestseller" data-product-id="{{ product.id }}">
+                  <span>Add to Cart</span>                  
+                    {% render 'loading-spinner' %}                  
+                </button>
               </div>
             </form>
           </div>
@@ -368,10 +371,45 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.product-card').forEach(function (card) {
+      const form = card.querySelector('form');
       const select = card.querySelector('select.variant-select');
       const qty = card.querySelector('input.qty-input');
       const priceEl = card.querySelector('.product-price');
-      if (!select || !qty || !priceEl) return;
+      const submitButton = card.querySelector('.btn-bestseller');
+
+      if (!form || !select || !qty || !priceEl || !submitButton) return;
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        card.querySelector('.loading__spinner').classList.remove('hidden');
+
+        const formData = new FormData(form);
+        formData.append('sections', ['cart-drawer']);
+        formData.append('sections_url', window.location.pathname);
+
+        fetch('/cart/add', {
+          method: 'POST',
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+          },
+          body: formData,
+        })
+        .then(response => response.json())
+        .then(response => {
+          document.dispatchEvent(new CustomEvent('cartUpdate', { detail: response }));
+          const cartDrawer = document.querySelector('cart-drawer');
+          if (cartDrawer) {
+            cartDrawer.renderContents(response);
+            cartDrawer.open();
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        })
+        .finally(() => {
+          card.querySelector('.loading__spinner').classList.add('hidden');
+        });
+      });
 
       const updatePrice = () => {
         const option = select.options[select.selectedIndex];
@@ -399,3 +437,19 @@
     });
   });
 </script>
+
+<style>
+  .btn-bestseller .loading__spinner {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5em;
+  }
+</style>
+
+<style>
+  .btn-bestseller .loading__spinner svg {
+    fill: white;
+  }
+</style>
