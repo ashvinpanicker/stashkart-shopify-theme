@@ -12,9 +12,12 @@
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-{%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-{%- endif -%}
+{%- comment -%}
+  The following code was removed to implement the dropdown/drawer menu:
+  {%- if section.settings.menu_type_desktop == 'mega' -%}
+    <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+  {%- endif -%}
+{%- endcomment -%}
 
 <style>
   header-drawer {
@@ -218,7 +221,9 @@
         </div>
     
         <div class="header__menu" style="flex-grow: 1;">
-          {% render 'header-mega-menu' %}
+          <div class="desktop-menu">
+            {% render 'header-dropdown-menu' %}
+          </div>
         </div>
     
         <!-- <div class="header__icons" style="flex-shrink: 0; display: flex; gap: 1rem; align-items: center;">
@@ -249,14 +254,17 @@
       endif
     %} -->
     
-    <!-- Added this to keep dropdown option working - ashvin -->
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
+    {%- comment -%}
+      The following code was removed to implement the dropdown/drawer menu:
+      <!-- Added this to keep dropdown option working - ashvin -->
+      {%- liquid
+        if section.settings.menu != blank
+          if section.settings.menu_type_desktop == 'dropdown'
+            render 'header-dropdown-menu'
+          endif
         endif
-      endif
-    %}
+      %}
+    {%- endcomment -%}
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}

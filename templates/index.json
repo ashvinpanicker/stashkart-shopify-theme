@@ -12,20 +12,20 @@
     "slideshow_QariNY": {
       "type": "slideshow",
       "blocks": {
-        "slide_w8J7KA": {
+        "slide_rwjYWf": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/a-family-wearing-peach-tshirts-in-an-airport_0accdeb0-e909-44f9-a8fb-6656979894f3.png",
-            "image_link": "shopify://collections/family",
-            "image_overlay_opacity": 40,
-            "heading": "Family",
+            "image": "shopify://shop_images/Website_Banner_All_products.png",
+            "image_link": "shopify://collections/all-products",
+            "image_overlay_opacity": 0,
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "For your loved ones",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/family",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/all-products",
             "button_style_secondary": false,
             "show_text_box": false,
-            "box_align": "middle-left",
+            "box_align": "bottom-left",
             "text_alignment": "left",
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
@@ -34,17 +34,17 @@
         "slide_FcKrfn": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Golf_Banner.png",
+            "image": "shopify://shop_images/Website_Banner_Sports_7315f8cd-cb77-49a3-84b7-58612852d398.png",
             "image_link": "shopify://collections/sports",
-            "image_overlay_opacity": 30,
-            "heading": "Sports",
+            "image_overlay_opacity": 0,
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Play Hard, Look Sharp",
-            "button_label": "Shop Now",
+            "subheading": "",
+            "button_label": "",
             "link": "shopify://collections/sports",
             "button_style_secondary": false,
             "show_text_box": true,
-            "box_align": "middle-center",
+            "box_align": "bottom-left",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
@@ -53,24 +53,44 @@
         "slide_CdC9zW": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/animals_pets.png",
+            "image": "shopify://shop_images/Website_Banner_Animals_Pets.png",
             "image_link": "shopify://collections/pets",
-            "image_overlay_opacity": 30,
-            "heading": "Pawprints",
+            "image_overlay_opacity": 0,
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Animal Inspired Products",
-            "button_label": "Shop Now",
+            "subheading": "",
+            "button_label": "",
             "link": "shopify://collections/pets",
             "button_style_secondary": false,
             "show_text_box": true,
-            "box_align": "middle-center",
+            "box_align": "bottom-right",
             "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
+        "slide_w8J7KA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website_Banner_Family.png",
+            "image_link": "shopify://collections/family",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/family",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "bottom-left",
+            "text_alignment": "left",
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
           }
         },
         "slide_R4qWTn": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_music-04.png",
             "image_link": "shopify://collections/squad-goals",
@@ -90,6 +110,7 @@
         },
         "slide_fw6V7p": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_quotes-04.png",
             "image_link": "shopify://collections/hustlers",
@@ -109,6 +130,7 @@
         },
         "slide_NVwM6t": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_music-02.png",
             "image_link": "shopify://collections/music",
@@ -128,6 +150,7 @@
         },
         "slide_aARUjL": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_Family-01.png",
             "image_link": "shopify://collections/travel",
@@ -147,6 +170,7 @@
         },
         "slide_Q8Nnyn": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_quotes-01.png",
             "image_link": "shopify://collections/quotes",
@@ -156,25 +180,6 @@
             "subheading": "Aspire to Inspire",
             "button_label": "Shop Now",
             "link": "shopify://collections/quotes",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
-        "slide_rwjYWf": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/lavender--white---brick-tshirt-on-3-basic-wood-man.jpg",
-            "image_link": "shopify://collections/all-products",
-            "image_overlay_opacity": 50,
-            "heading": "All Products",
-            "heading_size": "h1",
-            "subheading": "View our entire catalogue",
-            "button_label": "Check it out",
-            "link": "shopify://collections/all",
             "button_style_secondary": false,
             "show_text_box": false,
             "box_align": "middle-left",
@@ -205,24 +210,24 @@
         }
       },
       "block_order": [
-        "slide_w8J7KA",
+        "slide_rwjYWf",
         "slide_FcKrfn",
         "slide_CdC9zW",
+        "slide_w8J7KA",
         "slide_R4qWTn",
         "slide_fw6V7p",
         "slide_NVwM6t",
         "slide_aARUjL",
         "slide_Q8Nnyn",
-        "slide_rwjYWf",
         "slide_pMHDNJ"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "small",
+        "slide_height": "adapt_image",
         "slider_visual": "dots",
         "auto_rotate": true,
-        "change_slides_speed": 6,
-        "image_behavior": "ambient",
+        "change_slides_speed": 5,
+        "image_behavior": "none",
         "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
@@ -309,10 +314,16 @@
             "product": "stitch-inspired-cap-for-pet-lovers"
           }
         },
-        "product_RxEJH7": {
+        "product_KHKwfK": {
           "type": "product",
           "settings": {
-            "product": "ohana-means-family-lilo-stitch-inspired-poster-for-pet-lovers"
+            "product": "never-give-in-lovedale-alumni-golf-polo"
+          }
+        },
+        "product_MgX8pX": {
+          "type": "product",
+          "settings": {
+            "product": "నా-ఇష్టం-నాదిలే-crop-top"
           }
         },
         "product_afFLRC": {
@@ -333,16 +344,10 @@
             "product": "loved-by-karma-crew-t-shirt"
           }
         },
-        "product_MgX8pX": {
+        "product_RxEJH7": {
           "type": "product",
           "settings": {
-            "product": "catgpt-smarter-than-you-still-sleeps-16-hours-magic-mug"
-          }
-        },
-        "product_KHKwfK": {
-          "type": "product",
-          "settings": {
-            "product": "never-give-in-lovedale-alumni-golf-polo"
+            "product": "ohana-means-family-lilo-stitch-inspired-poster-for-pet-lovers"
           }
         },
         "product_DDzh64": {
@@ -354,12 +359,12 @@
       },
       "block_order": [
         "product_xVn8Mj",
-        "product_RxEJH7",
+        "product_KHKwfK",
+        "product_MgX8pX",
         "product_afFLRC",
         "product_gM9Nfk",
         "product_Wxx6VX",
-        "product_MgX8pX",
-        "product_KHKwfK",
+        "product_RxEJH7",
         "product_DDzh64"
       ],
       "settings": {
@@ -471,7 +476,7 @@
             "image": "shopify://shop_images/Website_illustrations-04_aa18fb28-86bc-4010-9b12-09a44746c397.png",
             "title": "Made Just for You",
             "text": "<p>Every item is crafted on demand, just for you. It’s personal, unique, and made with care. </p><p></p><p></p>",
-            "link_label": "For Bulk / Custom Orders Contact Us",
+            "link_label": "",
             "link": "shopify://pages/contact"
           }
         },
@@ -501,7 +506,7 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "Submit a custom design or idea",
-        "button_link": "shopify://pages/contact",
+        "button_link": "shopify://pages/custom",
         "columns_desktop": 4,
         "column_alignment": "left",
         "background_style": "primary",

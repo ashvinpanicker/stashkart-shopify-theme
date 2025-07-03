@@ -74,7 +74,33 @@
   --shadow-visible: var(--media-shadow-visible);
 }
 
-/* base */
+/* Hide the dropdown menu on smaller screens */
+.desktop-menu {
+  display: none;
+}
+
+/* Show the dropdown menu on larger screens */
+@media screen and (min-width: 990px) {
+  .desktop-menu {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Show the drawer menu on smaller screens */
+.mobile-menu {
+  display: block;
+}
+
+/* Hide the drawer menu on larger screens */
+@media screen and (min-width: 990px) {
+  .mobile-menu {
+    display: none;
+  }
+}
 
 .page-width {
   max-width: var(--page-width);
@@ -178,11 +204,6 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 .page-margin,
 .shopify-challenge__container {
   margin: 7rem auto;
-}
-
-.rte-width {
-  max-width: 82rem;
-  margin: 0 auto 2rem;
 }
 
 .list-unstyled {
@@ -497,6 +518,33 @@ h6:empty {
   background-color: transparent;
   font-size: 1.4rem;
   font-family: inherit;
+}
+
+.faq-section {
+  padding: 20px;
+  margin-bottom: 20px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.faq-item summary {
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq-item p {
+  padding: 10px;
 }
 
 .link--text {
@@ -3612,7 +3660,7 @@ details-disclosure>details {
 }
 
 /* Below this is Added by Ashvin */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   slideshow-component .slideshow.banner {
     display: flex;
     overflow: hidden;
@@ -3623,10 +3671,9 @@ details-disclosure>details {
     flex: 0 0 33%;
     max-width: 30% !important;
     padding: 0 5px;
-    /* optional spacing */
     box-sizing: border-box;
   }
-}
+} */
 
 .slideshow__slide:hover {
   cursor: pointer;
@@ -3687,3 +3734,10 @@ button {
 .facet-filters__sort {
   color: rgb(11 117 130) !important;
 }
+
+@media screen and (max-width: 749px) {
+  .btn-stash {
+    display: none !important;
+  }
+}
+

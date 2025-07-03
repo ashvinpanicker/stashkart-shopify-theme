@@ -354,6 +354,8 @@
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
+
+      {% section 'faq' %}
     </main>
 
     {% sections 'footer-group' %}
@@ -415,5 +417,23 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script>
+      // Fix EcomSend popup: Enable Enter key to submit
+      const waitForEcomSendPopup = setInterval(() => {
+        const emailInput = document.querySelector('.ecomsend__Input__Input[type="email"]');
+        const claimButton = document.querySelector('.ecomsend__Button[role="button"]');
+
+        if (emailInput && claimButton) {
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && document.activeElement === emailInput) {
+              e.preventDefault();
+              claimButton.click(); // simulate submit
+            }
+          });
+          clearInterval(waitForEcomSendPopup); // Done — stop checking
+        }
+      }, 300);
+    </script>
   </body>
 </html>
