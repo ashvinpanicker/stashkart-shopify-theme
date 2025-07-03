@@ -126,7 +126,7 @@
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
-    "cart_drawer_collection": "all-products",
+    "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-6451691d-ad9b-4ef2-9c16-45e300615810",
     "sections": {
       "main-password-header": {
