@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "text": "New here? Use code MYSTASH10 for 10 % off your first order 🎁",
-            "link": "shopify://collections/all"
+            "link": "https://stashkart.in/discount/MYSTASH10"
           }
         }
       },
