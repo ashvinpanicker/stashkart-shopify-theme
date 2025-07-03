@@ -27,9 +27,24 @@ class ProductGallery {
     // Add active class to selected thumbnail
     this.thumbnails[index].classList.add('active');
     
-    // Update main image
-    const newImageSrc = this.thumbnails[index].querySelector('img').src;
-    this.mainImage.src = newImageSrc;
+    // Update main image with fade animation
+    const thumbnail = this.thumbnails[index];
+    const newImageSrc = thumbnail.getAttribute('data-main-src');
+    const newImageSrcset = thumbnail.getAttribute('data-main-srcset');
+    // Fade out
+    this.mainImage.classList.add('fade-out');
+    this.mainImage.classList.remove('fade-in');
+    setTimeout(() => {
+      this.mainImage.src = newImageSrc;
+      if (newImageSrcset) {
+        this.mainImage.srcset = newImageSrcset;
+      }
+      // Fade in after image is loaded
+      this.mainImage.onload = () => {
+        this.mainImage.classList.remove('fade-out');
+        this.mainImage.classList.add('fade-in');
+      };
+    }, 300);
     
     // Update current index
     this.currentIndex = index;

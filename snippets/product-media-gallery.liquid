@@ -12,25 +12,45 @@
   <div class="product-gallery__thumbnails">
     {%- if product.selected_or_first_available_variant.featured_media != null -%}
       {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
-      <button class="product-gallery__thumbnail" data-thumbnail>
-        {{ featured_media | image_url: width: 200 | image_tag:
-          loading: 'lazy',
-          width: 100,
-          height: 100,
-          alt: featured_media.alt | escape
-        }}
+      <button class="product-gallery__thumbnail" data-thumbnail
+        data-main-src="{{ featured_media | image_url: width: 1200 }}"
+        data-main-srcset="
+          {{ featured_media | image_url: width: 800 }} 800w,
+          {{ featured_media | image_url: width: 1200 }} 1200w,
+          {{ featured_media | image_url: width: 1600 }} 1600w,
+          {{ featured_media | image_url: width: 2000 }} 2000w,
+          {{ featured_media | image_url: width: 2400 }} 2400w,
+          {{ featured_media | image_url: width: 3000 }} 3000w
+        ">
+        <img
+          src="{{ featured_media | image_url: width: 200 }}"
+          loading="lazy"
+          width="100"
+          height="100"
+          alt="{{ featured_media.alt | escape }}"
+        >
       </button>
     {%- endif -%}
 
     {%- for media in product.media -%}
       {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-        <button class="product-gallery__thumbnail" data-thumbnail>
-          {{ media | image_url: width: 200 | image_tag:
-            loading: 'lazy',
-            width: 100,
-            height: 100,
-            alt: media.alt | escape
-          }}
+        <button class="product-gallery__thumbnail" data-thumbnail
+          data-main-src="{{ media | image_url: width: 1200 }}"
+          data-main-srcset="
+            {{ media | image_url: width: 800 }} 800w,
+            {{ media | image_url: width: 1200 }} 1200w,
+            {{ media | image_url: width: 1600 }} 1600w,
+            {{ media | image_url: width: 2000 }} 2000w,
+            {{ media | image_url: width: 2400 }} 2400w,
+            {{ media | image_url: width: 3000 }} 3000w
+          ">
+          <img
+            src="{{ media | image_url: width: 200 }}"
+            loading="lazy"
+            width="100"
+            height="100"
+            alt="{{ media.alt | escape }}"
+          >
         </button>
       {%- endunless -%}
     {%- endfor -%}
@@ -41,7 +61,16 @@
       {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
       <img
         class="product-gallery__main-image"
-        src="{{ featured_media | image_url: width: 2000 }}"
+        src="{{ featured_media | image_url: width: 1200 }}"
+        srcset="
+          {{ featured_media | image_url: width: 800 }} 800w,
+          {{ featured_media | image_url: width: 1200 }} 1200w,
+          {{ featured_media | image_url: width: 1600 }} 1600w,
+          {{ featured_media | image_url: width: 2000 }} 2000w,
+          {{ featured_media | image_url: width: 2400 }} 2400w,
+          {{ featured_media | image_url: width: 3000 }} 3000w
+        "
+        sizes="(max-width: 600px) 100vw, 600px"
         alt="{{ featured_media.alt | escape }}"
         loading="lazy"
         width="{{ featured_media.width }}"
