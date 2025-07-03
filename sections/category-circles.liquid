@@ -45,8 +45,8 @@
 {% if section.settings.section_title != blank %}
   <h2 class="page-width category-circles-heading">{{ section.settings.section_title }}</h2>
 {% endif %}
-<div class="category-circles-wrapper">
-  <div class="page-width category-circles">
+<div class="category-circles-wrapper page-width">
+  <div class="category-circles">
     {% for block in section.blocks %}
       <a href="{{ block.settings.link }}" class="circle-item">
         {% if block.settings.image %}
@@ -183,46 +183,45 @@
     const springDelay = 1769;
     const springDuration = 420;
 
-    // SPRING ANIMATION (mobile only)
-    if (window.innerWidth < 768) {
-      setTimeout(() => {
-        let start = null;
+    // SPRING ANIMATION
 
-        function springScroll(timestamp) {
-          if (!start) start = timestamp;
-          const elapsed = timestamp - start;
+    setTimeout(() => {
+      let start = null;
 
-          const progress = elapsed / springDuration;
-          const eased = 1 - Math.cos(progress * Math.PI);
+      function springScroll(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
 
-          const offset = eased * nudgeDistance;
-          wrapper.scrollLeft = offset;
+        const progress = elapsed / springDuration;
+        const eased = 1 - Math.cos(progress * Math.PI);
 
-          if (elapsed < springDuration) {
-            requestAnimationFrame(springScroll);
-          } else {
-            // spring back
-            start = null;
-            requestAnimationFrame((timestamp) => springBack(timestamp, offset));
-          }
+        const offset = eased * nudgeDistance;
+        wrapper.scrollLeft = offset;
+
+        if (elapsed < springDuration) {
+          requestAnimationFrame(springScroll);
+        } else {
+          // spring back
+          start = null;
+          requestAnimationFrame((timestamp) => springBack(timestamp, offset));
         }
+      }
 
-        function springBack(timestamp, startOffset) {
-          if (!start) start = timestamp;
-          const elapsed = timestamp - start;
-          const progress = elapsed / springDuration;
-          const eased = 1 - Math.cos(progress * Math.PI);
-          const offset = startOffset - eased * startOffset;
-          wrapper.scrollLeft = offset;
+      function springBack(timestamp, startOffset) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+        const progress = elapsed / springDuration;
+        const eased = 1 - Math.cos(progress * Math.PI);
+        const offset = startOffset - eased * startOffset;
+        wrapper.scrollLeft = offset;
 
-          if (elapsed < springDuration) {
-            requestAnimationFrame((t) => springBack(t, startOffset));
-          }
+        if (elapsed < springDuration) {
+          requestAnimationFrame((t) => springBack(t, startOffset));
         }
+      }
 
-        requestAnimationFrame(springScroll);
-      }, springDelay);
-    }
+      requestAnimationFrame(springScroll);
+    }, springDelay);
 
     // SCROLL-TO-START BUTTON FUNCTIONALITY
     const endItem = document.querySelector('a.end-item');
@@ -230,7 +229,9 @@
       endItem.addEventListener('click', () => {
         wrapper.scrollTo({ left: 0, behavior: 'smooth' });
         // Ensure after smooth scroll, it's exactly at 0
-        setTimeout(() => { wrapper.scrollLeft = 0; }, 600);
+        setTimeout(() => {
+          wrapper.scrollLeft = 0;
+        }, 600);
       });
     }
   });
