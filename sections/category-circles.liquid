@@ -94,6 +94,7 @@
     padding: 10px 0;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-behavior: smooth;
   }
 
   .category-circles-wrapper::-webkit-scrollbar {
@@ -212,6 +213,9 @@
       height: 110px;
       border-radius: 18px;
     }
+    .category-circles {
+      gap: 16px;
+    }
     .start-item {
       display: none !important;
     }
@@ -276,7 +280,7 @@
         // Ensure after smooth scroll, it's exactly at 0
         setTimeout(() => {
           wrapper.scrollLeft = 0;
-        }, 600);
+        }, 900);
       });
     }
 
@@ -288,7 +292,7 @@
         // Ensure after smooth scroll, it's exactly at the end
         setTimeout(() => {
           wrapper.scrollLeft = wrapper.scrollWidth;
-        }, 600);
+        }, 900);
       });
     }
 
@@ -343,7 +347,7 @@
         // Ensure after smooth scroll, it's exactly at the end
         setTimeout(() => {
           wrapper.scrollLeft = wrapper.scrollWidth;
-        }, 600);
+        }, 900);
       });
 
       // Append the button to the last visible circle
