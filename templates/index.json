@@ -516,6 +516,22 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "175165880356121903": {
+      "type": "apps",
+      "blocks": {
+        "ck_google_reviews_google_reviews_XUqhTw": {
+          "type": "shopify://apps/ck-google-reviews/blocks/google_reviews/65a77010-5e58-49de-928f-6b86aa6ecffe",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ck_google_reviews_google_reviews_XUqhTw"
+      ],
+      "name": "Google Reviews",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -523,6 +539,7 @@
     "category_circles_kRAtgR",
     "product_list_6NcLaM",
     "collection_list_ibwbCY",
-    "multicolumn_ywMxgY"
+    "multicolumn_ywMxgY",
+    "175165880356121903"
   ]
 }
