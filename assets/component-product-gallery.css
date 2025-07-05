@@ -79,6 +79,11 @@
     gap: 1rem;
   }
 
+  .product-gallery__main {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
   .product-gallery__thumbnails {
     flex-direction: row;
     width: 100%;
