@@ -12,11 +12,30 @@
     "slideshow_QariNY": {
       "type": "slideshow",
       "blocks": {
+        "slide_w8J7KA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website_Banner.1_1299.webp",
+            "image_link": "shopify://collections/t-shirts",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/family",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "bottom-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
         "slide_rwjYWf": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Website_Banner_All_products.png",
-            "image_link": "shopify://collections/all-products",
+            "image": "shopify://shop_images/Website_Banner.1_Custom.webp",
+            "image_link": "shopify://pages/custom",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_size": "h1",
@@ -31,29 +50,10 @@
             "color_scheme": "scheme-4"
           }
         },
-        "slide_FcKrfn": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Website_Banner_Sports_7315f8cd-cb77-49a3-84b7-58612852d398.png",
-            "image_link": "shopify://collections/sports",
-            "image_overlay_opacity": 0,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/sports",
-            "button_style_secondary": false,
-            "show_text_box": true,
-            "box_align": "bottom-left",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
         "slide_CdC9zW": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Website_Banner_Animals_Pets.png",
+            "image": "shopify://shop_images/Website_Banner.1_999.webp",
             "image_link": "shopify://collections/pets",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -69,21 +69,21 @@
             "color_scheme": "scheme-4"
           }
         },
-        "slide_w8J7KA": {
+        "slide_FcKrfn": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Website_Banner_Family.png",
-            "image_link": "shopify://collections/family",
+            "image": "shopify://shop_images/Website_Banner.1_Golf.webp",
+            "image_link": "shopify://collections/sports",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
             "button_label": "",
-            "link": "shopify://collections/family",
+            "link": "shopify://collections/sports",
             "button_style_secondary": false,
-            "show_text_box": false,
+            "show_text_box": true,
             "box_align": "bottom-left",
-            "text_alignment": "left",
+            "text_alignment": "center",
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
           }
@@ -210,10 +210,10 @@
         }
       },
       "block_order": [
-        "slide_rwjYWf",
-        "slide_FcKrfn",
-        "slide_CdC9zW",
         "slide_w8J7KA",
+        "slide_rwjYWf",
+        "slide_CdC9zW",
+        "slide_FcKrfn",
         "slide_R4qWTn",
         "slide_fw6V7p",
         "slide_NVwM6t",
