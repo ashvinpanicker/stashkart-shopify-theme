@@ -50,25 +50,6 @@
             "color_scheme": "scheme-4"
           }
         },
-        "slide_w8J7KA": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Website_Banner_1299.png",
-            "image_link": "shopify://collections/t-shirts",
-            "image_overlay_opacity": 0,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/family",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "bottom-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
         "slide_FcKrfn": {
           "type": "slide",
           "settings": {
@@ -84,6 +65,25 @@
             "show_text_box": true,
             "box_align": "bottom-left",
             "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
+        "slide_w8J7KA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website_Banner_1299.png",
+            "image_link": "shopify://collections/t-shirts",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/family",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "bottom-left",
+            "text_alignment": "left",
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
           }
@@ -212,8 +212,8 @@
       "block_order": [
         "slide_CdC9zW",
         "slide_rwjYWf",
-        "slide_w8J7KA",
         "slide_FcKrfn",
+        "slide_w8J7KA",
         "slide_R4qWTn",
         "slide_fw6V7p",
         "slide_NVwM6t",
