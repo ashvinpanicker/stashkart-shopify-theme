@@ -71,6 +71,7 @@
         },
         "slide_w8J7KA": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Website_Banner_1299.png",
             "image_link": "shopify://collections/t-shirts",
