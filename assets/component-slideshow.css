@@ -135,6 +135,7 @@ slideshow-component .slideshow.banner {
 
 .slideshow__controls {
   border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  height: 30px;
 }
 
 .slideshow__controls--top {

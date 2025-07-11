@@ -6,7 +6,7 @@
       "type": "text",
       "id": "section_title",
       "label": "Section Title",
-      "default": "Shop by Category"
+      // "default": "Shop by Category"
     }
   ],
   "blocks": [
@@ -128,12 +128,12 @@
   }
 
   .circle-item img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 32px;
     border: 2px solid #ddd;
-    margin: 0 auto 12px auto;
+    margin: 0 auto;
     display: block;
     transition: transform 0.3s ease;
   }
@@ -145,7 +145,7 @@
   .circle-item span {
     display: block;
     margin-top: 0;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     width: 100%;
@@ -213,12 +213,17 @@
       height: 110px;
       border-radius: 18px;
     }
+    .circle-item span {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
     .category-circles {
       gap: 16px;
     }
     .start-item {
       display: none !important;
     }
+    
   }
 </style>
 
