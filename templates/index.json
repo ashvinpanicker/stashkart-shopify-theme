@@ -252,6 +252,14 @@
             "link": "shopify://collections/mugs"
           }
         },
+        "category_x4faxW": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Website_illustrations_category-05_32c6b9bd-dbfe-411f-9d16-31f7940d13f8.png",
+            "title": "Dog Tees",
+            "link": "shopify://collections/dog-t-shirts"
+          }
+        },
         "category_WeXtcH": {
           "type": "category",
           "settings": {
@@ -260,12 +268,12 @@
             "link": "shopify://collections/caps"
           }
         },
-        "category_x4faxW": {
+        "category_KAwFdd": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Website_illustrations_category-05_32c6b9bd-dbfe-411f-9d16-31f7940d13f8.png",
-            "title": "Dog Tees",
-            "link": "shopify://collections/dog-t-shirts"
+            "image": "shopify://shop_images/Website_illustrations.png",
+            "title": "Posters",
+            "link": "shopify://collections/posters"
           }
         },
         "category_hUwNAc": {
@@ -283,27 +291,19 @@
             "title": "Crop Tops",
             "link": "shopify://collections/crop-tops"
           }
-        },
-        "category_KAwFdd": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Website_illustrations.png",
-            "title": "Posters",
-            "link": "shopify://collections/posters"
-          }
         }
       },
       "block_order": [
         "category_6embML",
         "category_UfwM7T",
-        "category_WeXtcH",
         "category_x4faxW",
+        "category_WeXtcH",
+        "category_KAwFdd",
         "category_hUwNAc",
-        "category_ycGzK6",
-        "category_KAwFdd"
+        "category_ycGzK6"
       ],
       "settings": {
-        // "section_title": "Shop by Category"
+        "section_title": ""
       }
     },
     "product_list_6NcLaM": {
