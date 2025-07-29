@@ -16,6 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_999.png",
+            "mobile_image": "shopify://shop_images/og_img.png",
             "image_link": "shopify://collections/pets",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -35,6 +36,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_Custom.png",
+            "mobile_image": "shopify://shop_images/Blog_Sukrit_2.png",
             "image_link": "shopify://pages/custom",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -54,6 +56,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_Golf.png",
+            "mobile_image": "shopify://shop_images/Blog_How_3.png",
             "image_link": "shopify://collections/sports",
             "image_overlay_opacity": 0,
             "heading": "",
