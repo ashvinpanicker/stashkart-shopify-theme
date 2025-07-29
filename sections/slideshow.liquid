@@ -128,10 +128,14 @@
         aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         tabindex="-1"
       >
-        <div class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
+        <div class="slideshow__media banner__media media{% if block.settings.image == blank and block.settings.mobile_image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
           {%- if block.settings.image -%}
             {%- liquid
               assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
+              assign mobile_height = height
+              if block.settings.mobile_image
+                assign mobile_height = block.settings.mobile_image.width | divided_by: block.settings.mobile_image.aspect_ratio | round
+              endif
               if section.settings.image_behavior == 'ambient'
                 assign sizes = '120vw'
                 assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
@@ -144,20 +148,42 @@
                 assign fetch_priority = 'high'
               endif
             -%}
-            {%- if forloop.first %}
-              {{
-                block.settings.image
-                | image_url: width: 3840
-                | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
-              }}
-            {%- else -%}
-              {{
-                block.settings.image
-                | image_url: width: 3840
-                | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths
-              }}
-            {%- endif -%}
+            
+            <!-- Desktop Image -->
+            <div class="slideshow__image--desktop hide-mobile">
+              {%- if forloop.first %}
+                {{
+                  block.settings.image
+                  | image_url: width: 3840
+                  | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority, class: 'slideshow__image'
+                }}
+              {%- else -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 3840
+                  | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: 'slideshow__image'
+                }}
+              {%- endif -%}
+            </div>
+
+            <!-- Mobile Image or Fallback to Desktop Image -->
+            <div class="slideshow__image--mobile hide-desktop">
+              {%- if block.settings.mobile_image -%}
+                {{
+                  block.settings.mobile_image
+                  | image_url: width: 750
+                  | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 550, 750, 1100', class: 'slideshow__image', alt: block.settings.mobile_image.alt | default: block.settings.image.alt
+                }}
+              {%- else -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 750
+                  | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 550, 750, 1100', class: 'slideshow__image'
+                }}
+              {%- endif -%}
+            </div>
           {%- else -%}
+            <!-- Fallback Placeholder -->
             {%- assign placeholder_slide = forloop.index | modulo: 2 -%}
             {%- if placeholder_slide == 1 -%}
               {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -410,6 +436,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "t:sections.slideshow.blocks.slide.settings.image.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile image",
+          "info": "Optional: Display a different image on mobile devices"
         },
         {
           "type": "url",
