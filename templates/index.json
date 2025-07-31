@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_Custom.png",
-            "mobile_image": "shopify://shop_images/custom_mobile_square.png",
+            "mobile_image": "shopify://shop_images/custom_mobile_banner.png",
             "image_link": "shopify://pages/custom",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -36,7 +36,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_999.png",
-            "mobile_image": "shopify://shop_images/Screenshot_2025-07-30_at_5.30.56_AM_aa3c9f62-4101-4bd3-b0a2-f33a2fa7d78c.png",
+            "mobile_image": "shopify://shop_images/twinning_pet_mobile_banner.png",
             "image_link": "shopify://collections/pets",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -56,12 +56,12 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_Golf.png",
-            "mobile_image": "shopify://shop_images/Golf_Banner.png",
+            "mobile_image": "shopify://shop_images/sports_mobile_banner.png",
             "image_link": "shopify://collections/sports",
-            "image_overlay_opacity": 10,
+            "image_overlay_opacity": 0,
             "heading": "",
             "heading_size": "h1",
-            "subheading": "Sports",
+            "subheading": "",
             "button_label": "",
             "link": "shopify://collections/sports",
             "button_style_secondary": false,
