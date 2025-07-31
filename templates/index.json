@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_Custom.png",
-            "mobile_image": "shopify://shop_images/custom_mobile_banner.png",
+            "mobile_image": "shopify://shop_images/custom_mobile_banner_c63fc8c8-8141-44f3-8570-6b9624f87d58.png",
             "image_link": "shopify://pages/custom",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -36,7 +36,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_999.png",
-            "mobile_image": "shopify://shop_images/twinning_pet_mobile_banner.png",
+            "mobile_image": "shopify://shop_images/pet_mobile_banner.png",
             "image_link": "shopify://collections/pets",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -56,7 +56,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_Golf.png",
-            "mobile_image": "shopify://shop_images/sports_mobile_banner.png",
+            "mobile_image": "shopify://shop_images/Sports_mobile_banner_ac68458e-e00c-4677-963d-f3953c8cc189.png",
             "image_link": "shopify://collections/sports",
             "image_overlay_opacity": 0,
             "heading": "",
