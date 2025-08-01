@@ -20,15 +20,20 @@
 <meta property="og:description" content="{{ og_description | escape }}">
 
 {% comment %} {%- if page_image -%} {% endcomment %}
+{% comment %}
   <meta property="og:image" content="http:{{ page_image | image_url }}">
   <meta property="og:image:secure_url" content="https:{{ page_image | image_url }}">
   <meta property="og:image:width" content="{{ page_image.width }}">
   <meta property="og:image:height" content="{{ page_image.height }}">
+{% endcomment %}
 {% comment %} {%- else -%} {% endcomment %}
-  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0749/3940/0415/files/mobile_banner_custom.png">
-  <meta property="og:image:secure_url" content="https://cdn.shopify.com/s/files/1/0749/3940/0415/files/mobile_banner_custom.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0749/3940/0415/files/mobile_banner_custom.png">
+<meta
+  property="og:image:secure_url"
+  content="https://cdn.shopify.com/s/files/1/0749/3940/0415/files/mobile_banner_custom.png"
+>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 {% comment %} {%- endif -%} {% endcomment %}
 
 {%- if request.page_type == 'product' -%}
