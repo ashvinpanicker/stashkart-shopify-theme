@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_Custom.png",
-            "mobile_image": "shopify://shop_images/custom_mobile_banner_c63fc8c8-8141-44f3-8570-6b9624f87d58.png",
+            "mobile_image": "shopify://shop_images/mobile_banner_custom.png",
             "image_link": "shopify://pages/custom",
             "image_overlay_opacity": 0,
             "heading": "",
