@@ -235,6 +235,11 @@
         "type": "shopify://apps/myshop-whatsapp-button/blocks/widget/a5ad5d7c-50b7-4654-8fba-63fd50479f7d",
         "disabled": false,
         "settings": {}
+      },
+      "848547589086771589": {
+        "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-extension/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
