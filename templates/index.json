@@ -372,7 +372,8 @@
         "product_DDzh64"
       ],
       "settings": {
-        "heading": "Bestsellers"
+        "heading": "Bestsellers",
+        "heading_link": "shopify://collections/all-products"
       }
     },
     "17543270926b90dcc6": {
