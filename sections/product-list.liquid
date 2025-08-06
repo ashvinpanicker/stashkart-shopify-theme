@@ -50,7 +50,9 @@
     display: flex;
     overflow-x: auto;
     gap: 24px;
-    padding: 10px 10px 15px 10px; /* Added padding to prevent shadow clipping */
+    padding-top: 10px;
+    padding-bottom: 15px;
+    margin: 0 -10px; /* Use negative margin to extend for padding */
     -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
     scrollbar-width: thin; /* For Firefox */
     scrollbar-color: #ccc #f1f1f1; /* For Firefox */
@@ -310,7 +312,7 @@
   }
 {% endstyle %}
 
-<div class="page-width product-list-section">
+<div class="page-width product-list-section" style="padding: 0 10px;">
   <h2 class="product-list-heading">
     <a href="{{ section.settings.heading_link | default: '#' }}" style="text-decoration: none; color: inherit;">
       {{ section.settings.heading }}
