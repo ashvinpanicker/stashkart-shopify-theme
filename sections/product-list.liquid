@@ -7,6 +7,11 @@
       "id": "heading",
       "label": "Section Heading",
       "default": "Bestsellers"
+    },
+    {
+      "type": "url",
+      "id": "heading_link",
+      "label": "Heading Link"
     }
   ],
   "blocks": [
@@ -42,9 +47,30 @@
   }
 
   .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    overflow-x: auto;
     gap: 24px;
+    padding: 10px 10px 15px 10px; /* Added padding to prevent shadow clipping */
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #ccc #f1f1f1; /* For Firefox */
+  }
+
+  .product-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .product-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .product-grid::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 5px;
+  }
+
+  .product-grid::-webkit-scrollbar-thumb:hover {
+    background: #c0c0c0;
   }
 
   .product-card {
@@ -58,6 +84,8 @@
     padding: 18px 12px 20px 12px;
     align-items: stretch;
     justify-content: flex-start;
+    flex: 0 0 300px; /* Set a fixed width for each card */
+    width: 300px; /* Ensure consistent width */
   }
 
   .product-size-quantity-row {
@@ -161,25 +189,16 @@
   }
 
   @media screen and (max-width: 1024px) {
-    .product-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .product-card {
+      flex-basis: 250px;
     }
     .product-card {
       padding: 14px 6px 16px 6px;
     }
   }
   @media screen and (max-width: 600px) {
-    .product-grid {
-      grid-template-columns: 1fr;
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 1rem;
-    }
     .product-card {
-      scroll-snap-align: start;
-      width: 80%; /* Adjust as needed */
-      flex: 0 0 auto;
+      flex-basis: 220px;
     }
     .product-size-quantity-row,
     .product-price-atc-row {
@@ -236,17 +255,7 @@
     color: rgb(4, 120, 137);
   }
 
-  @media screen and (max-width: 768px) {
-    .product-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .product-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+  
 
   .variant-qty-row,
   .price-atc-row {
@@ -302,7 +311,11 @@
 {% endstyle %}
 
 <div class="page-width product-list-section">
-  <h2 class="product-list-heading">{{ section.settings.heading }}</h2>
+  <h2 class="product-list-heading">
+    <a href="{{ section.settings.heading_link | default: '#' }}" style="text-decoration: none; color: inherit;">
+      {{ section.settings.heading }}
+    </a>
+  </h2>
 
   {% if section.blocks.size > 0 %}
     <div class="product-grid">
