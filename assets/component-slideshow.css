@@ -20,10 +20,6 @@ slideshow-component .slideshow.banner {
   visibility: visible;
 }
 
-/* Added by Ashvin for smoother edges */
-.slideshow__media {
-  border-radius: 5px;
-}
 
 .banner__buttons {
   border-radius: 5px;
@@ -59,6 +55,9 @@ slideshow-component .slideshow.banner {
   .slideshow--placeholder.banner--adapt_image:not(.banner--mobile-bottom) {
     height: 28rem;
   }
+  /* .slideshow__slide {
+    min-height: 44rem;
+  } */
 }
 
 @media screen and (min-width: 750px) {
@@ -136,6 +135,7 @@ slideshow-component .slideshow.banner {
 
 .slideshow__controls {
   border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  height: 30px;
 }
 
 .slideshow__controls--top {
@@ -232,4 +232,115 @@ slideshow-component:not(.page-width) .slider-buttons {
   visibility: hidden;
   opacity: 0;
   transform: scale(0.8);
+}
+
+/* Hide mobile by default, show on mobile */
+.hide-desktop {
+  display: none !important;
+}
+
+/* Show desktop by default, hide on mobile */
+.hide-mobile {
+  display: block !important;
+}
+
+/* Show mobile and hide desktop on mobile screens */
+@media screen and (max-width: 749px) {
+  .hide-desktop {
+    display: block !important;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  /* Ensure mobile images fill the container on small screens */
+  .slideshow__image--mobile .slideshow__image {
+    width: 100%;
+    /* height: auto; */
+  }
+}
+
+/* Slideshow container */
+.slideshow--adapt {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Default desktop height */
+@media screen and (min-width: 750px) {
+  .slideshow--adapt {
+    height: 0;
+    padding-bottom: var(--slide-height, 56.25%);
+  }
+  
+  .slideshow--adapt .banner__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 749px) {
+  /* Set fixed height for mobile slideshow */
+  .slideshow--adapt,
+  .slideshow__slide,
+  .slideshow {
+    height: 50vh !important;
+    /* padding-bottom: 0 !important; */
+  }
+
+  .slideshow--adapt .banner__media {
+    position: relative !important;
+    height: 100% !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* Mobile image container */
+  .slideshow__image--mobile {
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  /* Mobile image */
+  .slideshow__image--mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+/* Style for all slideshow images */
+.slideshow--adapt .banner__media img,
+.slideshow__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Ensure both mobile and desktop image containers are properly sized */
+.slideshow__image--desktop,
+.slideshow__image--mobile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Make sure the image fills its container */
+.slideshow__image--desktop img,
+.slideshow__image--mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

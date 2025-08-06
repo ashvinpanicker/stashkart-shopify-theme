@@ -986,8 +986,8 @@ class SlideshowComponent extends SliderComponent {
   }
 
   autoRotateSlides() {
-    const slideScrollPosition =
-      this.currentPage === this.sliderItems.length-2 ? 0 : this.slider.scrollLeft + this.sliderItemOffset; // added -2 ashvin
+    const isLastSlide = this.currentPage >= this.sliderItems.length;
+    const slideScrollPosition = isLastSlide ? 0 : this.slider.scrollLeft + this.sliderItemOffset;  // added -2 ashvin
 
     this.setSlidePosition(slideScrollPosition);
     this.applyAnimationToAnnouncementBar();

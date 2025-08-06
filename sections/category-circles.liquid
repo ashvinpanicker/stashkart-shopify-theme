@@ -6,7 +6,7 @@
       "type": "text",
       "id": "section_title",
       "label": "Section Title",
-      "default": "Shop by Category"
+      // "default": "Shop by Category"
     }
   ],
   "blocks": [
@@ -43,21 +43,23 @@
 {% endschema %}
 
 {% if section.settings.section_title != blank %}
-  <h2 class="category-circles-heading">{{ section.settings.section_title }}</h2>
+  <h2 class="page-width category-circles-heading">{{ section.settings.section_title }}</h2>
 {% endif %}
-<div class="category-circles-wrapper">
+<div class="category-circles-wrapper page-width">
   <div class="category-circles">
     {% for block in section.blocks %}
       <a href="{{ block.settings.link }}" class="circle-item">
-        {% if block.settings.image %}
-          <img
-            src="{{ block.settings.image | image_url: width: 200 }}"
-            alt="{{ block.settings.title }}"
-            width="100"
-            height="100"
-          >
-        {% endif %}
-        <span>{{ block.settings.title }}</span>
+        <div class="circle-item-content" style="position: relative;">
+          {% if block.settings.image %}
+            <img
+              src="{{ block.settings.image | image_url: width: 200 }}"
+              alt="{{ block.settings.title }}"
+              width="100"
+              height="100"
+            >
+          {% endif %}
+          <span>{{ block.settings.title }}</span>
+        </div>
       </a>
     {% endfor %}
     <a href="javascript:void(0)" class="end-item" aria-label="Scroll to start">
@@ -79,10 +81,11 @@
 
 <style>
   .category-circles-heading {
-    text-align: center;
-    font-size: 2rem;
-    margin: 20px 0 10px 5px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 15px;
+    color: rgb(4, 120, 137);
   }
 
   .category-circles-wrapper {
@@ -91,6 +94,7 @@
     padding: 10px 0;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-behavior: smooth;
   }
 
   .category-circles-wrapper::-webkit-scrollbar {
@@ -99,36 +103,52 @@
 
   .category-circles {
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
-    gap: 24px;
+    gap: 40px;
     padding: 10px 20px;
+    justify-content: flex-start;
   }
 
   .circle-item {
     flex: 0 0 auto;
-    width: 100px;
-    text-align: center;
+    flex-direction: column;
+    height: auto;
+    text-align: left;
     text-decoration: none;
     color: inherit;
-  }
-
-  .circle-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #ddd;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
     transition: transform 0.3s ease;
   }
 
-  .circle-item:hover img {
-    transform: scale(1.1);
+  .circle-item img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 32px;
+    border: 2px solid #ddd;
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .circle-item:hover {
+    transform: translateY(-2px) scale(1.04);
   }
 
   .circle-item span {
     display: block;
-    margin-top: 8px;
-    font-weight: 500;
+    margin-top: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
   }
 
   a.end-item {
@@ -146,26 +166,72 @@
 
   /* Desktop layout: even spacing, wrapped rows */
   @media screen and (min-width: 768px) {
-    .category-circles-wrapper {
-      overflow-x: visible;
-    }
-
     .category-circles {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px 60px; /* vertical and horizontal spacing */
+      gap: 40px;
     }
 
     a.end-item {
+      display: flex !important;
+    }
+  }
+
+  .start-item, .end-item {
+    transition: opacity 0.3s;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .start-item.fade-out, .end-item.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .start-item {
+    flex: 0 0 auto;
+    width: 30px;
+    margin-top: -22px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Mobile styles: smaller title and category circle size */
+  @media screen and (max-width: 767px) {
+    .category-circles-heading {
+      font-size: 24px;
+    }
+    .circle-item img {
+      width: 110px;
+      height: 110px;
+      border-radius: 18px;
+    }
+    .circle-item span {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    .category-circles {
+      gap: 16px;
+    }
+    .start-item {
       display: none !important;
     }
+    
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector('.category-circles-wrapper');
-    if (!wrapper || window.innerWidth >= 768) return;
+    if (!wrapper) return;
 
     // Spring animation variables
     const nudgeDistance = 42;
@@ -173,6 +239,7 @@
     const springDuration = 420;
 
     // SPRING ANIMATION
+
     setTimeout(() => {
       let start = null;
 
@@ -218,5 +285,119 @@
         wrapper.scrollTo({ left: 0, behavior: 'smooth' });
       });
     }
+
+    // SCROLL-TO-END BUTTON FUNCTIONALITY
+    let startItem = document.querySelector('a.start-item');
+    if (startItem) {
+      startItem.addEventListener('click', () => {
+        wrapper.scrollTo({ left: wrapper.scrollWidth, behavior: 'smooth' });
+      });
+    }
+
+    // DYNAMIC SCROLL-TO-END BUTTON FUNCTIONALITY
+    let scrollToEndButton;
+    function createScrollToEndButton() {
+      const circlesWrapper = document.querySelector('.category-circles-wrapper');
+      const circles = document.querySelectorAll('.circle-item');
+
+      if (!circlesWrapper || circles.length === 0) return;
+
+      // Find the last visible circle
+      let lastVisibleCircle = null;
+      for (let i = circles.length - 1; i >= 0; i--) {
+        const circle = circles[i];
+        const rect = circle.getBoundingClientRect();
+        if (rect.left <= circlesWrapper.getBoundingClientRect().right && rect.right >= circlesWrapper.getBoundingClientRect().left) {
+          lastVisibleCircle = circle;
+          break;
+        }
+      }
+
+      if (!lastVisibleCircle) {
+        console.log('Last visible circle not found');
+        return;
+      }
+
+      // Create the scroll-to-end button
+      const scrollToEndButton = document.createElement('a');
+      scrollToEndButton.href = 'javascript:void(0)';
+      scrollToEndButton.classList.add('start-item');
+      scrollToEndButton.setAttribute('aria-label', 'Scroll to end');
+      scrollToEndButton.innerHTML = `
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      `;
+      console.log('Scroll to end button created');
+
+      // Add event listener to scroll to the end
+      scrollToEndButton.addEventListener('click', () => {
+        wrapper.scrollTo({ left: wrapper.scrollWidth, behavior: 'smooth' });
+      });
+
+      // Append the button to the last visible circle
+      const circleItemContent = lastVisibleCircle.querySelector('.circle-item-content');
+      if (circleItemContent) {
+        circleItemContent.appendChild(scrollToEndButton);
+      }
+      console.log('Scroll to end button appended to last visible circle');
+
+      // Style the button
+      scrollToEndButton.style.display = 'flex !important';
+      scrollToEndButton.style.alignItems = 'center !important';
+      scrollToEndButton.style.justifyContent = 'flex-end !important';
+      scrollToEndButton.style.position = 'absolute !important';
+      scrollToEndButton.style.top = '20% !important';
+      scrollToEndButton.style.right = '0 !important';
+      scrollToEndButton.style.transform = 'translateY(-50%) !important';
+    }
+    console.log('createScrollToEndButton function called');
+
+    // Call the function to create the button
+    createScrollToEndButton();
+
+    // Add scroll event listener to hide/show the scroll-to-end button
+    wrapper.addEventListener('scroll', function() {
+      const endItem = document.querySelector('a.end-item');
+      const startItem = document.querySelector('a.start-item');
+      console.log('Scroll event triggered', wrapper.scrollLeft, wrapper.clientWidth, wrapper.scrollWidth);
+      if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 10) {
+        // Scrolled to the end
+        if (startItem) {
+          startItem.classList.add('fade-out');
+        }
+        if (endItem) {
+          endItem.classList.remove('fade-out');
+        }
+      } else if (wrapper.scrollLeft <= 10) {
+        // Scrolled to the start
+        if (startItem) {
+          startItem.classList.remove('fade-out');
+        }
+        if (endItem) {
+          endItem.classList.add('fade-out');
+        }
+      } else {
+        // Not at the end or start
+        if (startItem) {
+          startItem.classList.remove('fade-out');
+        }
+        if (endItem) {
+          endItem.classList.remove('fade-out');
+        }
+      }
+    });
+
+    console.log('Scroll to end button script executed');
   });
 </script>
+

@@ -12,40 +12,22 @@
     "slideshow_QariNY": {
       "type": "slideshow",
       "blocks": {
-        "slide_w8J7KA": {
+        "slide_rwjYWf": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/a-family-wearing-peach-tshirts-in-an-airport_0accdeb0-e909-44f9-a8fb-6656979894f3.png",
-            "image_link": "shopify://collections/family",
-            "image_overlay_opacity": 40,
-            "heading": "Family",
+            "image": "shopify://shop_images/Website_Banner_Custom.png",
+            "mobile_image": "shopify://shop_images/mobile_banner_custom.png",
+            "image_link": "shopify://pages/custom",
+            "image_overlay_opacity": 0,
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "For your loved ones",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/family",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/all-products",
             "button_style_secondary": false,
             "show_text_box": false,
-            "box_align": "middle-left",
+            "box_align": "bottom-left",
             "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
-        "slide_FcKrfn": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Golf_Banner.png",
-            "image_link": "shopify://collections/sports",
-            "image_overlay_opacity": 30,
-            "heading": "Sports",
-            "heading_size": "h1",
-            "subheading": "Play Hard, Look Sharp",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/sports",
-            "button_style_secondary": false,
-            "show_text_box": true,
-            "box_align": "middle-center",
-            "text_alignment": "center",
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
           }
@@ -53,24 +35,66 @@
         "slide_CdC9zW": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/animals_pets.png",
+            "image": "shopify://shop_images/Website_Banner_999.png",
+            "mobile_image": "shopify://shop_images/pet_mobile_banner.png",
             "image_link": "shopify://collections/pets",
-            "image_overlay_opacity": 30,
-            "heading": "Pawprints",
+            "image_overlay_opacity": 0,
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Animal Inspired Products",
-            "button_label": "Shop Now",
+            "subheading": "",
+            "button_label": "",
             "link": "shopify://collections/pets",
             "button_style_secondary": false,
             "show_text_box": true,
-            "box_align": "middle-center",
+            "box_align": "bottom-right",
             "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
+        "slide_FcKrfn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website_Banner_Golf.png",
+            "mobile_image": "shopify://shop_images/Sports_mobile_banner_ac68458e-e00c-4677-963d-f3953c8cc189.png",
+            "image_link": "shopify://collections/sports",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/sports",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "bottom-left",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
+        "slide_w8J7KA": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Website_Banner_1299.png",
+            "image_link": "shopify://collections/t-shirts",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://collections/family",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "bottom-left",
+            "text_alignment": "left",
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
           }
         },
         "slide_R4qWTn": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_music-04.png",
             "image_link": "shopify://collections/squad-goals",
@@ -90,6 +114,7 @@
         },
         "slide_fw6V7p": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_quotes-04.png",
             "image_link": "shopify://collections/hustlers",
@@ -109,6 +134,7 @@
         },
         "slide_NVwM6t": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_music-02.png",
             "image_link": "shopify://collections/music",
@@ -128,6 +154,7 @@
         },
         "slide_aARUjL": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_Family-01.png",
             "image_link": "shopify://collections/travel",
@@ -147,6 +174,7 @@
         },
         "slide_Q8Nnyn": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/WebsiteMockups_quotes-01.png",
             "image_link": "shopify://collections/quotes",
@@ -156,25 +184,6 @@
             "subheading": "Aspire to Inspire",
             "button_label": "Shop Now",
             "link": "shopify://collections/quotes",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
-        "slide_rwjYWf": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/lavender--white---brick-tshirt-on-3-basic-wood-man.jpg",
-            "image_link": "shopify://collections/all-products",
-            "image_overlay_opacity": 50,
-            "heading": "All Products",
-            "heading_size": "h1",
-            "subheading": "View our entire catalogue",
-            "button_label": "Check it out",
-            "link": "shopify://collections/all",
             "button_style_secondary": false,
             "show_text_box": false,
             "box_align": "middle-left",
@@ -205,24 +214,24 @@
         }
       },
       "block_order": [
-        "slide_w8J7KA",
-        "slide_FcKrfn",
+        "slide_rwjYWf",
         "slide_CdC9zW",
+        "slide_FcKrfn",
+        "slide_w8J7KA",
         "slide_R4qWTn",
         "slide_fw6V7p",
         "slide_NVwM6t",
         "slide_aARUjL",
         "slide_Q8Nnyn",
-        "slide_rwjYWf",
         "slide_pMHDNJ"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "small",
+        "slide_height": "adapt_image",
         "slider_visual": "dots",
         "auto_rotate": true,
-        "change_slides_speed": 6,
-        "image_behavior": "ambient",
+        "change_slides_speed": 5,
+        "image_behavior": "none",
         "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
@@ -246,6 +255,14 @@
             "link": "shopify://collections/mugs"
           }
         },
+        "category_x4faxW": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Website_illustrations_category-05_32c6b9bd-dbfe-411f-9d16-31f7940d13f8.png",
+            "title": "Dog Tees",
+            "link": "shopify://collections/dog-t-shirts"
+          }
+        },
         "category_WeXtcH": {
           "type": "category",
           "settings": {
@@ -254,12 +271,12 @@
             "link": "shopify://collections/caps"
           }
         },
-        "category_x4faxW": {
+        "category_KAwFdd": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/Website_illustrations_category-05_32c6b9bd-dbfe-411f-9d16-31f7940d13f8.png",
-            "title": "Dog Tees",
-            "link": "shopify://collections/dog-t-shirts"
+            "image": "shopify://shop_images/Website_illustrations.png",
+            "title": "Posters",
+            "link": "shopify://collections/posters"
           }
         },
         "category_hUwNAc": {
@@ -282,40 +299,47 @@
       "block_order": [
         "category_6embML",
         "category_UfwM7T",
-        "category_WeXtcH",
         "category_x4faxW",
+        "category_WeXtcH",
+        "category_KAwFdd",
         "category_hUwNAc",
         "category_ycGzK6"
       ],
       "settings": {
-        "section_title": "Shop by Category"
+        "section_title": ""
       }
     },
     "product_list_6NcLaM": {
       "type": "product-list",
       "blocks": {
-        "product_RxEJH7": {
+        "product_xVn8Mj": {
           "type": "product",
           "settings": {
-            "product": "ohana-means-family-lilo-stitch-inspired-poster-for-pet-lovers"
+            "product": "stitch-inspired-cap-for-pet-lovers"
+          }
+        },
+        "product_KHKwfK": {
+          "type": "product",
+          "settings": {
+            "product": "never-give-in-lovedale-alumni-golf-polo"
+          }
+        },
+        "product_MgX8pX": {
+          "type": "product",
+          "settings": {
+            "product": "నా-ఇష్టం-నాదిలే-crop-top"
           }
         },
         "product_afFLRC": {
           "type": "product",
           "settings": {
-            "product": "just-beat-it-iconic-music-anthem-dog-t-shirt"
-          }
-        },
-        "product_GTHNwT": {
-          "type": "product",
-          "settings": {
-            "product": "birdies-on-tap-t-shirt"
+            "product": "beatles-lyric-inspired-dog-t-shirts"
           }
         },
         "product_gM9Nfk": {
           "type": "product",
           "settings": {
-            "product": "golphin-baseball-cap"
+            "product": "it-s-a-dolphin-playing-golf-it-s-a-golphin-mug"
           }
         },
         "product_Wxx6VX": {
@@ -324,16 +348,10 @@
             "product": "loved-by-karma-crew-t-shirt"
           }
         },
-        "product_MgX8pX": {
+        "product_RxEJH7": {
           "type": "product",
           "settings": {
-            "product": "catgpt-smarter-than-you-still-sleeps-16-hours-magic-mug"
-          }
-        },
-        "product_KHKwfK": {
-          "type": "product",
-          "settings": {
-            "product": "who-let-the-dogs-out-with-a-retro-desi-remix-oversized-t-shirt"
+            "product": "ohana-means-family-lilo-stitch-inspired-poster-for-pet-lovers"
           }
         },
         "product_DDzh64": {
@@ -344,17 +362,35 @@
         }
       },
       "block_order": [
-        "product_RxEJH7",
+        "product_xVn8Mj",
+        "product_KHKwfK",
+        "product_MgX8pX",
         "product_afFLRC",
-        "product_GTHNwT",
         "product_gM9Nfk",
         "product_Wxx6VX",
-        "product_MgX8pX",
-        "product_KHKwfK",
+        "product_RxEJH7",
         "product_DDzh64"
       ],
       "settings": {
-        "heading": "Bestsellers"
+        "heading": "Bestsellers",
+        "heading_link": "shopify://collections/all-products"
+      }
+    },
+    "17543270926b90dcc6": {
+      "type": "apps",
+      "blocks": {
+        "ga_image_gallery_photo_galler_app_embeded_WCbhL7": {
+          "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-embeded/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
+          "settings": {
+            "popup_embedded_id": "gallery-id-6187"
+          }
+        }
+      },
+      "block_order": [
+        "ga_image_gallery_photo_galler_app_embeded_WCbhL7"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "collection_list_ibwbCY": {
@@ -462,7 +498,7 @@
             "image": "shopify://shop_images/Website_illustrations-04_aa18fb28-86bc-4010-9b12-09a44746c397.png",
             "title": "Made Just for You",
             "text": "<p>Every item is crafted on demand, just for you. It’s personal, unique, and made with care. </p><p></p><p></p>",
-            "link_label": "For Bulk / Custom Orders Contact Us",
+            "link_label": "",
             "link": "shopify://pages/contact"
           }
         },
@@ -492,15 +528,31 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "Submit a custom design or idea",
-        "button_link": "shopify://pages/contact",
+        "button_link": "shopify://pages/custom",
         "columns_desktop": 4,
         "column_alignment": "left",
         "background_style": "primary",
         "color_scheme": "scheme-b930d057-28bb-472e-85fc-146e40b9da7b",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "175165880356121903": {
+      "type": "apps",
+      "blocks": {
+        "ck_google_reviews_google_reviews_XUqhTw": {
+          "type": "shopify://apps/ck-google-reviews/blocks/google_reviews/65a77010-5e58-49de-928f-6b86aa6ecffe",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ck_google_reviews_google_reviews_XUqhTw"
+      ],
+      "name": "Google Reviews",
+      "settings": {
+        "include_margins": true
       }
     }
   },
@@ -508,7 +560,9 @@
     "slideshow_QariNY",
     "category_circles_kRAtgR",
     "product_list_6NcLaM",
+    "17543270926b90dcc6",
     "collection_list_ibwbCY",
-    "multicolumn_ywMxgY"
+    "multicolumn_ywMxgY",
+    "175165880356121903"
   ]
 }

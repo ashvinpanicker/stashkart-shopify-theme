@@ -9,53 +9,67 @@
   width: 100%;
 }
 
+.blog-articles .card-wrapper {
+  width: 100%;
+}
+
 @media screen and (min-width: 750px) {
   .blog-articles {
-    grid-template-columns: 1fr 1fr;
-    column-gap: var(--grid-desktop-horizontal-spacing);
-    row-gap: var(--grid-desktop-vertical-spacing);
+    column-gap: 2.5rem;
+    row-gap: 2.5rem;
   }
+
 
   .blog-articles--collage > *:nth-child(3n + 1),
   .blog-articles--collage > *:nth-child(3n + 2):last-child {
-    grid-column: span 2;
-    text-align: center;
-  }
-
-  .blog-articles--collage > *:nth-child(3n + 1) .card,
-  .blog-articles--collage > *:nth-child(3n + 2):last-child .card {
-    text-align: center;
   }
 
   .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--small .ratio::before,
   .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--small .ratio::before {
-    padding-bottom: 22rem;
+    padding-bottom: 12rem;
   }
 
   .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--medium .ratio::before,
   .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--medium .ratio::before {
-    padding-bottom: 44rem;
+    padding-bottom: 24rem;
   }
 
   .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--large .ratio::before,
   .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--large .ratio::before {
-    padding-bottom: 66rem;
+    padding-bottom: 36rem;
   }
 }
 
 @media screen and (min-width: 990px) {
   .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--small .ratio .ratio::before,
   .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--small .ratio .ratio::before {
-    padding-bottom: 27.5rem;
+    padding-bottom: 20rem;
   }
-
+ 
   .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--medium .ratio::before,
   .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--medium .ratio::before {
-    padding-bottom: 55rem;
+    padding-bottom: 40rem;
   }
-
+ 
   .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--large .ratio::before,
   .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--large .ratio::before {
-    padding-bottom: 82.5rem;
+    padding-bottom: 60rem;
   }
+}
+
+.article-card .card__content {
+  padding: 1.5rem;
+}
+
+.article-card .card__heading {
+  margin-bottom: 0.5rem;
+}
+
+.article-card .article-card__info {
+  margin-bottom: 1rem;
+}
+
+.article-card .article-card__excerpt {
+  margin-bottom: 1.5rem;
+  text-align: justify;
 }

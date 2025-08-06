@@ -17,16 +17,34 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "New here? Use code MYSTASH10 for 10 % off your first order 🎁",
-            "link": "shopify://collections/all"
+            "text": "Free shipping on all orders!",
+            "link": ""
+          }
+        },
+        "announcement_enaDVi": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Get started with your design",
+            "link": ""
+          }
+        },
+        "announcement_4hpNn3": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_enaDVi",
+        "announcement_4hpNn3"
       ],
       "settings": {
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "color_scheme": "scheme-4",
         "show_line_separator": true,
