@@ -1,0 +1,104 @@
+<div class="how-it-works-section">
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="steps-container">
+    {% for block in section.blocks %}
+      <div class="step">
+        {% if block.settings.image != blank %}
+          <img src="{{ block.settings.image | img_url: '80x80' }}" alt="{{ block.settings.image.alt }}" width="80" height="80">
+        {% else %}
+          <img src="https://dummyimage.com/80x80/000/fff&text=Step{{ forloop.index }}" alt="Step {{ forloop.index }}" width="80" height="80">
+        {% endif %}
+        <h3>{{ block.settings.step_heading }}</h3>
+        <p>{{ block.settings.step_description }}</p>
+      </div>
+      {% unless forloop.last %}
+        <div class="arrow">→</div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+  {% if section.settings.button_text != blank %}
+    <button class="product-catalogue-button">{{ section.settings.button_text }}</button>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "How It Works ?"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "PRODUCT CATALOGUE"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Step Image"
+        },
+        {
+          "type": "text",
+          "id": "step_heading",
+          "label": "Step Heading",
+          "default": "Fill the Form"
+        },
+        {
+          "type": "textarea",
+          "id": "step_description",
+          "label": "Step Description",
+          "default": "Tell us your idea and what product you want:"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Design How It Works",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "step_heading": "Fill the Form",
+            "step_description": "Tell us your idea and what product you want:"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_heading": "Review. Design. Quote.",
+            "step_description": "You get a price, timeline, and optional mock-up."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_heading": "Approve & Pay",
+            "step_description": "Make payment, and we get started."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_heading": "Print & Deliver",
+            "step_description": "Your custom order is made with love and delivered to your door."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

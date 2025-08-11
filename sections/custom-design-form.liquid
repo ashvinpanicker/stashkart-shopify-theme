@@ -1,0 +1,239 @@
+<div class="form-section">
+  <h2>{{ section.settings.form_heading }}</h2>
+  <form method="POST" action="{{ section.settings.form_action_url }}">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">{{ section.settings.name_label }} *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">{{ section.settings.phone_label }}</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="email">{{ section.settings.email_label }} *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>{{ section.settings.product_label }} *</label>
+      <div class="checkbox-group">
+        {% for product_option in section.settings.product_options %}
+          <label><input type="radio" name="product" value="{{ product_option.value }}" {% if product_option.required %}required{% endif %}> {{ product_option.label }}</label>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="quantity">{{ section.settings.quantity_label }}*</label>
+        <input type="number" id="quantity" name="quantity" required>
+      </div>
+      <div class="form-group">
+        <label for="deadline">{{ section.settings.deadline_label }}</label>
+        <input type="date" id="deadline" name="deadline">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>{{ section.settings.design_option_label }} *</label>
+      <div class="radio-group">
+        {% for design_option in section.settings.design_options %}
+          <label><input type="radio" name="design_option" value="{{ design_option.value }}" {% if design_option.required %}required{% endif %}> {{ design_option.label }}</label>
+          {% if design_option.sub_text != blank %}
+            <p class="sub-text">{{ design_option.sub_text }}</p>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="idea">{{ section.settings.idea_label }}*</label>
+      <textarea id="idea" name="idea" rows="5" placeholder="{{ section.settings.idea_placeholder }}" required></textarea>
+    </div>
+
+    <div class="form-group file-upload">
+      <label for="inspiration">{{ section.settings.inspiration_label }} *</label>
+      <input type="text" id="inspiration" name="inspiration" placeholder="{{ section.settings.inspiration_placeholder }}" required>
+      <button type="button" class="upload-button">
+        {% if section.settings.upload_icon != blank %}
+          <img src="{{ section.settings.upload_icon | img_url: '20x20' }}" alt="Upload" width="20" height="20">
+        {% else %}
+          <img src="https://dummyimage.com/20x20/000/fff&text=Clip" alt="Upload" width="20" height="20">
+        {% endif %}
+      </button>
+    </div>
+
+    <div class="form-group checkbox-agree">
+      <label><input type="checkbox" name="agree" required> {{ section.settings.agree_label }}</label>
+    </div>
+
+    <button type="submit" class="submit-button">{{ section.settings.submit_button_text }}</button>
+  </form>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Design Form",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Form Heading",
+      "default": "Submit Your Customization Request"
+    },
+    {
+      "type": "text",
+      "id": "form_action_url",
+      "label": "Form Action URL",
+      "default": "https://formspree.io/f/mldnwwzr"
+    },
+    {
+      "type": "text",
+      "id": "name_label",
+      "label": "Name Label",
+      "default": "Your Name"
+    },
+    {
+      "type": "text",
+      "id": "phone_label",
+      "label": "Phone Label",
+      "default": "Phone Number"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email Label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "product_label",
+      "label": "Product Label",
+      "default": "What product do you want?"
+    },
+    {
+      "type": "text",
+      "id": "quantity_label",
+      "label": "Quantity Label",
+      "default": "Quantity"
+    },
+    {
+      "type": "text",
+      "id": "deadline_label",
+      "label": "Deadline Label",
+      "default": "When do you need it by?"
+    },
+    {
+      "type": "text",
+      "id": "design_option_label",
+      "label": "Design Option Label",
+      "default": "Do you have a design?"
+    },
+    {
+      "type": "text",
+      "id": "idea_label",
+      "label": "Idea Label",
+      "default": "Describe your idea"
+    },
+    {
+      "type": "text",
+      "id": "idea_placeholder",
+      "label": "Idea Placeholder",
+      "default": "Tell us about your design, colors, text, vibe, etc."
+    },
+    {
+      "type": "text",
+      "id": "inspiration_label",
+      "label": "Inspiration Label",
+      "default": "Upload or Paste a reference or design link"
+    },
+    {
+      "type": "text",
+      "id": "inspiration_placeholder",
+      "label": "Inspiration Placeholder",
+      "default": "https://..."
+    },
+    {
+      "type": "image_picker",
+      "id": "upload_icon",
+      "label": "Upload Icon"
+    },
+    {
+      "type": "text",
+      "id": "agree_label",
+      "label": "Agreement Label",
+      "default": "I understand this is a design + print service"
+    },
+    {
+      "type": "text",
+      "id": "submit_button_text",
+      "label": "Submit Button Text",
+      "default": "SEND ENQUIRY"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_option",
+      "name": "Product Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Custom T-Shirt"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "Custom T-Shirt"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "design_option",
+      "name": "Design Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Just an idea - I need you to design it (₹499)"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "Just an idea - I need you to design it (₹499)"
+        },
+        {
+          "type": "textarea",
+          "id": "sub_text",
+          "label": "Sub Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Design Form"
+    }
+  ]
+}
+{% endschema %}

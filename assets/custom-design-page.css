@@ -1,10 +1,3 @@
-.custom-design-page {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  font-family: sans-serif;
-  color: #1c2f32;
-}
 
 /* Hero Section */
 .hero-section {
@@ -371,53 +364,17 @@
 
 /* Call to Action Section */
 .cta-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #007a8c;
-  padding: 50px;
-  border-radius: 10px;
-  color: white;
   text-align: center;
+  background-color: #007a8c; /* This will be covered by the image, but good to have a fallback */
+  padding: 0; /* No padding needed if image covers */
+  border-radius: 10px;
+  overflow: hidden; /* Ensures image respects border-radius */
 }
 
-.cta-content {
-  flex: 2;
-  padding-right: 30px;
-}
-
-.cta-content h2 {
-  font-size: 2.8em;
-  margin-bottom: 15px;
-  line-height: 1.2;
-}
-
-.cta-content p {
-  font-size: 1.2em;
-  margin-bottom: 25px;
-}
-
-.start-now-button {
-  padding: 15px 40px;
-  background-color: #ef3f23;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1.3em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.cta-image {
-  flex: 1;
-  text-align: right;
-}
-
-.cta-image img {
-  max-width: 100%;
+.cta-section img {
+  width: 100%;
   height: auto;
-  border-radius: 5px;
+  display: block;
 }
 
 /* Responsive adjustments */

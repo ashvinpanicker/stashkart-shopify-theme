@@ -1,0 +1,38 @@
+<div class="cta-section">
+  {% if section.settings.image_link != blank %}
+    <a href="{{ section.settings.image_link }}">
+  {% endif %}
+  {% if section.settings.image != blank %}
+    <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}">
+  {% else %}
+    <img src="https://dummyimage.com/900x300/000/fff&text=CTA+Image" alt="Call to Action" width="900" height="300">
+  {% endif %}
+  {% if section.settings.image_link != blank %}
+    </a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Custom Design CTA",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "Image Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Design CTA"
+    }
+  ]
+}
+{% endschema %}

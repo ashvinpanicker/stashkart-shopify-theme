@@ -1,0 +1,92 @@
+<div class="why-custom-section">
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="reasons-container">
+    {% for block in section.blocks %}
+      <div class="reason-card">
+        {% if block.settings.image != blank %}
+          <img src="{{ block.settings.image | img_url: '80x80' }}" alt="{{ block.settings.image.alt }}" width="80" height="80">
+        {% else %}
+          <img src="https://dummyimage.com/80x80/000/fff&text=Reason{{ forloop.index }}" alt="Reason {{ forloop.index }}" width="80" height="80">
+        {% endif %}
+        <h3>{{ block.settings.reason_heading }}</h3>
+        <p>{{ block.settings.reason_description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Why Go Custom",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Go Custom?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reason",
+      "name": "Reason",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Reason Image"
+        },
+        {
+          "type": "text",
+          "id": "reason_heading",
+          "label": "Reason Heading",
+          "default": "You want to wear your idea."
+        },
+        {
+          "type": "textarea",
+          "id": "reason_description",
+          "label": "Reason Description",
+          "default": "Whether it's a catchphrase, artwork, or a doodle, we'll bring it to life."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Go Custom",
+      "blocks": [
+        {
+          "type": "reason",
+          "settings": {
+            "reason_heading": "You want to wear your idea.",
+            "reason_description": "Whether it's a catchphrase, artwork, or a doodle, we'll bring it to life."
+          }
+        },
+        {
+          "type": "reason",
+          "settings": {
+            "reason_heading": "You're planning a moment.",
+            "reason_description": "Reunions, birthdays, launch events, parties, weddings - custom merch adds personality."
+          }
+        },
+        {
+          "type": "reason",
+          "settings": {
+            "reason_heading": "You just need one. Or many.",
+            "reason_description": "No pressure on quantity, we work with individuals and groups."
+          }
+        },
+        {
+          "type": "reason",
+          "settings": {
+            "reason_heading": "You don't need to be a designer.",
+            "reason_description": "Just share the idea. That's enough. We'll take care of the rest."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
