@@ -773,6 +773,124 @@
   </div>
 </product-info>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const designCheckbox = document.getElementById('enable_design_service');
+  if (!designCheckbox) return;
+
+  const designTextWrapper = document.getElementById('design_text_wrapper');
+  const designTextInput = document.getElementById('design_text');
+  const mainProductTitle = {{ product.title | json }};
+  const designServiceVariantId = 9109410054367;
+  let designServiceItemKey = null; // To store the key of the added item
+
+  // Function to refresh cart UI by dispatching a cart:updated event
+  function refreshCart() {
+    fetch('/cart.js')
+      .then(res => res.json())
+      .then(cart => {
+        document.dispatchEvent(new CustomEvent('cart:updated', { bubbles: true, detail: { cart } }));
+      });
+  }
+
+  // On page load, check if the item is already in the cart for this specific product
+  function initializeState() {
+    fetch('/cart.js')
+      .then(res => res.json())
+      .then(cart => {
+        const existingItem = cart.items.find(item => 
+          item.variant_id === designServiceVariantId && 
+          item.properties['For Product'] === mainProductTitle
+        );
+        if (existingItem) {
+          designCheckbox.checked = true;
+          designServiceItemKey = existingItem.key;
+          if (designTextWrapper) designTextWrapper.style.display = 'block';
+          if (designTextInput) designTextInput.value = existingItem.properties['Text to print'] || '';
+        }
+      });
+  }
+
+  designCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+      if (designTextWrapper) designTextWrapper.style.display = 'block';
+      
+      const formData = {
+        'items': [{
+          'id': designServiceVariantId,
+          'quantity': 1,
+          'properties': {
+            'For Product': mainProductTitle,
+            'Text to print': designTextInput ? designTextInput.value : ''
+          }
+        }]
+      };
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      .then(res => res.json())
+      .then(cart => {
+        const newItem = cart.items.find(item => item.variant_id === designServiceVariantId && item.properties['For Product'] === mainProductTitle);
+        if (newItem) {
+          designServiceItemKey = newItem.key;
+        }
+        refreshCart();
+      })
+      .catch(error => {
+        console.error('Error adding design service:', error);
+        this.checked = false;
+      });
+
+    } else {
+      if (designTextWrapper) designTextWrapper.style.display = 'none';
+      if (!designServiceItemKey) return; // Nothing to remove
+
+      const updates = { [designServiceItemKey]: 0 };
+
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ updates })
+      })
+      .then(res => res.json())
+      .then(cart => {
+        designServiceItemKey = null;
+        refreshCart();
+      })
+      .catch(error => console.error('Error removing design service:', error));
+    }
+  });
+
+  if (designTextInput) {
+    designTextInput.addEventListener('change', function() {
+      if (!designCheckbox.checked || !designServiceItemKey) return;
+
+      const properties = {
+          'For Product': mainProductTitle,
+          'Text to print': this.value
+      };
+
+      fetch('/cart/change.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ line: designServiceItemKey, properties: properties })
+      })
+      .then(res => res.json())
+      .then(cart => {
+        refreshCart();
+      })
+      .catch(error => console.error('Error updating note:', error));
+    });
+  }
+
+  // Initialize the state on page load
+  initializeState();
+});
+</script>
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
