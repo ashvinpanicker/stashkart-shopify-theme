@@ -1,0 +1,237 @@
+{{ 'custom-design-page.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-design-page">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Your idea on a custom mug</h1>
+      <p>Whether you're creating personalized gifts or just want something uniquely <em>you</em>, we’re here to bring your vision to life.</p>
+      <p>Express your creativity, surprise a friend, or build a community with custom apparel and accessories. <strong>No idea is too wild — if you can dream it, we can print it.</strong></p>
+    </div>
+    <div class="hero-image">
+      <img src="https://dummyimage.com/400x300/000/fff&text=Hero+Image" alt="Custom Merch" width="400" height="300">
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <h2>Submit Your Customization Request</h2>
+    <form method="POST" action="https://formspree.io/f/mldnwwzr">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>What product do you want? *</label>
+        <div class="checkbox-group">
+          <label><input type="radio" name="product" value="Oversized T-shirt" required> Oversized T-shirt</label>
+          <label><input type="radio" name="product" value="Sweatshirt"> Sweatshirt</label>
+          <label><input type="radio" name="product" value="Dog T-shirt"> Dog T-shirt</label>
+          <label><input type="radio" name="product" value="T-Shirt"> T-Shirt</label>
+          <label><input type="radio" name="product" value="Poster"> Poster</label>
+          <label><input type="radio" name="product" value="Tote Bag"> Tote Bag</label>
+          <label><input type="radio" name="product" value="Mug"> Mug</label>
+          <label><input type="radio" name="product" value="Cap"> Cap</label>
+          <label><input type="radio" name="product" value="Others"> Others</label>
+          <label><input type="radio" name="product" value="Hoodie"> Hoodie</label>
+          <label><input type="radio" name="product" value="Sleeveless Tee"> Sleeveless Tee</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="quantity">Quantity*</label>
+          <input type="number" id="quantity" name="quantity" required>
+        </div>
+        <div class="form-group">
+          <label for="deadline">When do you need it by?</label>
+          <input type="date" id="deadline" name="deadline">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Do you have a design? *</label>
+        <div class="radio-group">
+          <label><input type="radio" name="design_option" value="Just an idea - I need you to design it (₹499)" required> Just an idea – I need you to design it (₹499)</label>
+          <p class="sub-text">You tell us the concept, we do everything: artwork, layout, and print prep.</p>
+          <label><input type="radio" name="design_option" value="Yes, I have artwork (₹249)"> Yes, I have artwork (₹249)</label>
+          <p class="sub-text">Artwork must be print-ready (PNG, PDF, etc). If we need to remove background, resize, rasterize, it may cost ₹499</p>
+          <label><input type="radio" name="design_option" value="I just want to add text to a Stashkart design (₹99)"> I just want to add text to a Stashkart design (₹99)</label>
+          <p class="sub-text">Add names, quotes, dates, team names to existing designs.</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="idea">Describe your idea*</label>
+        <textarea id="idea" name="idea" rows="5" placeholder="Tell us about your design, colors, text, vibe, etc." required></textarea>
+      </div>
+
+      <div class="form-group file-upload">
+        <label for="inspiration">Upload or Paste a reference or design link *</label>
+        <input type="text" id="inspiration" name="inspiration" placeholder="https://..." required>
+        <button type="button" class="upload-button">
+          <img src="https://dummyimage.com/20x20/000/fff&text=Clip" alt="Upload" width="20" height="20">
+        </button>
+      </div>
+
+      <div class="form-group checkbox-agree">
+        <label><input type="checkbox" name="agree" required> I understand this is a design + print service</label>
+      </div>
+
+      <button type="submit" class="submit-button">SEND ENQUIRY</button>
+    </form>
+  </div>
+
+  <!-- How It Works Section -->
+  <div class="how-it-works-section">
+    <h2>How It Works ?</h2>
+    <div class="steps-container">
+      <div class="step">
+        <img src="https://dummyimage.com/80x80/000/fff&text=Step1" alt="Fill the Form" width="80" height="80">
+        <h3>Fill the Form</h3>
+        <p>Tell us your idea and what product you want:</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <img src="https://dummyimage.com/80x80/000/fff&text=Step2" alt="Review. Design. Quote." width="80" height="80">
+        <h3>Review. Design. Quote.</h3>
+        <p>You get a price, timeline, and optional mock-up.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <img src="https://dummyimage.com/80x80/000/fff&text=Step3" alt="Approve & Pay" width="80" height="80">
+        <h3>Approve & Pay</h3>
+        <p>Make payment, and we get started.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <img src="https://dummyimage.com/80x80/000/fff&text=Step4" alt="Print & Deliver" width="80" height="80">
+        <h3>Print & Deliver</h3>
+        <p>Your custom order is made with love and delivered to your door.</p>
+      </div>
+    </div>
+    <button class="product-catalogue-button">PRODUCT CATALOGUE</button>
+  </div>
+
+  <!-- Ideas Turned Into Merch Section -->
+  <div class="ideas-merch-section">
+    <h2>Ideas Turned Into Merch</h2>
+    <div class="gallery">
+      <img src="https://dummyimage.com/200x150/000/fff&text=Merch1" alt="Merch 1" width="200" height="150">
+      <img src="https://dummyimage.com/200x150/000/fff&text=Merch2" alt="Merch 2" width="200" height="150">
+      <img src="https://dummyimage.com/200x150/000/fff&text=Merch3" alt="Merch 3" width="200" height="150">
+      <img src="https://dummyimage.com/200x150/000/fff&text=Merch4" alt="Merch 4" width="200" height="150">
+      <img src="https://dummyimage.com/200x150/000/fff&text=Merch5" alt="Merch 5" width="200" height="150">
+      <img src="https://dummyimage.com/200x150/000/fff&text=Merch6" alt="Merch 6" width="200" height="150">
+      <img src="https://dummyimage.com/200x150/000/fff&text=Merch7" alt="Merch 7" width="200" height="150">
+      <img src="https://dummyimage.com/200x150/000/fff&text=Merch8" alt="Merch 8" width="200" height="150">
+    </div>
+  </div>
+
+  <!-- Why Go Custom Section -->
+  <div class="why-custom-section">
+    <h2>Why Go Custom?</h2>
+    <div class="reasons-container">
+      <div class="reason-card">
+        <img src="https://dummyimage.com/80x80/000/fff&text=Reason1" alt="Your idea" width="80" height="80">
+        <h3>You want to wear your idea.</h3>
+        <p>Whether it's a catchphrase, artwork, or a doodle, we'll bring it to life.</p>
+      </div>
+      <div class="reason-card">
+        <img src="https://dummyimage.com/80x80/000/fff&text=Reason2" alt="Planning a moment" width="80" height="80">
+        <h3>You're planning a moment.</h3>
+        <p>Reunions, birthdays, launch events, parties, weddings - custom merch adds personality.</p>
+      </div>
+      <div class="reason-card">
+        <img src="https://dummyimage.com/80x80/000/fff&text=Reason3" alt="Just need one" width="80" height="80">
+        <h3>You just need one. Or many.</h3>
+        <p>No pressure on quantity, we work with individuals and groups.</p>
+      </div>
+      <div class="reason-card">
+        <img src="https://dummyimage.com/80x80/000/fff&text=Reason4" alt="Don't need a designer" width="80" height="80">
+        <h3>You don't need to be a designer.</h3>
+        <p>Just share the idea. That's enough. We'll take care of the rest.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What People Are Saying Section -->
+  <div class="testimonials-section">
+    <h2>What People Are Saying</h2>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <img src="https://dummyimage.com/60x60/000/fff&text=Avatar1" alt="Dean D." width="60" height="60">
+        <h4>Dean D. <span class="role">Director</span></h4>
+        <p>"Great quality products - Flags, programs for exceptional capacities, birthday, and occasion welcome are largely still mainstream on paper."</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://dummyimage.com/60x60/000/fff&text=Avatar2" alt="Cristian L." width="60" height="60">
+        <h4>Cristian L. <span class="role">Manager</span></h4>
+        <p>"Best services ever - Flags, programs for exceptional capacities, birthday, and occasion welcome are largely still mainstream on paper exceptional capacities."</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://dummyimage.com/60x60/000/fff&text=Avatar3" alt="Leonel R." width="60" height="60">
+        <h4>Leonel R. <span class="role">Designer</span></h4>
+        <p>"Top noth support - Flags, programs for, birthday, and occasion welcome are largely still mainstream on paper exceptional capacities."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action Section -->
+  <div class="cta-section">
+    <div class="cta-content">
+      <h2>CUSTOM TEES. ZERO EFFORT. FULL YOU.</h2>
+      <p>Just drop your idea, & we'll design it, print it, and ship it.</p>
+      <button class="start-now-button">START NOW</button>
+    </div>
+    <div class="cta-image">
+      <img src="https://dummyimage.com/300x200/000/fff&text=CTA+Image" alt="Custom Tees" width="300" height="200">
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Custom Design Page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
