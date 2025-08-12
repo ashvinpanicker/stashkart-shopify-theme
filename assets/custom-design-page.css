@@ -224,26 +224,32 @@
 }
 
 .step {
-  flex: 1;
-  min-width: 150px;
-  max-width: 200px;
+  flex: 0 0 22%; /* Adjust flex-basis to allow more space for images and text */
+  min-width: 180px; /* Increase min-width for larger images */
+  max-width: 250px; /* Increase max-width */
   text-align: center;
   padding: 15px;
+  display: flex; /* Use flexbox for internal alignment */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
 }
 
 .step img {
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Increase margin for better spacing */
+  display: block; /* Ensure image is a block element for centering */
 }
 
 .step h3 {
   color: #1c2f32;
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  font-size: 1.3em; /* Slightly larger heading */
+  margin-bottom: 8px; /* Adjust margin */
 }
 
 .step p {
-  font-size: 0.9em;
+  font-size: 1em; /* Slightly larger paragraph text */
   color: #555;
+  line-height: 1.4; /* Improve readability */
+  text-align: center; /* Ensure text is centered */
 }
 
 .arrow {

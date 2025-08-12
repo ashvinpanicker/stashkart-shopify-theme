@@ -4,9 +4,9 @@
     {% for block in section.blocks %}
       <div class="step">
         {% if block.settings.image != blank %}
-          <img src="{{ block.settings.image | img_url: '80x80' }}" alt="{{ block.settings.image.alt }}" width="80" height="80">
+          <img src="{{ block.settings.image | img_url: '120x120' }}" alt="{{ block.settings.image.alt }}" width="120" height="120">
         {% else %}
-          <img src="https://dummyimage.com/80x80/000/fff&text=Step{{ forloop.index }}" alt="Step {{ forloop.index }}" width="80" height="80">
+          <img src="https://dummyimage.com/120x120/000/fff&text=Step{{ forloop.index }}" alt="Step {{ forloop.index }}" width="120" height="120">
         {% endif %}
         <h3>{{ block.settings.step_heading }}</h3>
         <p>{{ block.settings.step_description }}</p>
