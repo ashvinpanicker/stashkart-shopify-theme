@@ -2137,7 +2137,10 @@ input[type='checkbox'] {
 
 /* utility-bar */
 .utility-bar {
-  height: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .utility-bar--bottom-border {
