@@ -223,12 +223,15 @@
         "ga_image_gallery_photo_galler_app_embeded_PrWi9a": {
           "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-embeded/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
           "settings": {
-            "popup_embedded_id": "gallery-id-6187"
+            "popup_embedded_id": "gallery-id-6386"
           }
         }
       },
       "block_order": [
         "ga_image_gallery_photo_galler_app_embeded_PrWi9a"
+      ],
+      "custom_css": [
+        "div {background-color: #EDA22D;}"
       ],
       "settings": {
         "include_margins": true
