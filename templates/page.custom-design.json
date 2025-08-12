@@ -234,7 +234,7 @@
         "div {background-color: #eda22d;}"
       ],
       "settings": {
-        "include_margins": true
+        "include_margins": false
       }
     },
     "multicolumn_pBTapz": {
