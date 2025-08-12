@@ -2,7 +2,7 @@
 
 <div class="hero-section" {% if section.settings.background_image != blank %}style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');"{% endif %}>
   <div class="form-section-overlay">
-    <h2>{{ section.settings.form_heading }}</h2>
+    <h2>Your idea on a custom <span id="typewriter-text"></span></h2>
     <form method="POST" action="{{ section.settings.form_action_url }}">
       <div class="form-row">
         <div class="form-group">
@@ -86,6 +86,39 @@
   </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const textElement = document.getElementById('typewriter-text');
+    const words = ["t-shirt", "hoodie", "mug", "tote", "cap", "poster"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeWriter() {
+      const currentWord = words[wordIndex];
+      if (isDeleting) {
+        textElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        textElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        setTimeout(() => isDeleting = true, 1000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+
+      const typingSpeed = isDeleting ? 50 : 150;
+      setTimeout(typeWriter, typingSpeed);
+    }
+
+    typeWriter();
+  });
+</script>
+
 {% schema %}
 {
   "name": "Custom Design Hero",
@@ -101,12 +134,6 @@
     {
       "type": "header",
       "content": "Form Settings"
-    },
-    {
-      "type": "text",
-      "id": "form_heading",
-      "label": "Form Heading",
-      "default": "Your idea on a custom mug"
     },
     {
       "type": "text",
