@@ -223,6 +223,29 @@
   flex-wrap: wrap;
 }
 
+@media (min-width: 1279px) { /* Apply desktop styles for screens wider than 1278px */
+  .steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .step {
+    flex: 0 0 22%;
+    min-width: 180px;
+    max-width: 250px;
+  }
+
+  .arrow {
+    display: block; /* Ensure arrows are visible on desktop */
+    margin: 0 10px; /* Adjust margin for horizontal centering */
+    position: relative;
+    top: -80px; /* Move arrows slightly higher */
+  }
+}
+
+
 .step {
   flex: 0 0 22%; /* Adjust flex-basis to allow more space for images and text */
   min-width: 180px; /* Increase min-width for larger images */
@@ -250,11 +273,22 @@
   color: #555;
   line-height: 1.4; /* Improve readability */
   text-align: center; /* Ensure text is centered */
+  min-height: 4.2em; /* Ensure enough space for 3 lines of text (3 * 1.4em line-height) */
+  display: flex;
+  align-items: flex-start; /* Align text to the top */
+  justify-content: center;
 }
 
 .arrow {
   font-size: 2em;
   color: #007a8c;
+  position: relative; /* Allow positioning */
+  top: -80px; /* Move arrows slightly higher */
+}
+
+/* Typewriter text in bold font weight */
+#typewriter-text {
+  font-weight: bold;
 }
 
 .product-catalogue-button {
@@ -348,6 +382,26 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1278px) {
+  .steps-container {
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
+    gap: 20px; /* Adjust gap as needed */
+    align-items: stretch; /* Ensure grid items stretch to fill available height */
+  }
+
+  .step {
+    flex: unset; /* Remove flex-basis for grid */
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .arrow {
+    display: none; /* Hide arrows on mobile */
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
@@ -407,14 +461,6 @@
     display: block;
   }
 
-  .steps-container {
-    flex-direction: column;
-  }
-
-  .arrow {
-    transform: rotate(90deg);
-    margin: 10px 0;
-  }
 
   .reasons-container {
     flex-direction: column;
