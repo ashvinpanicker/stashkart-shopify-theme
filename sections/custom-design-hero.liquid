@@ -10,12 +10,12 @@
           <input type="text" id="name" name="name" required>
         </div>
         <div class="form-group">
-          <label for="phone">{{ section.settings.phone_label }}</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-        <div class="form-group">
           <label for="email">{{ section.settings.email_label }} *</label>
           <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">{{ section.settings.phone_label }}</label>
+          <input type="tel" id="phone" name="phone">
         </div>
       </div>
 
@@ -66,7 +66,7 @@
 
       <div class="form-group">
         <label for="idea">{{ section.settings.idea_label }}*</label>
-        <textarea id="idea" name="idea" rows="5" placeholder="{{ section.settings.idea_placeholder }}" required></textarea>
+        <textarea id="idea" name="idea" rows="2" placeholder="{{ section.settings.idea_placeholder }}" required></textarea>
       </div>
 
       <div class="form-group">
@@ -74,10 +74,12 @@
         <input type="text" id="inspiration" name="inspiration" placeholder="{{ section.settings.inspiration_placeholder }}">
         <p class="sub-text">{{ section.settings.inspiration_sub_text }}</p>
       </div>
-
+      
+      {% comment %} 
       <div class="form-group checkbox-agree">
         <label><input type="checkbox" name="agree" required> {{ section.settings.agree_label }}</label>
-      </div>
+      </div> 
+      {% endcomment %}
 
       <button type="submit" class="submit-button">{{ section.settings.submit_button_text }}</button>
     </form>
