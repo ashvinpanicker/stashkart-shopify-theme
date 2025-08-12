@@ -9,7 +9,8 @@
   padding: 40px;
   border-radius: 0; /* Remove rounded corners */
   margin-bottom: 40px;
-  min-height: 500px; /* Ensure enough space for the form */
+  min-height: 600px; /* Increased height to fit form */
+  height: 88vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,8 +51,8 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   width: 400px; /* Adjust width as needed */
   z-index: 2; /* Ensure form is above hero content and image */
-  max-height: calc(100% - 40px); /* Ensure form fits within banner height with padding */
-  overflow-y: auto; /* Add scroll if content overflows */
+  max-height: 100%; /* Ensure form fits within banner height */
+  overflow-y: hidden; /* Prevent scrolling */
 }
 
 .form-section-overlay h2 {
@@ -114,6 +115,29 @@
   color: #1c2f32;
 }
 
+.form-section-overlay .product-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 10px; /* Gap between items */
+}
+
+.form-section-overlay .product-options-grid .checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0; /* Remove default margin */
+}
+
+.form-section-overlay .radio-group .radio-label {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0;
+}
+
+.form-section-overlay .radio-group .radio-label .price {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
 .form-section-overlay .checkbox-group input,
 .form-section-overlay .radio-group input {
   margin-right: 8px;
@@ -133,6 +157,14 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 4px;
+}
+
+.form-section-overlay .sub-text {
+  font-size: 0.85em;
+  color: #666;
+  margin-left: 22px;
+  margin-top: -3px;
+  margin-bottom: 8px;
 }
 
 .form-section-overlay .file-upload input {
@@ -321,6 +353,7 @@
     text-align: center;
     padding: 20px;
     min-height: auto;
+    height: auto;
     background-image: none !important; /* Remove desktop background image on mobile */
   }
 
@@ -343,8 +376,12 @@
     transform: translate(0, 0);
     width: 100%;
     margin-top: 20px;
-    max-height: none; /* Remove max-height for mobile */
-    overflow-y: visible; /* Remove overflow for mobile */
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .form-section-overlay .product-options-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
   }
 
   .form-section-overlay .form-row {

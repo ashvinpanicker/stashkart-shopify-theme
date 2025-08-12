@@ -21,10 +21,13 @@
 
       <div class="form-group">
         <label>{{ section.settings.product_label }} *</label>
-        <div class="checkbox-group">
+        <div class="checkbox-group product-options-grid">
           {% for product_option in section.blocks %}
             {% if product_option.type == 'product_option' %}
-              <label><input type="radio" name="product" value="{{ product_option.settings.value }}" {% if product_option.settings.required %}required{% endif %}> {{ product_option.settings.label }}</label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="product[]" value="{{ product_option.settings.value }}" {% if product_option.settings.required %}required{% endif %}>
+                {{ product_option.settings.label }}
+              </label>
             {% endif %}
           {% endfor %}
         </div>
@@ -46,7 +49,13 @@
         <div class="radio-group">
           {% for design_option in section.blocks %}
             {% if design_option.type == 'design_option' %}
-              <label><input type="radio" name="design_option" value="{{ design_option.settings.value }}" {% if design_option.settings.required %}required{% endif %}> {{ design_option.settings.label }}</label>
+              <label class="radio-label">
+                <input type="radio" name="design_option" value="{{ design_option.settings.value }}" {% if design_option.settings.required %}required{% endif %}>
+                {{ design_option.settings.label }}
+                {% if design_option.settings.price != blank %}
+                  <span class="price"> ({{ design_option.settings.price }})</span>
+                {% endif %}
+              </label>
               {% if design_option.settings.sub_text != blank %}
                 <p class="sub-text">{{ design_option.settings.sub_text }}</p>
               {% endif %}
@@ -60,16 +69,10 @@
         <textarea id="idea" name="idea" rows="5" placeholder="{{ section.settings.idea_placeholder }}" required></textarea>
       </div>
 
-      <div class="form-group file-upload">
-        <label for="inspiration">{{ section.settings.inspiration_label }} *</label>
-        <input type="text" id="inspiration" name="inspiration" placeholder="{{ section.settings.inspiration_placeholder }}" required>
-        <button type="button" class="upload-button">
-          {% if section.settings.upload_icon != blank %}
-            <img src="{{ section.settings.upload_icon | img_url: '20x20' }}" alt="Upload" width="20" height="20">
-          {% else %}
-            <img src="https://dummyimage.com/20x20/000/fff&text=Clip" alt="Upload" width="20" height="20">
-          {% endif %}
-        </button>
+      <div class="form-group">
+        <label for="inspiration">{{ section.settings.inspiration_label }}</label>
+        <input type="text" id="inspiration" name="inspiration" placeholder="{{ section.settings.inspiration_placeholder }}">
+        <p class="sub-text">{{ section.settings.inspiration_sub_text }}</p>
       </div>
 
       <div class="form-group checkbox-agree">
@@ -167,7 +170,7 @@
       "type": "text",
       "id": "inspiration_label",
       "label": "Inspiration Label",
-      "default": "Upload or Paste a reference or design link"
+      "default": "Paste a reference design links"
     },
     {
       "type": "text",
@@ -176,9 +179,10 @@
       "default": "https://..."
     },
     {
-      "type": "image_picker",
-      "id": "upload_icon",
-      "label": "Upload Icon"
+      "type": "text",
+      "id": "inspiration_sub_text",
+      "label": "Inspiration Sub Text",
+      "default": "Optional: Paste links to designs you like."
     },
     {
       "type": "text",
@@ -232,7 +236,13 @@
           "type": "text",
           "id": "value",
           "label": "Value",
-          "default": "Just an idea - I need you to design it (₹499)"
+          "default": "Just an idea - I need you to design it"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "₹499"
         },
         {
           "type": "textarea",
@@ -333,8 +343,9 @@
         {
           "type": "design_option",
           "settings": {
-            "label": "Just an idea - I need you to design it (₹499)",
-            "value": "Just an idea - I need you to design it (₹499)",
+            "label": "Just an idea - I need you to design it",
+            "value": "Just an idea - I need you to design it",
+            "price": "₹499",
             "sub_text": "You tell us the concept, we do everything: artwork, layout, and print prep.",
             "required": true
           }
@@ -342,16 +353,18 @@
         {
           "type": "design_option",
           "settings": {
-            "label": "Yes, I have artwork (₹249)",
-            "value": "Yes, I have artwork (₹249)",
+            "label": "Yes, I have artwork",
+            "value": "Yes, I have artwork",
+            "price": "₹249",
             "sub_text": "Artwork must be print-ready (PNG, PDF, etc). If we need to remove background, resize, rasterize, it may cost ₹499"
           }
         },
         {
           "type": "design_option",
           "settings": {
-            "label": "I just want to add text to a Stashkart design (₹99)",
-            "value": "I just want to add text to a Stashkart design (₹99)",
+            "label": "I just want to add text to a Stashkart design",
+            "value": "I just want to add text to a Stashkart design",
+            "price": "₹99",
             "sub_text": "Add names, quotes, dates, team names to existing designs."
           }
         }
