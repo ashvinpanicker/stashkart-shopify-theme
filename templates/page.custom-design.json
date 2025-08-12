@@ -161,7 +161,7 @@
         "idea_placeholder": "Tell us about your design, colors, text, vibe, etc.",
         "inspiration_label": "Paste a reference or design link",
         "inspiration_placeholder": "https://...",
-        "inspiration_sub_text": "Optional: Paste links to designs you like.",
+        "inspiration_sub_text": "Optional: Paste multiple links to designs you like.",
         "agree_label": "I understand this is a design + print service",
         "submit_button_text": "SEND ENQUIRY"
       }
@@ -208,9 +208,13 @@
         "step_gnrJXE",
         "step_aqnfdq"
       ],
+      "custom_css": [
+        "a {text-decoration: none;}"
+      ],
       "settings": {
         "heading": "How It Works ?",
-        "button_text": "PRODUCT CATALOGUE"
+        "button_text": "PRODUCT CATALOGUE",
+        "button_link": "https://cdn.shopify.com/s/files/1/0749/3940/0415/files/Product_Catalog.pdf?v=1754967240"
       }
     },
     "175496021521eea826": {
