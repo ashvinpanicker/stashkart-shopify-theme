@@ -24,23 +24,14 @@
         "announcement_enaDVi": {
           "type": "announcement",
           "settings": {
-            "text": "First time here? Use WELCOME10 for 10% off*",
+            "text": "First time here? Use code \"WELCOME10\" for 10% off*",
             "link": "https://stashkart.in/discount/WELCOME10?redirect=/collections/all"
-          }
-        },
-        "announcement_4hpNn3": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
           }
         }
       },
       "block_order": [
         "announcement-bar-0",
-        "announcement_enaDVi",
-        "announcement_4hpNn3"
+        "announcement_enaDVi"
       ],
       "settings": {
         "auto_rotate": true,
