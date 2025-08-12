@@ -115,8 +115,8 @@
           "settings": {
             "label": "I have artwork",
             "value": "I have artwork",
-            "price": "₹249",
-            "sub_text": "We will make the artwork print ready and send you some mockups before shipping",
+            "price": "₹199",
+            "sub_text": "We will make the artwork print ready and send you some mockups before shipping. If we need to remove background, resize, or edit the design, it may cost ₹499",
             "required": false
           }
         },
@@ -231,7 +231,7 @@
         "ga_image_gallery_photo_galler_app_embeded_PrWi9a"
       ],
       "custom_css": [
-        "div {background-color: #EDA22D;}"
+        "div {background-color: #eda22d;}"
       ],
       "settings": {
         "include_margins": true
