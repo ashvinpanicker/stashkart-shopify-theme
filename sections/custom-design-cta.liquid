@@ -1,13 +1,26 @@
 <div class="cta-section">
-  {% if section.settings.image_link != blank %}
-    <a href="{{ section.settings.image_link }}">
+  {% assign link_url = section.settings.image_link %}
+  {% if section.settings.scroll_to_top %}
+    {% assign link_url = '#top' %}
   {% endif %}
-  {% if section.settings.image != blank %}
-    <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}">
-  {% else %}
-    <img src="https://dummyimage.com/900x300/000/fff&text=CTA+Image" alt="Call to Action" width="900" height="300">
+
+  {% if link_url != blank %}
+    <a href="{{ link_url }}" {% if section.settings.scroll_to_top %}onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });"{% endif %}>
   {% endif %}
-  {% if section.settings.image_link != blank %}
+  <div class="cta-image-wrapper">
+    {% if section.settings.image != blank %}
+      <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" class="desktop-image">
+    {% else %}
+      <img src="https://dummyimage.com/900x300/000/fff&text=CTA+Image+Desktop" alt="Call to Action Desktop" width="900" height="300" class="desktop-image">
+    {% endif %}
+
+    {% if section.settings.mobile_image != blank %}
+      <img src="{{ section.settings.mobile_image | img_url: 'master' }}" alt="{{ section.settings.mobile_image.alt }}" width="{{ section.settings.mobile_image.width }}" height="{{ section.settings.mobile_image.height }}" class="mobile-image">
+    {% else %}
+      <img src="https://dummyimage.com/400x200/000/fff&text=CTA+Image+Mobile" alt="Call to Action Mobile" width="400" height="200" class="mobile-image">
+    {% endif %}
+  </div>
+  {% if link_url != blank %}
     </a>
   {% endif %}
 </div>
@@ -21,12 +34,23 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
     },
     {
       "type": "url",
       "id": "image_link",
-      "label": "Image Link"
+      "label": "Image Link (for specific section)"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll_to_top",
+      "label": "Scroll to top of page on click",
+      "default": false
     }
   ],
   "presets": [

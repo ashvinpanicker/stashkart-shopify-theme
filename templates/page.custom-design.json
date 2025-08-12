@@ -8,18 +8,8 @@
         "subheading_2": "Express your creativity, surprise a friend, or build a community with custom apparel and accessories. No idea is too wild — if you can dream it, we can print it."
       }
     },
-    "form": {
-      "type": "custom-design-form",
-      "settings": {
-      }
-    },
     "how_it_works": {
       "type": "custom-design-how-it-works",
-      "settings": {
-      }
-    },
-    "ideas_merch": {
-      "type": "custom-design-ideas-merch",
       "settings": {
       }
     },
@@ -36,9 +26,7 @@
   },
   "order": [
     "hero",
-    "form",
     "how_it_works",
-    "ideas_merch",
     "why_custom",
     "cta"
   ]
