@@ -4,10 +4,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align content to the start (left) */
   background-color: #eef3fa; /* Fallback color */
   padding: 40px;
-  border-radius: 10px;
+  border-radius: 0; /* Remove rounded corners */
   margin-bottom: 40px;
   min-height: 500px; /* Ensure enough space for the form */
   background-size: cover;
@@ -20,6 +20,7 @@
   padding-right: 20px;
   z-index: 1; /* Ensure content is above the image */
   color: #1c2f32; /* Adjust text color for readability on image */
+  margin-left: 20px; /* Add left margin for spacing */
 }
 
 .hero-content h1 {
@@ -41,14 +42,16 @@
 .form-section-overlay {
   position: absolute;
   top: 50%;
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for centering */
+  left: 20px; /* Position to the left with some margin */
+  transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   width: 400px; /* Adjust width as needed */
   z-index: 2; /* Ensure form is above hero content and image */
+  max-height: calc(100% - 40px); /* Ensure form fits within banner height with padding */
+  overflow-y: auto; /* Add scroll if content overflows */
 }
 
 .form-section-overlay h2 {
@@ -287,7 +290,7 @@
   text-align: center;
   background-color: #007a8c; /* Fallback color */
   padding: 0;
-  border-radius: 10px;
+  border-radius: 0; /* Remove rounded corners */
   overflow: hidden;
 }
 
@@ -340,6 +343,8 @@
     transform: translate(0, 0);
     width: 100%;
     margin-top: 20px;
+    max-height: none; /* Remove max-height for mobile */
+    overflow-y: visible; /* Remove overflow for mobile */
   }
 
   .form-section-overlay .form-row {
