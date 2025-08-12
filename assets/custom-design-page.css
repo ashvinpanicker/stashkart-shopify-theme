@@ -5,17 +5,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #eef3fa;
+  background-color: #eef3fa; /* Fallback color */
   padding: 40px;
   border-radius: 10px;
   margin-bottom: 40px;
   min-height: 500px; /* Ensure enough space for the form */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
   flex: 1;
   padding-right: 20px;
   z-index: 1; /* Ensure content is above the image */
+  color: #1c2f32; /* Adjust text color for readability on image */
 }
 
 .hero-content h1 {
@@ -31,27 +35,14 @@
 }
 
 .hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
+  display: none; /* Hide the separate image div as background will be used */
 }
 
 .form-section-overlay {
   position: absolute;
   top: 50%;
-  right: 20px; /* Adjust as needed */
-  transform: translateY(-50%);
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for centering */
   background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
   padding: 30px;
   border-radius: 10px;
@@ -294,16 +285,30 @@
 /* Call to Action Section */
 .cta-section {
   text-align: center;
-  background-color: #007a8c; /* This will be covered by the image, but good to have a fallback */
-  padding: 0; /* No padding needed if image covers */
+  background-color: #007a8c; /* Fallback color */
+  padding: 0;
   border-radius: 10px;
-  overflow: hidden; /* Ensures image respects border-radius */
+  overflow: hidden;
 }
 
-.cta-section img {
+.cta-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.cta-image-wrapper img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.cta-image-wrapper .desktop-image {
+  display: block;
+}
+
+.cta-image-wrapper .mobile-image {
+  display: none;
 }
 
 /* Responsive adjustments */
@@ -313,6 +318,7 @@
     text-align: center;
     padding: 20px;
     min-height: auto;
+    background-image: none !important; /* Remove desktop background image on mobile */
   }
 
   .hero-content {
@@ -321,6 +327,7 @@
   }
 
   .hero-image {
+    display: block; /* Show the image div on mobile if needed, though background is preferred */
     position: relative;
     width: 100%;
     height: 200px; /* Adjust as needed for mobile hero image height */
@@ -329,8 +336,8 @@
   .form-section-overlay {
     position: relative;
     top: auto;
-    right: auto;
-    transform: translateY(0);
+    left: auto;
+    transform: translate(0, 0);
     width: 100%;
     margin-top: 20px;
   }

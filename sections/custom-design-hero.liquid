@@ -1,20 +1,6 @@
 {{ 'custom-design-page.css' | asset_url | stylesheet_tag }}
 
-<div class="hero-section">
-  <div class="hero-content">
-    <h1>{{ section.settings.heading }}</h1>
-    <p>{{ section.settings.subheading_1 }}</p>
-    <p>{{ section.settings.subheading_2 }}</p>
-  </div>
-  <div class="hero-image">
-    {% if section.settings.image != blank %}
-      <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}">
-    {% else %}
-      <img src="https://dummyimage.com/400x300/000/fff&text=Hero+Image" alt="Custom Merch" width="400" height="300">
-    {% endif %}
-  </div>
-
-  <!-- Form Section integrated into Hero -->
+<div class="hero-section" {% if section.settings.background_image != blank %}style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');"{% endif %}>
   <div class="form-section-overlay">
     <h2>{{ section.settings.form_heading }}</h2>
     <form method="POST" action="{{ section.settings.form_action_url }}">
@@ -102,27 +88,10 @@
   "class": "section",
   "settings": [
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Hero Heading",
-      "default": "Your idea on a custom mug"
-    },
-    {
-      "type": "textarea",
-      "id": "subheading_1",
-      "label": "Hero Subheading 1",
-      "default": "Whether you're creating personalized gifts or just want something uniquely you, we’re here to bring your vision to life."
-    },
-    {
-      "type": "textarea",
-      "id": "subheading_2",
-      "label": "Hero Subheading 2",
-      "default": "Express your creativity, surprise a friend, or build a community with custom apparel and accessories. No idea is too wild — if you can dream it, we can print it."
-    },
-    {
       "type": "image_picker",
-      "id": "image",
-      "label": "Hero Image"
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Image for the hero section background."
     },
     {
       "type": "header",
@@ -132,7 +101,7 @@
       "type": "text",
       "id": "form_heading",
       "label": "Form Heading",
-      "default": "Submit Your Customization Request"
+      "default": "Your idea on a custom mug"
     },
     {
       "type": "text",
