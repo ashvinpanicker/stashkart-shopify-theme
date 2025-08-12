@@ -17,7 +17,9 @@
     {% endfor %}
   </div>
   {% if section.settings.button_text != blank %}
-    <button class="product-catalogue-button">{{ section.settings.button_text }}</button>
+    <a href="{{ section.settings.button_link }}" class="product-catalogue-button">
+      {{ section.settings.button_text }}
+    </a>
   {% endif %}
 </div>
 
@@ -38,6 +40,11 @@
       "id": "button_text",
       "label": "Button Text",
       "default": "PRODUCT CATALOGUE"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
     }
   ],
   "blocks": [
