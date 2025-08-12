@@ -11,9 +11,144 @@
   "sections": {
     "hero": {
       "type": "custom-design-hero",
+      "blocks": {
+        "product_option_TV8Ue9": {
+          "type": "product_option",
+          "settings": {
+            "label": "Oversized T-shirt",
+            "value": "Oversized T-shirt",
+            "required": false
+          }
+        },
+        "product_option_zNDjLh": {
+          "type": "product_option",
+          "settings": {
+            "label": "Sweatshirt",
+            "value": "Sweatshirt",
+            "required": false
+          }
+        },
+        "product_option_ttXeVj": {
+          "type": "product_option",
+          "settings": {
+            "label": "Dog T-shirt",
+            "value": "Dog T-shirt",
+            "required": false
+          }
+        },
+        "product_option_UV6nwg": {
+          "type": "product_option",
+          "settings": {
+            "label": "T-Shirt",
+            "value": "T-Shirt",
+            "required": false
+          }
+        },
+        "product_option_CWfbRr": {
+          "type": "product_option",
+          "settings": {
+            "label": "Poster",
+            "value": "Poster",
+            "required": false
+          }
+        },
+        "product_option_7biHhc": {
+          "type": "product_option",
+          "settings": {
+            "label": "Tote Bag",
+            "value": "Custom T-ShaTote Bagirt",
+            "required": false
+          }
+        },
+        "product_option_hkqyFk": {
+          "type": "product_option",
+          "settings": {
+            "label": "Mug",
+            "value": "Mug",
+            "required": false
+          }
+        },
+        "product_option_CCyWDP": {
+          "type": "product_option",
+          "settings": {
+            "label": "Cap",
+            "value": "Cap",
+            "required": false
+          }
+        },
+        "product_option_Ritm8C": {
+          "type": "product_option",
+          "settings": {
+            "label": "Hoodie",
+            "value": "Hoodie",
+            "required": false
+          }
+        },
+        "product_option_W6Rm93": {
+          "type": "product_option",
+          "settings": {
+            "label": "Sleeveless Tee",
+            "value": "Sleeveless Tee",
+            "required": false
+          }
+        },
+        "product_option_aGAMGq": {
+          "type": "product_option",
+          "settings": {
+            "label": "Others",
+            "value": "Others",
+            "required": false
+          }
+        },
+        "design_option_XFQWPD": {
+          "type": "design_option",
+          "settings": {
+            "label": "Just an idea - I need you to design it",
+            "value": "Just an idea - I need you to design it",
+            "price": "₹499",
+            "sub_text": "You tell us the concept, we do everything: artwork, layout, and print prep.",
+            "required": false
+          }
+        },
+        "design_option_EPUcFQ": {
+          "type": "design_option",
+          "settings": {
+            "label": "I have artwork",
+            "value": "I have artwork",
+            "price": "₹249",
+            "sub_text": "We will make the artwork print ready and send you some mockups before shipping",
+            "required": false
+          }
+        },
+        "design_option_jdJGyF": {
+          "type": "design_option",
+          "settings": {
+            "label": "I just want to add text to a Stashkart design",
+            "value": "I just want to add text to a Stashkart design (₹99)",
+            "price": "₹99",
+            "sub_text": "Add names, quotes, dates, team names to existing designs.",
+            "required": false
+          }
+        }
+      },
+      "block_order": [
+        "product_option_TV8Ue9",
+        "product_option_zNDjLh",
+        "product_option_ttXeVj",
+        "product_option_UV6nwg",
+        "product_option_CWfbRr",
+        "product_option_7biHhc",
+        "product_option_hkqyFk",
+        "product_option_CCyWDP",
+        "product_option_Ritm8C",
+        "product_option_W6Rm93",
+        "product_option_aGAMGq",
+        "design_option_XFQWPD",
+        "design_option_EPUcFQ",
+        "design_option_jdJGyF"
+      ],
       "settings": {
         "background_image": "shopify://shop_images/custom_page_banner.webp",
-        "form_heading": "Your idea on a custom mug",
         "form_action_url": "https://formspree.io/f/mldnwwzr",
         "name_label": "Your Name",
         "phone_label": "Phone Number",
@@ -26,6 +161,7 @@
         "idea_placeholder": "Tell us about your design, colors, text, vibe, etc.",
         "inspiration_label": "Paste a reference or design link",
         "inspiration_placeholder": "https://...",
+        "inspiration_sub_text": "Optional: Paste links to designs you like.",
         "agree_label": "I understand this is a design + print service",
         "submit_button_text": "SEND ENQUIRY"
       }
