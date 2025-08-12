@@ -3,7 +3,7 @@
 <div class="hero-section" {% if section.settings.background_image != blank %}style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');"{% endif %}>
   <div class="form-section-overlay">
     <h2>Your idea on a custom <span id="typewriter-text"></span></h2>
-    <form method="POST" action="{{ section.settings.form_action_url }}">
+    <form id="custom-design-form" method="POST" action="{{ section.settings.form_action_url }}">
       <div class="form-row">
         <div class="form-group">
           <label for="name">{{ section.settings.name_label }} *</label>
@@ -82,6 +82,7 @@
       {% endcomment %}
 
       <button type="submit" class="submit-button">{{ section.settings.submit_button_text }}</button>
+      <div id="form-messages" style="margin-top: 15px;"></div>
     </form>
   </div>
 </div>
@@ -116,6 +117,44 @@
     }
 
     typeWriter();
+
+    const form = document.getElementById('custom-design-form');
+    const formMessages = document.getElementById('form-messages');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent default form submission
+
+      formMessages.innerHTML = ''; // Clear previous messages
+      formMessages.style.color = ''; // Reset color
+
+      const formData = new FormData(form);
+      const actionUrl = form.getAttribute('action');
+
+      fetch(actionUrl, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        return response.json().then(errorData => {
+          throw new Error(errorData.errors ? JSON.stringify(errorData.errors) : 'Form submission failed.');
+        });
+      })
+      .then(data => {
+        formMessages.style.color = 'green';
+        formMessages.textContent = 'Your enquiry has been sent successfully!';
+        form.reset(); // Clear the form
+      })
+      .catch(error => {
+        formMessages.style.color = 'red';
+        formMessages.textContent = 'Error: ' + error.message;
+      });
+    });
   });
 </script>
 
