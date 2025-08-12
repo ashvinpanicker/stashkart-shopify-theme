@@ -23,10 +23,9 @@
         },
         "announcement_enaDVi": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Get started with your design",
-            "link": ""
+            "text": "First time here? Use WELCOME10 for 10% off*",
+            "link": "https://stashkart.in/discount/WELCOME10?redirect=/collections/all"
           }
         },
         "announcement_4hpNn3": {
