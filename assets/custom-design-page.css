@@ -51,8 +51,8 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   width: 600px; /* Adjust width as needed */
   z-index: 2; /* Ensure form is above hero content and image */
-  max-height: 100%; /* Ensure form fits within banner height */
-  overflow-y: hidden; /* Prevent scrolling */
+  max-height: 90%; /* Ensure form fits within banner height */
+  overflow-y: auto; /* Prevent scrolling */
 }
 
 .form-section-overlay h2 {
