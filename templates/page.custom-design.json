@@ -1,33 +1,250 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "custom-design-hero",
       "settings": {
-        "heading": "Your idea on a custom mug",
-        "subheading_1": "Whether you're creating personalized gifts or just want something uniquely you, we’re here to bring your vision to life.",
-        "subheading_2": "Express your creativity, surprise a friend, or build a community with custom apparel and accessories. No idea is too wild — if you can dream it, we can print it."
+        "background_image": "shopify://shop_images/custom_page_banner.webp",
+        "form_heading": "Your idea on a custom mug",
+        "form_action_url": "https://formspree.io/f/mldnwwzr",
+        "name_label": "Your Name",
+        "phone_label": "Phone Number",
+        "email_label": "Email",
+        "product_label": "What product do you want?",
+        "quantity_label": "Quantity",
+        "deadline_label": "When do you need it by?",
+        "design_option_label": "Do you have a design?",
+        "idea_label": "Describe your idea",
+        "idea_placeholder": "Tell us about your design, colors, text, vibe, etc.",
+        "inspiration_label": "Upload or Paste a reference or design link",
+        "inspiration_placeholder": "https://...",
+        "agree_label": "I understand this is a design + print service",
+        "submit_button_text": "SEND ENQUIRY"
       }
     },
     "how_it_works": {
       "type": "custom-design-how-it-works",
+      "blocks": {
+        "step_dkDcGf": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/FORM.png",
+            "step_heading": "Fill the Form",
+            "step_description": "Tell us your idea and what product you want:"
+          }
+        },
+        "step_JrzkPy": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/DESIGN_QUOTE.png",
+            "step_heading": "Review. Design. Quote.",
+            "step_description": "You get a price, timeline, and optional mock-up."
+          }
+        },
+        "step_gnrJXE": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/PAYMENT_CARD_de016e1f-2f0c-4c79-849b-0838d095085c.png",
+            "step_heading": "Approve & Pay",
+            "step_description": "Make payment, and we get started."
+          }
+        },
+        "step_aqnfdq": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/PRINT_DELIVER.png",
+            "step_heading": "Print & Deliver",
+            "step_description": "Your custom order is made with love and delivered to your door."
+          }
+        }
+      },
+      "block_order": [
+        "step_dkDcGf",
+        "step_JrzkPy",
+        "step_gnrJXE",
+        "step_aqnfdq"
+      ],
       "settings": {
+        "heading": "How It Works ?",
+        "button_text": "PRODUCT CATALOGUE"
       }
     },
-    "why_custom": {
-      "type": "custom-design-why-custom",
+    "175496021521eea826": {
+      "type": "apps",
+      "blocks": {
+        "ga_image_gallery_photo_galler_app_embeded_PrWi9a": {
+          "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-embeded/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
+          "settings": {
+            "popup_embedded_id": "gallery-id-6187"
+          }
+        }
+      },
+      "block_order": [
+        "ga_image_gallery_photo_galler_app_embeded_PrWi9a"
+      ],
       "settings": {
+        "include_margins": true
+      }
+    },
+    "multicolumn_pBTapz": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Rt4mpD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WEAR_YOUR_IDEA.png",
+            "title": "You want to wear your idea.",
+            "text": "<p>Whether it's a catchphrase, artwork, or a doodle, we'll bring it to life.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Cy7PWQ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CELEBRATE_MOMENTS.png",
+            "title": "You’re planning a moment.",
+            "text": "<p>Reunions, birthdays, launch events, parties, weddings- custom merch adds personality.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_zewgtd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NO_MOQ.png",
+            "title": "You just need one. Or many.",
+            "text": "<p>No pressure on quantity, we work with individuals and groups.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dJCKpz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IDEA_TO_DESIGN.png",
+            "title": "You don’t need to be a designer.",
+            "text": "<p>Just share the idea. That’s enough. We’ll take care of the rest.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Rt4mpD",
+        "column_Cy7PWQ",
+        "column_zewgtd",
+        "column_dJCKpz"
+      ],
+      "custom_css": [
+        "p {color: #444;}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Why Go Custom?",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-b930d057-28bb-472e-85fc-146e40b9da7b",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_bqhd7L": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3rp8BL": {
+          "type": "heading",
+          "settings": {
+            "heading": "What People are Saying",
+            "heading_size": "h1"
+          }
+        },
+        "text_4jGHCW": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_P6yzj8": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_3rp8BL",
+        "text_4jGHCW",
+        "button_P6yzj8"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-b930d057-28bb-472e-85fc-146e40b9da7b",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "17549611669c22e0b4": {
+      "type": "apps",
+      "blocks": {
+        "ck_google_reviews_google_list_n8KJWV": {
+          "type": "shopify://apps/ck-google-reviews/blocks/google_list/65a77010-5e58-49de-928f-6b86aa6ecffe",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ck_google_reviews_google_list_n8KJWV"
+      ],
+      "custom_css": [
+        "div {padding: 0px;}"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "cta": {
       "type": "custom-design-cta",
       "settings": {
+        "image": "shopify://shop_images/Website_Banner.1_Custom.webp",
+        "mobile_image": "shopify://shop_images/mobile_banner_custom.png",
+        "image_link": "shopify://pages/custom",
+        "scroll_to_top": true
       }
     }
   },
   "order": [
     "hero",
     "how_it_works",
-    "why_custom",
+    "175496021521eea826",
+    "multicolumn_pBTapz",
+    "rich_text_bqhd7L",
+    "17549611669c22e0b4",
     "cta"
   ]
 }
