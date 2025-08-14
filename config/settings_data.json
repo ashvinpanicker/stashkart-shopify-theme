@@ -240,6 +240,11 @@
         "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-extension/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
         "disabled": false,
         "settings": {}
+      },
+      "1533640784960836671": {
+        "type": "shopify://apps/exit-intent-popup/blocks/app-embed/c17e85dd-754c-49c5-b48d-036782d11f80",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
