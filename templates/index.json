@@ -527,7 +527,7 @@
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
-        "button_label": "Submit a custom design or idea",
+        "button_label": "",
         "button_link": "shopify://pages/custom",
         "columns_desktop": 4,
         "column_alignment": "left",
@@ -554,6 +554,19 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "marquee_text_Aqk4cw": {
+      "type": "marquee-text",
+      "custom_css": [
+        "div {color: white; font-style: italic; font-size: 20px;}"
+      ],
+      "name": "Marquee Text",
+      "settings": {
+        "marquee_text": "ORDER ON WHATSAPP",
+        "link_url": "https://wa.me/918147626358?text=Hi!%20I%27m%20here%20from%20your%20website.",
+        "background_color": "#047889",
+        "separator_text": "•"
+      }
     }
   },
   "order": [
@@ -563,6 +576,7 @@
     "17543270926b90dcc6",
     "collection_list_ibwbCY",
     "multicolumn_ywMxgY",
+    "marquee_text_Aqk4cw",
     "175165880356121903"
   ]
 }
