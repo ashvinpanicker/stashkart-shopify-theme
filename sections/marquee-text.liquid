@@ -1,0 +1,63 @@
+<div class="marquee-text-section" style="background-color: {{ section.settings.background_color }};">
+  <div class="marquee-text-wrapper">
+    <a href="{{ section.settings.link_url }}" class="marquee-text-link">
+      {% for i in (1..10) %}
+        <span class="marquee-text-content">{{ section.settings.marquee_text }}</span>
+        <span class="marquee-text-separator">{{ section.settings.separator_text }}</span>
+      {% endfor %}
+    </a>
+  </div>
+</div>
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<link href="{{ 'section-marquee-text.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
+<script src="{{ 'marquee-text.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Marquee Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "marquee_text",
+      "label": "Marquee Text",
+      "default": "Your Marquee Text Here"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "text",
+      "id": "separator_text",
+      "label": "Separator Text",
+      "default": " • "
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee Text"
+    }
+  ]
+}
+{% endschema %}

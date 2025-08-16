@@ -1,0 +1,40 @@
+.marquee-text-section {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.marquee-text-wrapper {
+  display: inline-block;
+  animation: marquee 15s linear infinite; /* Adjust duration as needed */
+}
+
+.marquee-text-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.marquee-text-content {
+  display: inline-block;
+  padding-right: 50px; /* Space between repeated text */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.marquee-text-separator {
+  display: inline-block;
+  padding-right: 50px; /* Space after separator */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
