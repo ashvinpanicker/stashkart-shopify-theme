@@ -308,6 +308,19 @@
         "padding_bottom": 36
       }
     },
+    "marquee_text_NYcXNH": {
+      "type": "marquee-text",
+      "custom_css": [
+        "div {color: white; font-style: italic; font-size: 20px;}"
+      ],
+      "name": "Marquee Text",
+      "settings": {
+        "marquee_text": "ORDER ON WHATSAPP",
+        "link_url": "https://wa.me/918147626358?text=Hi!%20I%27m%20here%20from%20your%20website.",
+        "background_color": "#047889",
+        "separator_text": "•"
+      }
+    },
     "rich_text_bqhd7L": {
       "type": "rich-text",
       "blocks": {
@@ -386,6 +399,7 @@
     "how_it_works",
     "175496021521eea826",
     "multicolumn_pBTapz",
+    "marquee_text_NYcXNH",
     "rich_text_bqhd7L",
     "17549611669c22e0b4",
     "cta"
