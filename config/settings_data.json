@@ -180,29 +180,49 @@
         "disabled": false,
         "settings": {}
       },
-      "4015264832934714879": {
-        "type": "shopify://apps/ecomsend-popups/blocks/app/a5670cf8-5705-4b01-ad9e-447033feae26",
-        "disabled": false,
-        "settings": {}
-      },
       "5958325610427746679": {
         "type": "shopify://apps/search7-smart-search-filter/blocks/search-filter/88e24ea2-237e-4897-9894-0fe383246073",
         "disabled": false,
         "settings": {}
       },
+      "11674196072004505311": {
+        "type": "shopify://apps/myshop-whatsapp-button/blocks/widget/a5ad5d7c-50b7-4654-8fba-63fd50479f7d",
+        "disabled": false,
+        "settings": {}
+      },
+      "848547589086771589": {
+        "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-extension/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
+        "disabled": false,
+        "settings": {}
+      },
+      "1533640784960836671": {
+        "type": "shopify://apps/exit-intent-popup/blocks/app-embed/c17e85dd-754c-49c5-b48d-036782d11f80",
+        "disabled": false,
+        "settings": {}
+      },
+      "2567389343055140935": {
+        "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": false,
+        "settings": {}
+      },
       "3138269044488530766": {
         "type": "shopify://apps/uppromote-affiliate/blocks/core-script/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       },
       "9005256451184024879": {
         "type": "shopify://apps/uppromote-affiliate/blocks/customer-referral/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
-        "disabled": false,
+        "disabled": true,
+        "settings": {}
+      },
+      "4015264832934714879": {
+        "type": "shopify://apps/trustoo-email-popups/blocks/app/a5670cf8-5705-4b01-ad9e-447033feae26",
+        "disabled": true,
         "settings": {}
       },
       "7398019964405354113": {
         "type": "shopify://apps/adsgun/blocks/adsgun/eefd9671-57eb-40f1-ba25-de091fe93b0f",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "loaders_enabled": false,
           "loader_color": "#047889",
@@ -227,24 +247,9 @@
           "di_placeholder_color": "#707070",
           "di_button_bg_color": "#047889",
           "di_btn_hover_bg_color": "#105989",
-          "di_btn_color": "#fff",
+          "di_btn_color": "#ffffff",
           "cart_drawer_font": "helvetica_n4"
         }
-      },
-      "11674196072004505311": {
-        "type": "shopify://apps/myshop-whatsapp-button/blocks/widget/a5ad5d7c-50b7-4654-8fba-63fd50479f7d",
-        "disabled": false,
-        "settings": {}
-      },
-      "848547589086771589": {
-        "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-extension/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
-        "disabled": false,
-        "settings": {}
-      },
-      "1533640784960836671": {
-        "type": "shopify://apps/exit-intent-popup/blocks/app-embed/c17e85dd-754c-49c5-b48d-036782d11f80",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {
