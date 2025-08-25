@@ -11,71 +11,10 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "footer_banner_Qq7DUq": {
-      "type": "footer-banner",
-      "blocks": {
-        "image_GQCUbY": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/WebsiteMockups_quotes-03_1f4a3f23-bdfe-45c6-89ea-4db81713b081.png",
-            "custom_class": "image-1"
-          }
-        },
-        "image_dELjBF": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/WebsiteMockups_quotes-02_cf717b8a-ed8d-4eec-b834-6a8e23c57a56.png",
-            "custom_class": "image-2"
-          }
-        },
-        "image_HBrzKg": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/9_Back_5a271d54-7a91-42dd-ad28-753ad2779fd0.png",
-            "custom_class": "image-3"
-          }
-        },
-        "image_AzrEnr": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/dog_peach.png",
-            "custom_class": "image-4"
-          }
-        },
-        "image_Ep9GUQ": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/cosmic_mess_mockup.jpg",
-            "custom_class": "image-5"
-          }
-        },
-        "image_7TJcCx": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/1_Front_8085d8cf-8851-4cbd-ac56-40bf213f9fb7.png",
-            "custom_class": "image-6"
-          }
-        }
+     "faq": {
+        "type": "faq",
+        "settings": {}
       },
-      "block_order": [
-        "image_GQCUbY",
-        "image_dELjBF",
-        "image_HBrzKg",
-        "image_AzrEnr",
-        "image_Ep9GUQ",
-        "image_7TJcCx"
-      ],
-      "name": "Footer Banner",
-      "settings": {
-        "background_color": "#f3eaff",
-        "title": "Quirky designs, quality merch.",
-        "description": "Life's too short for boring stuff. Shop designs that actually get you.",
-        "button1_link": "shopify://collections/all",
-        "button1_text": "Shop Now",
-        "button2_link": "",
-        "button2_text": "Learn More"
-      }
-    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -95,7 +34,7 @@
     }
   },
   "order": [
-    "footer_banner_Qq7DUq",
+    "faq",
     "footer"
   ]
 }
