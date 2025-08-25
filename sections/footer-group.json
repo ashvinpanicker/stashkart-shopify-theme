@@ -11,10 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "faq": {
-      "type": "faq",
-      "settings": {}
-    },
     "slideshow_Qarify": {
       "type": "slideshow",
       "blocks": {
@@ -37,10 +33,10 @@
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-4"
           }
-        },
+        }
       },
       "block_order": [
-        "slide_rwjYWf",
+        "slide_rwjYWf"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -50,8 +46,12 @@
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": false,
-        "accessibility_info": "Order Custom Merchandise online from Stashkart. Custom T-Shirts, Custom Hoodies, Custom Mugs and more.",
+        "accessibility_info": "Order Custom Merchandise online from Stashkart. Custom T-Shirts, Custom Hoodies, Custom Mugs and more."
       }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
     },
     "footer": {
       "type": "footer",
@@ -72,8 +72,8 @@
     }
   },
   "order": [
-    "faq",
     "slideshow_Qarify",
+    "faq",
     "footer"
   ]
 }
