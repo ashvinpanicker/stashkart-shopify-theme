@@ -221,7 +221,7 @@
       "type": "apps",
       "blocks": {
         "ga_image_gallery_photo_galler_app_embeded_PrWi9a": {
-          "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-embeded/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
+          "type": "shopify://apps/ga-image-gallery-photo-gallery/blocks/app-embeded/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
           "settings": {
             "popup_embedded_id": "gallery-id-6386"
           }
@@ -386,6 +386,7 @@
     },
     "cta": {
       "type": "custom-design-cta",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Website_Banner.1_Custom.webp",
         "mobile_image": "shopify://shop_images/mobile_banner_custom.png",
