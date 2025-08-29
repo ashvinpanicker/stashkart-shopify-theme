@@ -305,17 +305,54 @@
         "category_hUwNAc",
         "category_ycGzK6"
       ],
+      "name": "Categories",
       "settings": {
-        "section_title": ""
+        "section_title": "Categories"
       }
     },
     "product_list_6NcLaM": {
       "type": "product-list",
       "blocks": {
+        "product_MgX8pX": {
+          "type": "product",
+          "settings": {
+            "product": "wild-india-tote-bag-all-over-animal-print-design"
+          }
+        },
+        "product_DDzh64": {
+          "type": "product",
+          "settings": {
+            "product": "slow-down-breathe-repeat-yoga-is-my-energy-charger-oversized-t-shirt"
+          }
+        },
+        "product_RxEJH7": {
+          "type": "product",
+          "settings": {
+            "product": "fully-booked-mischief-managed-book-club-notebook"
+          }
+        },
+        "product_Wxx6VX": {
+          "type": "product",
+          "settings": {
+            "product": "indie-dog-embroidered-crop-top-desi-pride-street-style"
+          }
+        },
+        "product_gM9Nfk": {
+          "type": "product",
+          "settings": {
+            "product": "mischief-managed-coffee-mug-coffee-gives-me-main-character-energy"
+          }
+        },
         "product_xVn8Mj": {
           "type": "product",
           "settings": {
             "product": "stitch-inspired-cap-for-pet-lovers"
+          }
+        },
+        "product_afFLRC": {
+          "type": "product",
+          "settings": {
+            "product": "born-to-read-forced-to-work-comic-style-bookish-oversized-t-shirt"
           }
         },
         "product_KHKwfK": {
@@ -323,54 +360,19 @@
           "settings": {
             "product": "never-give-in-lovedale-alumni-golf-polo"
           }
-        },
-        "product_MgX8pX": {
-          "type": "product",
-          "settings": {
-            "product": "నా-ఇష్టం-నాదిలే-crop-top"
-          }
-        },
-        "product_afFLRC": {
-          "type": "product",
-          "settings": {
-            "product": "beatles-lyric-inspired-dog-t-shirts"
-          }
-        },
-        "product_gM9Nfk": {
-          "type": "product",
-          "settings": {
-            "product": "it-s-a-dolphin-playing-golf-it-s-a-golphin-mug"
-          }
-        },
-        "product_Wxx6VX": {
-          "type": "product",
-          "settings": {
-            "product": "loved-by-karma-crew-t-shirt"
-          }
-        },
-        "product_RxEJH7": {
-          "type": "product",
-          "settings": {
-            "product": "ohana-means-family-lilo-stitch-inspired-poster-for-pet-lovers"
-          }
-        },
-        "product_DDzh64": {
-          "type": "product",
-          "settings": {
-            "product": "beer-oclock-black"
-          }
         }
       },
       "block_order": [
-        "product_xVn8Mj",
-        "product_KHKwfK",
         "product_MgX8pX",
-        "product_afFLRC",
-        "product_gM9Nfk",
-        "product_Wxx6VX",
+        "product_DDzh64",
         "product_RxEJH7",
-        "product_DDzh64"
+        "product_Wxx6VX",
+        "product_gM9Nfk",
+        "product_xVn8Mj",
+        "product_afFLRC",
+        "product_KHKwfK"
       ],
+      "name": "Bestsellers Section",
       "settings": {
         "heading": "Bestsellers",
         "heading_link": "shopify://collections/all-products"
@@ -380,7 +382,7 @@
       "type": "apps",
       "blocks": {
         "ga_image_gallery_photo_galler_app_embeded_WCbhL7": {
-          "type": "shopify://apps/ga-image-gallery-photo-galler/blocks/app-embeded/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
+          "type": "shopify://apps/ga-image-gallery-photo-gallery/blocks/app-embeded/6e61cc50-97c2-40a1-9971-8ad3f8851e1e",
           "settings": {
             "popup_embedded_id": "gallery-id-6187"
           }
@@ -539,6 +541,19 @@
         "padding_bottom": 36
       }
     },
+    "marquee_text_Aqk4cw": {
+      "type": "marquee-text",
+      "custom_css": [
+        "div {color: white; font-style: italic; font-size: 20px;}"
+      ],
+      "name": "Marquee Text",
+      "settings": {
+        "marquee_text": "ORDER ON WHATSAPP",
+        "link_url": "https://wa.me/918147626358?text=Hi!%20I%27m%20here%20from%20your%20website.",
+        "background_color": "#047889",
+        "separator_text": "•"
+      }
+    },
     "175165880356121903": {
       "type": "apps",
       "blocks": {
@@ -553,19 +568,6 @@
       "name": "Google Reviews",
       "settings": {
         "include_margins": true
-      }
-    },
-    "marquee_text_Aqk4cw": {
-      "type": "marquee-text",
-      "custom_css": [
-        "div {color: white; font-style: italic; font-size: 20px;}"
-      ],
-      "name": "Marquee Text",
-      "settings": {
-        "marquee_text": "ORDER ON WHATSAPP",
-        "link_url": "https://wa.me/918147626358?text=Hi!%20I%27m%20here%20from%20your%20website.",
-        "background_color": "#047889",
-        "separator_text": "•"
       }
     }
   },
