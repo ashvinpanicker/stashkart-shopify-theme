@@ -9,15 +9,81 @@
  */
 {
   "sections": {
+    "image_banner_iWhwjC": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Website_Banner_About_Desktop.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
     "about_us_story": {
       "type": "about-us-story",
+      "blocks": {
+        "team_member_9pLDrF": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/ashvin-2019.png",
+            "name": "Ashvin",
+            "linkedin_url": "https://www.linkedin.com/in/ashvin-panicker/",
+            "website_url": "https://ashvinpanicker.com",
+            "instagram_url": "",
+            "description": "<p>With over 8 years of experience building tech products, Ashvin brings execution and scalability to Stashkart. He previously founded a fintech startup that was funded by Y Combinator and is now profitable. At Stashkart, he combines his product mindset with a love for ideas—making sure creativity meets structure.</p>"
+          }
+        },
+        "team_member_dEGdxj": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Avani.png",
+            "name": "Avani",
+            "linkedin_url": "https://www.linkedin.com/in/avani-lakhotia/",
+            "website_url": "https://avanilakhotia.com",
+            "instagram_url": "https://www.instagram.com/avani_lakhotia/",
+            "description": "<p>Avani is a designer with over 7 years of experience across branding, typography, and visual storytelling. She has worked with design studios and global clients before co-founding Stashkart, where she brings the creative vision and design expertise that transform ideas into products people love.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "team_member_9pLDrF",
+        "team_member_dEGdxj"
+      ],
       "settings": {
         "title": "Our Story",
-        "story_content": "<p>Stashkart began with a simple thought: ideas deserve to exist in the real world. Ashvin always had new concepts he wanted to see on t-shirts. Avani, his school friend and a designer, had notebooks full of illustrations waiting for a canvas. What started as “let’s make a store” soon grew into a platform where creators, artists, and brands can transform their ideas into products, without inventory, risk, or design skills. Today, Stashkart empowers anyone with an idea to productize it, seamlessly and creatively.</p>"
+        "story_content": "<p>Stashkart began with a simple thought: <em>ideas deserve to exist in the real world. </em><br/>Ashvin always had new concepts he wanted to see on t-shirts. Avani, his school friend and a designer, had notebooks full of illustrations waiting for a canvas. What started as “let’s make a store” soon grew into a platform where creators, artists, and brands can transform their ideas into products, without inventory, risk, or design skills. Today, Stashkart empowers anyone with an idea to productize it, seamlessly and creatively.</p>"
       }
     },
     "why_trust_us": {
       "type": "about-us-why-trust-us",
+      "blocks": {
+        "reason_w4ALj6": {
+          "type": "reason",
+          "settings": {
+            "icon": "shopify://shop_images/FORM-Tile.png",
+            "heading": "Proven Expertise",
+            "description": "<p>8+ years of experience building tech and design products, with YC-backed startup success.</p>"
+          }
+        },
+        "reason_mL3XGy": {
+          "type": "reason",
+          "settings": {
+            "heading": "Proven Expertise",
+            "description": "<p>8+ years of experience building tech and design products, with YC-backed startup success.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "reason_w4ALj6",
+        "reason_mL3XGy"
+      ],
       "settings": {
         "title": "Why Trust Stashkart?"
       }
@@ -39,11 +105,26 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "marquee_text_k3Q49G": {
+      "type": "marquee-text",
+      "custom_css": [
+        "div {color: white; text-transform: capitalize;}"
+      ],
+      "name": "Marquee Text",
+      "settings": {
+        "marquee_text": "👉 HAVE AN IDEA? LET'S TURN IT INTO A PRODUCT",
+        "link_url": "https://wa.me/918147626358?text=Hi!%20I%27m%20here%20from%20your%20website%20about%20us%20page.",
+        "background_color": "#f43c18",
+        "separator_text": "•"
+      }
     }
   },
   "order": [
+    "image_banner_iWhwjC",
     "about_us_story",
     "why_trust_us",
-    "testimonials"
+    "testimonials",
+    "marquee_text_k3Q49G"
   ]
 }
