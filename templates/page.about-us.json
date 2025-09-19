@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "about_us_story": {
+      "type": "about-us-story"
+    },
+    "why_trust_us": {
+      "type": "about-us-why-trust-us"
+    },
+    "testimonials": {
+      "type": "apps",
+      "blocks": {
+        "ck_google_reviews_google_list_n8KJWV": {
+          "type": "shopify://apps/ck-google-reviews/blocks/google_list/65a77010-5e58-49de-928f-6b86aa6ecffe",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ck_google_reviews_google_list_n8KJWV"
+      ],
+      "custom_css": [
+        "div {padding: 0px;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "cta": {
+      "type": "custom-design-cta",
+      "settings": {
+        "image": "shopify://shop_images/Website_Banner.1_Custom.webp",
+        "mobile_image": "shopify://shop_images/mobile_banner_custom.png",
+        "image_link": "shopify://pages/custom",
+        "scroll_to_top": true
+      }
+    }
+  },
+  "order": [
+    "about_us_story",
+    "why_trust_us",
+    "testimonials",
+    "cta"
+  ]
+}
