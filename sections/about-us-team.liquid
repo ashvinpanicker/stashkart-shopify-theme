@@ -1,28 +1,16 @@
 <style>
-  .about-us-story {
+  .about-us-team {
     padding: 60px 20px;
     text-align: center;
     background-color: #f8f8f8;
   }
-  .about-us-story__title {
-    font-size: 3em;
-    margin-bottom: 40px;
-    color: #333;
-  }
-  .about-us-story__content {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
-  }
-  .about-us-story__team {
+  .about-us-team__grid {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
   }
-  .about-us-story__member {
+  .about-us-team__member {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
@@ -33,25 +21,24 @@
     align-items: center;
     justify-content: space-between;
   }
-  .about-us-story__member-image {
+  .about-us-team__member-image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
   }
-  .about-us-story__member-name {
+  .about-us-team__member-name {
     font-size: 1.8em;
-    color: #333;
     margin-bottom: 10px;
   }
-  .about-us-story__member-social {
+  .about-us-team__member-social {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 15px;
   }
-  .about-us-story__member-social a {
+  .about-us-team__member-social a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,18 +50,16 @@
     text-decoration: none;
     font-size: 1.2em;
   }
-  .about-us-story__member-social img {
+  .about-us-team__member-social img {
     width: 20px;
     height: 20px;
   }
-  .about-us-story__member-description {
+  .about-us-team__member-description {
     font-size: 0.95em;
     line-height: 1.5;
-    color: #666;
     margin-top: 15px;
   }
-  .about-us-story__careers {
-    background-color: #f0f0f0;
+  .about-us-team__careers {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
@@ -85,12 +70,11 @@
     justify-content: center;
     align-items: center;
   }
-  .about-us-story__careers-title {
+  .about-us-team__careers-title {
     font-size: 1.8em;
-    color: #333;
     margin-bottom: 15px;
   }
-  .about-us-story__careers-link {
+  .about-us-team__careers-link {
     display: inline-block;
     background-color: #007bff;
     color: #fff;
@@ -100,27 +84,22 @@
     font-size: 1em;
     transition: background-color 0.3s ease;
   }
-  .about-us-story__careers-link:hover {
+  .about-us-team__careers-link:hover {
     background-color: #0056b3;
   }
 </style>
 
-<div class="about-us-story">
-  <h2 class="about-us-story__title">{{ section.settings.title }}</h2>
-  <div class="about-us-story__content">
-    {{ section.settings.story_content }}
-  </div>
-
-  <div class="about-us-story__team">
+<div class="about-us-team">
+  <div class="about-us-team__grid">
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'team_member' %}
-          <div class="about-us-story__member" style="background-color: {{ block.settings.background_color }};">
+          <div class="about-us-team__member" style="background-color: {{ block.settings.background_color }};">
             {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | image_url: width: 240 }}" alt="{{ block.settings.name }}" class="about-us-story__member-image" width="120" height="120">
+              <img src="{{ block.settings.image | image_url: width: 240 }}" alt="{{ block.settings.name }}" class="about-us-team__member-image" width="120" height="120">
             {% endif %}
-            <h3 class="about-us-story__member-name">{{ block.settings.name }}</h3>
-            <div class="about-us-story__member-social">
+            <h3 class="about-us-team__member-name" style="color: {{ block.settings.text_color }};">{{ block.settings.name }}</h3>
+            <div class="about-us-team__member-social">
               {% if block.settings.linkedin_url != blank and block.settings.linkedin_icon != blank %}
                 <a href="{{ block.settings.linkedin_url }}" target="_blank">
                   <img src="{{ block.settings.linkedin_icon | image_url: width: 20 }}" alt="LinkedIn" width="20" height="20">
@@ -137,13 +116,13 @@
                 </a>
               {% endif %}
             </div>
-            <p class="about-us-story__member-description">{{ block.settings.description }}</p>
+            <p class="about-us-team__member-description" style="color: {{ block.settings.text_color }};">{{ block.settings.description }}</p>
           </div>
         {% when 'careers' %}
-          <div class="about-us-story__careers" style="background-color: {{ block.settings.background_color }};">
-            <h3 class="about-us-story__careers-title">{{ block.settings.title }}</h3>
+          <div class="about-us-team__careers" style="background-color: {{ block.settings.background_color }};">
+            <h3 class="about-us-team__careers-title" style="color: {{ block.settings.text_color }};">{{ block.settings.title }}</h3>
             {% if block.settings.button_label != blank and block.settings.button_link != blank %}
-              <a href="{{ block.settings.button_link }}" class="about-us-story__careers-link">{{ block.settings.button_label }}</a>
+              <a href="{{ block.settings.button_link }}" class="about-us-team__careers-link">{{ block.settings.button_label }}</a>
             {% endif %}
           </div>
       {% endcase %}
@@ -153,21 +132,7 @@
 
 {% schema %}
 {
-  "name": "About Us Story",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Heading",
-      "default": "Our Story"
-    },
-    {
-      "type": "richtext",
-      "id": "story_content",
-      "label": "Story Content",
-      "default": "<p>Stashkart began with a simple thought: ideas deserve to exist in the real world. Ashvin always had new concepts he wanted to see on t-shirts. Avani, his school friend and a designer, had notebooks full of illustrations waiting for a canvas. What started as “let’s make a store” soon grew into a platform where creators, artists, and brands can transform their ideas into products, without inventory, risk, or design skills. Today, Stashkart empowers anyone with an idea to productize it, seamlessly and creatively.</p>"
-    }
-  ],
+  "name": "About Us Team",
   "blocks": [
     {
       "type": "team_member",
@@ -189,6 +154,12 @@
           "id": "background_color",
           "label": "Background Color",
           "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#333333"
         },
         {
           "type": "image_picker",
@@ -254,13 +225,19 @@
           "id": "background_color",
           "label": "Background Color",
           "default": "#f0f0f0"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#333333"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "About Us Story"
+      "name": "About Us Team"
     }
   ]
 }
