@@ -26,39 +26,67 @@
         "show_text_below": false
       }
     },
-    "about_us_story": {
-      "type": "about-us-story",
+    "about_us_story_content": {
+      "type": "about-us-story-content",
+      "settings": {
+        "title": "Our Story",
+        "story_content": "<p>Stashkart began with a simple thought: <em>ideas deserve to exist in the real world.<br/></em><br/>Ashvin always had new concepts he wanted to see on t-shirts. Avani, his school friend and a designer, had notebooks full of illustrations waiting for a canvas. What started as “let’s make a store” soon grew into a platform where creators, artists, and brands can transform their ideas into products, without inventory, risk, or design skills. <br/><strong><br/>Today, Stashkart empowers anyone with an idea to productize it, seamlessly and creatively.</strong></p>",
+        "background_color": "#f8f8f8",
+        "text_color": "#555555"
+      }
+    },
+    "about_us_team": {
+      "type": "about-us-team",
       "blocks": {
-        "team_member_9pLDrF": {
+        "team_member_ashvin": {
           "type": "team_member",
           "settings": {
             "image": "shopify://shop_images/ashvin-2019.png",
             "name": "Ashvin",
+            "background_color": "#008080",
+            "text_color": "#ffffff",
+            "linkedin_icon": "shopify://shop_images/linkedin_icon.png",
             "linkedin_url": "https://www.linkedin.com/in/ashvin-panicker/",
+            "website_icon": "shopify://shop_images/website_icon.png",
             "website_url": "https://ashvinpanicker.com",
+            "instagram_icon": "shopify://shop_images/instagram_icon.png",
             "instagram_url": "",
             "description": "<p>With over 8 years of experience building tech products, Ashvin brings execution and scalability to Stashkart. He previously founded a fintech startup that was funded by Y Combinator and is now profitable. At Stashkart, he combines his product mindset with a love for ideas—making sure creativity meets structure.</p>"
           }
         },
-        "team_member_dEGdxj": {
+        "team_member_avani": {
           "type": "team_member",
           "settings": {
             "image": "shopify://shop_images/Avani.png",
             "name": "Avani",
+            "background_color": "#eda22d",
+            "text_color": "#ffffff",
+            "linkedin_icon": "shopify://shop_images/linkedin_icon.png",
             "linkedin_url": "https://www.linkedin.com/in/avani-lakhotia/",
+            "website_icon": "shopify://shop_images/website_icon.png",
             "website_url": "https://avanilakhotia.com",
+            "instagram_icon": "shopify://shop_images/instagram_icon.png",
             "instagram_url": "https://www.instagram.com/avani_lakhotia/",
             "description": "<p>Avani is a designer with over 7 years of experience across branding, typography, and visual storytelling. She has worked with design studios and global clients before co-founding Stashkart, where she brings the creative vision and design expertise that transform ideas into products people love.</p>"
+          }
+        },
+        "careers_block": {
+          "type": "careers",
+          "settings": {
+            "title": "Join The Team",
+            "button_link": "/pages/careers",
+            "button_label": "View Openings",
+            "background_color": "#e0e0e0",
+            "text_color": "#333333"
           }
         }
       },
       "block_order": [
-        "team_member_9pLDrF",
-        "team_member_dEGdxj"
+        "team_member_ashvin",
+        "team_member_avani",
+        "careers_block"
       ],
       "settings": {
-        "title": "Our Story",
-        "story_content": "<p>Stashkart began with a simple thought: <em>ideas deserve to exist in the real world.<br/></em><br/>Ashvin always had new concepts he wanted to see on t-shirts. Avani, his school friend and a designer, had notebooks full of illustrations waiting for a canvas. What started as “let’s make a store” soon grew into a platform where creators, artists, and brands can transform their ideas into products, without inventory, risk, or design skills. <br/><strong><br/>Today, Stashkart empowers anyone with an idea to productize it, seamlessly and creatively.</strong></p>"
       }
     },
     "why_trust_us": {
@@ -122,7 +150,8 @@
   },
   "order": [
     "image_banner_iWhwjC",
-    "about_us_story",
+    "about_us_story_content",
+    "about_us_team",
     "why_trust_us",
     "testimonials",
     "marquee_text_k3Q49G"
