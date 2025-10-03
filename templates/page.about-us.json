@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner_iWhwjC": {
@@ -36,13 +45,12 @@
             "name": "Ashvin",
             "background_color": "#008080",
             "text_color": "#ffffff",
-            "linkedin_icon": "shopify://shop_images/linkedin_icon.png",
+            "linkedin_icon": "shopify://shop_images/Rectangle_6a1a018d-bdcf-41a1-8df2-7152deab9310.png",
             "linkedin_url": "https://www.linkedin.com/in/ashvin-panicker/",
-            "website_icon": "shopify://shop_images/website_icon.png",
+            "website_icon": "shopify://shop_images/canva-website-icon-MAFBFKx5wmk.webp",
             "website_url": "https://ashvinpanicker.com",
-            "instagram_icon": "shopify://shop_images/instagram_icon.png",
             "instagram_url": "",
-            "description": "<p>With over 8 years of experience building tech products, Ashvin brings execution and scalability to Stashkart. He previously founded a fintech startup that was funded by Y Combinator and is now profitable. At Stashkart, he combines his product mindset with a love for ideas—making sure creativity meets structure.</p>"
+            "description": "<p>With over 8 years of experience building tech products, Ashvin brings execution and scalability to Stashkart. He previously founded a fintech startup that was funded by Y Combinator and is now profitable. At Stashkart, he combines his product mindset with a love for ideas, making sure creativity meets structure.</p>"
           }
         },
         "team_member_avani": {
@@ -52,13 +60,13 @@
             "name": "Avani",
             "background_color": "#eda22d",
             "text_color": "#ffffff",
-            "linkedin_icon": "shopify://shop_images/linkedin_icon.png",
+            "linkedin_icon": "shopify://shop_images/Rectangle_6a1a018d-bdcf-41a1-8df2-7152deab9310.png",
             "linkedin_url": "https://www.linkedin.com/in/avani-lakhotia/",
-            "website_icon": "shopify://shop_images/website_icon.png",
+            "website_icon": "shopify://shop_images/canva-website-icon-MAFBFKx5wmk.webp",
             "website_url": "https://avanilakhotia.com",
-            "instagram_icon": "shopify://shop_images/instagram_icon.png",
+            "instagram_icon": "shopify://shop_images/icons8-instagram-logo-144_2_5ed73558-1683-40dc-8d23-2ee8929236b0.png",
             "instagram_url": "https://www.instagram.com/avani_lakhotia/",
-            "description": "<p>Avani is a designer with over 7 years of experience across branding, typography, and visual storytelling. She has worked with design studios and global clients before co-founding Stashkart, where she brings the creative vision and design expertise that transform ideas into products people love.</p>"
+            "description": "<p>Avani is a designer with over 7 years of experience across branding, typography, and visual storytelling. She has worked with various design studios and clients worldwide before co-founding Stashkart. Avani brings the creative vision and design expertise that transform ideas into products people love.</p>"
           }
         },
         "careers_block": {
@@ -77,8 +85,10 @@
         "team_member_avani",
         "careers_block"
       ],
-      "settings": {
-      }
+      "custom_css": [
+        "p {color: white;}"
+      ],
+      "settings": {}
     },
     "why_trust_us": {
       "type": "about-us-why-trust-us",
@@ -94,14 +104,42 @@
         "reason_mL3XGy": {
           "type": "reason",
           "settings": {
-            "heading": "Proven Expertise",
-            "description": "<p>8+ years of experience building tech and design products, with YC-backed startup success.</p>"
+            "icon": "shopify://shop_images/Website_illustrations-02_9d69a421-c417-4592-8b47-333cc44956aa.png",
+            "heading": "Quality First",
+            "description": "<p>Every order is carefully checked for design accuracy, detail, and durability.</p>"
+          }
+        },
+        "reason_3qiC6i": {
+          "type": "reason",
+          "settings": {
+            "icon": "shopify://shop_images/DESIGN_QUOTE.png",
+            "heading": "Transparent Process",
+            "description": "<p>No hidden costs, no complexity - Just a clear, hassle-free path from idea to product.</p>"
+          }
+        },
+        "reason_QgXtVC": {
+          "type": "reason",
+          "settings": {
+            "icon": "shopify://shop_images/CELEBRATE_MOMENTS.png",
+            "heading": "Real People, Real Support",
+            "description": "<p>Founded and run by Ashvin & Avani, you always know who’s behind your order.</p>"
+          }
+        },
+        "reason_FdtPQT": {
+          "type": "reason",
+          "settings": {
+            "icon": "shopify://shop_images/PRINT_DELIVER.png",
+            "heading": "Reliable Delivery",
+            "description": "<p>From design to doorstep, we manage the entire process so your product arrives as expected.</p>"
           }
         }
       },
       "block_order": [
         "reason_w4ALj6",
-        "reason_mL3XGy"
+        "reason_mL3XGy",
+        "reason_3qiC6i",
+        "reason_QgXtVC",
+        "reason_FdtPQT"
       ],
       "settings": {
         "title": "Why Trust Stashkart?"
