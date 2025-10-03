@@ -73,7 +73,7 @@
           "type": "careers",
           "settings": {
             "title": "Join The Team",
-            "button_link": "/pages/careers",
+            "button_link": "https://www.linkedin.com/company/tailgrab-digital/jobs/",
             "button_label": "View Openings",
             "background_color": "#e0e0e0",
             "text_color": "#333333"
