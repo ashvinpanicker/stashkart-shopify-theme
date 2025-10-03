@@ -59,7 +59,7 @@
             "image": "shopify://shop_images/Avani.png",
             "name": "Avani",
             "background_color": "#eda22d",
-            "text_color": "#ffffff",
+            "text_color": "#242833",
             "linkedin_icon": "shopify://shop_images/Rectangle_6a1a018d-bdcf-41a1-8df2-7152deab9310.png",
             "linkedin_url": "https://www.linkedin.com/in/avani-lakhotia/",
             "website_icon": "shopify://shop_images/canva-website-icon-MAFBFKx5wmk.webp",
@@ -85,9 +85,7 @@
         "team_member_avani",
         "careers_block"
       ],
-      "custom_css": [
-        "p {color: white;}"
-      ],
+      "custom_css": [],
       "settings": {}
     },
     "multicolumn_8RhEUw": {
