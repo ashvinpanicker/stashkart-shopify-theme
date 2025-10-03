@@ -90,6 +90,85 @@
       ],
       "settings": {}
     },
+    "multicolumn_8RhEUw": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_MqtFtz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FORM-Tile.png",
+            "title": "Proven Expertise",
+            "text": "<p>8+ years of experience building tech and design products, with YC-backed startup success.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xnr93G": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Website_illustrations-02_9d69a421-c417-4592-8b47-333cc44956aa.png",
+            "title": "Quality First",
+            "text": "<p>Every order is carefully checked for design accuracy, detail, and durability.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_j7EYEf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/DESIGN_QUOTE.png",
+            "title": "Transparent Process",
+            "text": "<p>No hidden costs, no complexity - Just a clear, hassle-free path from idea to product.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_CJjyVd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CELEBRATE_MOMENTS.png",
+            "title": "Real People, Real Support",
+            "text": "<p>Founded and run by Ashvin & Avani, you always know who’s behind your order.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_gArnCy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PRINT_DELIVER.png",
+            "title": "Reliable Delivery",
+            "text": "<p>From design to doorstep, we manage the entire process so your product arrives as expected.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_MqtFtz",
+        "column_xnr93G",
+        "column_j7EYEf",
+        "column_CJjyVd",
+        "column_gArnCy"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Why Trust Stashkart?",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 5,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "why_trust_us": {
       "type": "about-us-why-trust-us",
       "blocks": {
@@ -141,6 +220,7 @@
         "reason_QgXtVC",
         "reason_FdtPQT"
       ],
+      "disabled": true,
       "settings": {
         "title": "Why Trust Stashkart?"
       }
@@ -181,6 +261,7 @@
     "image_banner_iWhwjC",
     "about_us_story_content",
     "about_us_team",
+    "multicolumn_8RhEUw",
     "why_trust_us",
     "testimonials",
     "marquee_text_k3Q49G"
