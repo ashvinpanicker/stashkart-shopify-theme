@@ -23,12 +23,15 @@
     flex-wrap: wrap;
   }
   .about-us-story__member {
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
     width: 300px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
   .about-us-story__member-image {
     width: 120px;
@@ -42,17 +45,63 @@
     color: #333;
     margin-bottom: 10px;
   }
+  .about-us-story__member-social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
   .about-us-story__member-social a {
-    margin: 0 8px;
-    color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #eee;
+    color: #333;
     text-decoration: none;
     font-size: 1.2em;
+  }
+  .about-us-story__member-social img {
+    width: 20px;
+    height: 20px;
   }
   .about-us-story__member-description {
     font-size: 0.95em;
     line-height: 1.5;
     color: #666;
     margin-top: 15px;
+  }
+  .about-us-story__careers {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-us-story__careers-title {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .about-us-story__careers-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  .about-us-story__careers-link:hover {
+    background-color: #0056b3;
   }
 </style>
 
@@ -66,23 +115,36 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'team_member' %}
-          <div class="about-us-story__member">
+          <div class="about-us-story__member" style="background-color: {{ block.settings.background_color }};">
             {% if block.settings.image != blank %}
               <img src="{{ block.settings.image | image_url: width: 240 }}" alt="{{ block.settings.name }}" class="about-us-story__member-image" width="120" height="120">
             {% endif %}
             <h3 class="about-us-story__member-name">{{ block.settings.name }}</h3>
             <div class="about-us-story__member-social">
-              {% if block.settings.linkedin_url != blank %}
-                <a href="{{ block.settings.linkedin_url }}" target="_blank">LinkedIn</a>
+              {% if block.settings.linkedin_url != blank and block.settings.linkedin_icon != blank %}
+                <a href="{{ block.settings.linkedin_url }}" target="_blank">
+                  <img src="{{ block.settings.linkedin_icon | image_url: width: 20 }}" alt="LinkedIn" width="20" height="20">
+                </a>
               {% endif %}
-              {% if block.settings.website_url != blank %}
-                <a href="{{ block.settings.website_url }}" target="_blank">Website</a>
+              {% if block.settings.website_url != blank and block.settings.website_icon != blank %}
+                <a href="{{ block.settings.website_url }}" target="_blank">
+                  <img src="{{ block.settings.website_icon | image_url: width: 20 }}" alt="Website" width="20" height="20">
+                </a>
               {% endif %}
-              {% if block.settings.instagram_url != blank %}
-                <a href="{{ block.settings.instagram_url }}" target="_blank">Instagram</a>
+              {% if block.settings.instagram_url != blank and block.settings.instagram_icon != blank %}
+                <a href="{{ block.settings.instagram_url }}" target="_blank">
+                  <img src="{{ block.settings.instagram_icon | image_url: width: 20 }}" alt="Instagram" width="20" height="20">
+                </a>
               {% endif %}
             </div>
             <p class="about-us-story__member-description">{{ block.settings.description }}</p>
+          </div>
+        {% when 'careers' %}
+          <div class="about-us-story__careers" style="background-color: {{ block.settings.background_color }};">
+            <h3 class="about-us-story__careers-title">{{ block.settings.title }}</h3>
+            {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+              <a href="{{ block.settings.button_link }}" class="about-us-story__careers-link">{{ block.settings.button_label }}</a>
+            {% endif %}
           </div>
       {% endcase %}
     {% endfor %}
@@ -123,14 +185,35 @@
           "default": "Team Member Name"
         },
         {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "image_picker",
+          "id": "linkedin_icon",
+          "label": "LinkedIn Icon"
+        },
+        {
           "type": "url",
           "id": "linkedin_url",
           "label": "LinkedIn URL"
         },
         {
+          "type": "image_picker",
+          "id": "website_icon",
+          "label": "Website Icon"
+        },
+        {
           "type": "url",
           "id": "website_url",
           "label": "Website URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "instagram_icon",
+          "label": "Instagram Icon"
         },
         {
           "type": "url",
@@ -142,6 +225,35 @@
           "id": "description",
           "label": "Description",
           "default": "<p>Description of the team member.</p>"
+        }
+      ]
+    },
+    {
+      "type": "careers",
+      "name": "Careers Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Join The Team"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "View Openings"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#f0f0f0"
         }
       ]
     }
