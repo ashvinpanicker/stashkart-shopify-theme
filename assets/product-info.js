@@ -296,6 +296,16 @@ if (!customElements.get('product-info')) {
               [mediaGallerySourceItems, sourceSet, sourceMap] = refreshSourceData();
             }
           });
+        } else {
+          const customGallerySource = this.querySelector('.product-gallery');
+          const customGalleryDestination = html.querySelector('.product-gallery');
+
+          if (customGallerySource && customGalleryDestination) {
+            customGallerySource.innerHTML = customGalleryDestination.innerHTML;
+            if (typeof ProductGallery !== 'undefined') {
+              new ProductGallery(customGallerySource);
+            }
+          }
         }
 
         // set featured media as active in the media gallery
