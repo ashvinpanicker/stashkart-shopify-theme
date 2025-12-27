@@ -77,6 +77,109 @@
       additional_props: input_dataset
     %}
   {%- elsif picker_type == 'button' -%}
+    {%- liquid
+      assign text_color = null
+      assign background_color = null
+      
+      if value.swatch.color
+        assign background_color = value.swatch.color
+        assign rgb_values = value.swatch.color.rgb | split: ', '
+        assign r = rgb_values[0] | plus: 0 | times: 299
+        assign g = rgb_values[1] | plus: 0 | times: 587
+        assign b = rgb_values[2] | plus: 0 | times: 114
+        assign brightness = r | plus: g | plus: b | divided_by: 1000
+        if brightness > 128
+          assign text_color = '#000000'
+        else
+          assign text_color = '#FFFFFF'
+        endif
+      else
+        assign option_name_downcase = option.name | downcase
+        if option_name_downcase == 'color' or option_name_downcase == 'colour'
+          assign variant_name_down = value | downcase | strip
+          case variant_name_down
+            when 'sky blue'
+              assign background_color = '#87CEEB'
+            when 'charcoal'
+              assign background_color = '#36454F'
+            when 'lavender'
+              assign background_color = '#E6E6FA'
+            when 'jade'
+              assign background_color = '#C4EFC3'
+            when 'grey melange'
+              assign background_color = '#E7E5D8'
+            when 'peach'
+              assign background_color = '#F8D8BC'
+            when 'mint'
+              assign background_color = '#C3F9EB'
+            when 'coral'
+              assign background_color = '#DD6E6B'
+            when 'baby blue'
+              assign background_color = '#ACE7FB'
+            when 'copper'
+              assign background_color = '#BB6F5A'
+            when 'off white'
+              assign background_color = '#FFFDE9'
+            when 'charcoal melange'
+              assign background_color = '#585650'
+            when 'navy blue'
+              assign background_color = '#2E3446'
+            when 'bottle green'
+              assign background_color = '#295E3C'
+            when 'coffee brown'
+              assign background_color = '#362723'
+            when 'steel grey'
+              assign background_color = '#42484B'
+            when 'mushroom'
+              assign background_color = '#C7998F'
+            when 'light baby pink'
+              assign background_color = '#F3E4F2'
+            when 'olive green'
+              assign background_color = '#685B4F'
+            when 'light pink'
+              assign background_color = '#F3E4F2'
+            when 'dark blue'
+              assign background_color = '#2B38A1'
+            when 'orchid blue'
+              assign background_color = '#309AD2'
+            when 'royal blue'
+              assign background_color = '#2B3566'
+            when 'petrol blue'
+              assign background_color = '#172C41'
+            when 'mustard yellow'
+              assign background_color = '#FDD03E'
+            when 'brick red'
+              assign background_color = '#C33122'
+            else
+              assign background_color = variant_name_down
+          endcase
+
+          if background_color
+            assign hex_color = background_color | remove: '#'
+            assign r_hex = hex_color | slice: 0, 2
+            assign g_hex = hex_color | slice: 2, 2
+            assign b_hex = hex_color | slice: 4, 2
+            
+            assign rgb_str = background_color | color_to_rgb
+            if rgb_str
+               assign rgb_values = rgb_str | remove: 'rgb(' | remove: ')' | split: ', '
+               assign r = rgb_values[0] | plus: 0 | times: 299
+               assign g = rgb_values[1] | plus: 0 | times: 587
+               assign b = rgb_values[2] | plus: 0 | times: 114
+               assign brightness = r | plus: g | plus: b | divided_by: 1000
+               if brightness > 128
+                 assign text_color = '#000000'
+               else
+                 assign text_color = '#FFFFFF'
+               endif
+            else
+               # Fallback for valid CSS names that liquid can't parse or if color_to_rgb fails
+               assign text_color = '#000000' 
+            endif
+          endif
+        endif
+      endif
+    -%}
     <input
       type="radio"
       id="{{ input_id }}"
@@ -91,7 +194,12 @@
       {% endif %}
       {{ input_dataset }}
     >
-    <label for="{{ input_id }}">
+    <label for="{{ input_id }}"
+      class="{% if background_color %}color-swatch-button{% endif %}"
+      {% if background_color %}
+        style="background: {{ background_color }}; {% if text_color %}color: {{ text_color }};{% endif %}"
+      {% endif %}
+    >
       {{ value -}}
       {{ label_unavailable }}
     </label>

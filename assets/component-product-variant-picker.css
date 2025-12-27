@@ -133,6 +133,16 @@ variant-selects {
 }
 
 /* Custom styles for Swatch display type */
+.color-swatch-button {
+  filter: opacity(0.5);
+  transition: filter var(--duration-short) ease;
+}
+
+.product-form__input input[type='radio']:checked+.color-swatch-button {
+  filter: opacity(1);
+  border-color: rgb(var(--color-foreground));
+}
+
 .product-form__input--swatch {
   display: flex;
   flex-wrap: wrap;
