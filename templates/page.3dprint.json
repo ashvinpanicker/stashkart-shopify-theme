@@ -9,13 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
     "image_banner_pw7Rda": {
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
@@ -31,6 +24,13 @@
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "collection_list_r8iKgH": {
@@ -83,8 +83,8 @@
     }
   },
   "order": [
-    "main",
     "image_banner_pw7Rda",
+    "main",
     "collection_list_r8iKgH"
   ]
 }

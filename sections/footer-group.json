@@ -38,6 +38,7 @@
       "block_order": [
         "slide_rwjYWf"
       ],
+      "disabled": true,
       "settings": {
         "layout": "full_bleed",
         "slide_height": "adapt_image",
@@ -51,6 +52,7 @@
     },
     "faq": {
       "type": "faq",
+      "disabled": true,
       "settings": {}
     },
     "footer": {
