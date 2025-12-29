@@ -67,15 +67,21 @@ if (!customElements.get('product-info')) {
 
         const productUrl = target.dataset.productUrl || this.pendingRequestUrl || this.dataset.url;
         this.pendingRequestUrl = productUrl;
-        const shouldSwapProduct = this.dataset.url !== productUrl;
+
+        const currentUrlObj = new URL(this.dataset.url, window.location.href);
+        const newUrlObj = new URL(productUrl, window.location.href);
+        const shouldSwapProduct = currentUrlObj.pathname !== newUrlObj.pathname;
+
         const shouldFetchFullPage = this.dataset.updateUrl === 'true' && shouldSwapProduct;
+
+        const isSizeOption = target.name.match(/^size-/i);
 
         this.renderProductInfo({
           requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
           targetId: target.id,
           callback: shouldSwapProduct
             ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
-            : this.handleUpdateProductInfo(productUrl),
+            : this.handleUpdateProductInfo(productUrl, isSizeOption),
         });
       }
 
@@ -161,7 +167,7 @@ if (!customElements.get('product-info')) {
         }
       }
 
-      handleUpdateProductInfo(productUrl) {
+      handleUpdateProductInfo(productUrl, preventImageUpdate = false) {
         return (html) => {
           const variant = this.getSelectedVariant(html);
 
@@ -175,7 +181,9 @@ if (!customElements.get('product-info')) {
             return;
           }
 
-          this.updateMedia(html, variant?.featured_media?.id);
+          if (!preventImageUpdate) {
+            this.updateMedia(html, variant?.featured_media?.id);
+          }
 
           const updateSourceFromDestination = (id, shouldHide = (source) => false) => {
             const source = html.getElementById(`${id}-${this.sectionId}`);
