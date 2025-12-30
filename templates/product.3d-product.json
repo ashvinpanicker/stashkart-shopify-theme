@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "omi_omi_viewer_RYbFWW": {
+          "type": "shopify://apps/omi/blocks/omi-viewer/fbdd9cd6-392a-48c7-8772-8fb44bcce846",
+          "settings": {}
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -57,6 +61,7 @@
         }
       },
       "block_order": [
+        "omi_omi_viewer_RYbFWW",
         "vendor",
         "title",
         "price",
