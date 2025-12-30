@@ -1,14 +1,17 @@
 if (!customElements.get('product-model')) {
   customElements.define(
     'product-model',
-    class ProductModel extends DeferredMedia {
+    class ProductModel extends HTMLElement {
       constructor() {
         super();
+        this.observer = null;
+      }
+
+      connectedCallback() {
+        this.loadContent();
       }
 
       loadContent() {
-        super.loadContent();
-
         Shopify.loadFeatures([
           {
             name: 'model-viewer-ui',
@@ -20,7 +23,6 @@ if (!customElements.get('product-model')) {
 
       setupModelViewerUI(errors) {
         if (errors) return;
-
         this.modelViewerUI = new Shopify.ModelViewerUI(this.querySelector('model-viewer'));
       }
     }

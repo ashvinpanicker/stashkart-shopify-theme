@@ -285,6 +285,11 @@
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    {%- if product.media.size > 0 -%}
+      <link rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
+      <link rel="stylesheet" href="{{ 'component-product-model.css' | asset_url }}" media="print" onload="this.media='all'">
+    {%- endif -%}
+
     {%- if settings.predictive_search_enabled -%}
       <link
         rel="stylesheet"
@@ -433,5 +438,6 @@
         }
       }, 300);
     </script>
+    <script src="{{ 'product-model.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

@@ -1,52 +1,66 @@
 class ProductGallery {
   constructor(container) {
     this.container = container;
-    this.mainImage = container.querySelector('.product-gallery__main-image');
+    this.mediaItems = container.querySelectorAll('.product-gallery__media-item');
     this.thumbnails = container.querySelectorAll('.product-gallery__thumbnail');
     this.currentIndex = 0;
-    
+
     this.init();
   }
 
   init() {
     // Add click event listeners to thumbnails
     this.thumbnails.forEach((thumbnail, index) => {
-      thumbnail.addEventListener('click', () => {
-        this.setActiveImage(index);
+      thumbnail.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.setActiveMedia(index);
       });
     });
 
-    // Set initial active state
-    this.setActiveImage(0);
+    // Determine initial active index based on visible media item
+    this.mediaItems.forEach((item, index) => {
+      if (!item.classList.contains('hidden')) {
+        this.currentIndex = index;
+      }
+    });
+
+    // Ensure the correct thumbnail is active initially
+    this.setActiveMedia(this.currentIndex);
+
+    // Listen for custom event to change image
+    document.addEventListener('stashkart:gallery:go-to-image', (event) => {
+      if (event.detail && typeof event.detail.index === 'number') {
+        this.setActiveMedia(event.detail.index);
+      }
+    });
   }
 
-  setActiveImage(index) {
-    // Remove active class from all thumbnails
+  setActiveMedia(index) {
+    if (index < 0 || index >= this.mediaItems.length) return;
+
+    // Update thumbnails
     this.thumbnails.forEach(thumb => thumb.classList.remove('active'));
-    
-    // Add active class to selected thumbnail
-    this.thumbnails[index].classList.add('active');
-    
-    // Update main image with fade animation
-    const thumbnail = this.thumbnails[index];
-    const newImageSrc = thumbnail.getAttribute('data-main-src');
-    const newImageSrcset = thumbnail.getAttribute('data-main-srcset');
-    // Fade out
-    this.mainImage.classList.add('fade-out');
-    this.mainImage.classList.remove('fade-in');
-    setTimeout(() => {
-      this.mainImage.src = newImageSrc;
-      if (newImageSrcset) {
-        this.mainImage.srcset = newImageSrcset;
+    if (this.thumbnails[index]) {
+      this.thumbnails[index].classList.add('active');
+    }
+
+    // Update media items visibility
+    this.mediaItems.forEach((item, i) => {
+      if (i === index) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+        // Pause videos/models when hidden
+        const video = item.querySelector('video, iframe');
+        if (video) {
+          if (video.tagName === 'VIDEO') {
+            video.pause();
+          }
+          // For iframes we can't easily pause without postMessage logic, ignoring for now as per plan
+        }
       }
-      // Fade in after image is loaded
-      this.mainImage.onload = () => {
-        this.mainImage.classList.remove('fade-out');
-        this.mainImage.classList.add('fade-in');
-      };
-    }, 300);
-    
-    // Update current index
+    });
+
     this.currentIndex = index;
   }
 }
